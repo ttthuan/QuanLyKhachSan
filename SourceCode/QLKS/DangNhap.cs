@@ -161,7 +161,7 @@ namespace PresentationLayer
 
 			if(taiKhoan != null)
 			{
-				MessageBox.Show("Đăng nhập thành công");
+				
 			}
 			else
 			{

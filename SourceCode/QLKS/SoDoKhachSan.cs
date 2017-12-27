@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DataTranferObject;
 
 namespace PresentationLayer
 {
@@ -21,11 +22,11 @@ namespace PresentationLayer
         //// khái báo biến
         //public NHANVIEN nhanVien = null;
         int tick = 0;
-        
+		
         public SoDoKhachSan()
         {
             InitializeComponent();
-            
+			
             //formLoad();
             timerAutoChange.Start();
         }
