@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>PresentationLayer</RootNamespace>
     <AssemblyName>PresentationLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -45,12 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllerSV.cs" />
+    <Compile Include="CSS.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIZE.cs" />
     <Compile Include="SoDoKhachSan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoDoKhachSan.resx">
       <DependentUpon>SoDoKhachSan.cs</DependentUpon>
@@ -101,6 +113,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\alert-circle-outline.png" />
+    <None Include="Resources\bank.png" />
+    <Content Include="Resources\close-circle-outline.png" />
+    <Content Include="Resources\folder-account.png" />
+    <Content Include="Resources\lock-reset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
