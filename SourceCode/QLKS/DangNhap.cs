@@ -69,7 +69,7 @@ namespace PresentationLayer
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				//Dang nhap
+				KiemtraDangnhap();
 			}
 			else
 			{
@@ -85,7 +85,7 @@ namespace PresentationLayer
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				//ham dang nhap
+				KiemtraDangnhap();
 			}
 			else
 			{
@@ -142,7 +142,7 @@ namespace PresentationLayer
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				//ham dang nhap
+				KiemtraDangnhap();
 			}
 		}
 
@@ -161,11 +161,20 @@ namespace PresentationLayer
 
 			if(taiKhoan != null)
 			{
-				
+				this.Hide();
+				ControllerSV objSV = new ControllerSV();
+				objSV.taiKhoan = taiKhoan;
+				FormMain form = new FormMain(objSV);
+				form.ShowDialog();
+				//Show();
+				this.Close();
 			}
 			else
 			{
-				MessageBox.Show("Đăng nhập thất bại");
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Đăng nhập thất bại!";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
 			}
 		}
 	}

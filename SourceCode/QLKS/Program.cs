@@ -15,7 +15,7 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain(new ControllerSV()));
+            Application.Run(new DangNhap());
         }
     }
 }

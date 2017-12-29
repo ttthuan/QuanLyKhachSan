@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataTranferObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PresentationLayer
 {
 	public partial class ThayDoiMatKhau : Form
 	{
+		public static TaiKhoanDTO taiKhoan;
 		public ThayDoiMatKhau()
 		{
 			InitializeComponent();

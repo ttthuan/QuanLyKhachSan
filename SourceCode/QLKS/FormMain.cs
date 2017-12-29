@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataTranferObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,7 @@ namespace PresentationLayer
         Form bieuDoKhachDen = null;
         Form dmk = null;
         Form quanlytaikhoan = null;
+		Form thaydoimatkau = null;
 
         public Label plbDangXuat = null;
 
@@ -50,9 +52,13 @@ namespace PresentationLayer
         
         // khai báo delegate
         public delegate void callBtnMouseEvent(object sender, MouseEventArgs e);
+
+		//Tai khoản đăng nhập
+		TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
         
         public FormMain(ControllerSV objSV)
         {
+			taiKhoan = objSV.taiKhoan;
             InitializeComponent();
 
             pnTitle.BackColor = TITLE_PRIMERY;
@@ -136,7 +142,10 @@ namespace PresentationLayer
             heightOfPanelTaiKhoan = SIZE.HEIGHT_BUTTON;
 
             plbDangXuat = lbDangXuat;
-        }
+
+			//taikhoan
+			lbTaiKhoan.Text = objSV.taiKhoan.Tendangnhap;
+		}
 
         private void BtnQuanLyTaiKhoan_MouseUp(object sender, MouseEventArgs e)
         {
@@ -149,12 +158,15 @@ namespace PresentationLayer
 
         private void BtnDoiMatKhau_MouseUp(object sender, MouseEventArgs e)
         {
-            setColorActiveForButton((Button)sender);
-            
-            // xử lý btnDoiMatKhau ở đây
-
-            onlyShowOneFormOnPannelBody(dmk);
-        }
+			setColorActiveForButton((Button)sender);
+			dmk = new ThayDoiMatKhau();
+			ThayDoiMatKhau.taiKhoan = taiKhoan;
+			dmk.Dock = DockStyle.Fill;
+			dmk.TopLevel = false;
+			pnBody.Controls.Add(dmk);
+			dmk.Show();
+			onlyShowOneFormOnPannelBody(dmk);
+		}
 
         private void BtnDanhSachKhachHang_MouseUp(object sender, MouseEventArgs e)
         {
@@ -380,10 +392,15 @@ namespace PresentationLayer
         private void btnDichVu_MouseUp(object sender, MouseEventArgs e)
         {
             setColorActiveForButton((Button)sender);
-
-            
-
-            onlyShowOneFormOnPannelBody(dichVu);
+			if (dichVu == null)
+			{
+				dichVu = new DichVuvaLoaiDichVu();
+				dichVu.Dock = DockStyle.Fill;
+				dichVu.TopLevel = false;
+				pnBody.Controls.Add(dichVu);
+				dichVu.Show();
+			}
+			onlyShowOneFormOnPannelBody(dichVu);
         }
 
         // expand group button DoanhThu
@@ -444,5 +461,6 @@ namespace PresentationLayer
         {
 
         }
-    }
+
+	}
 }
