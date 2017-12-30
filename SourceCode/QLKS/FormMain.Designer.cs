@@ -45,8 +45,8 @@
             this.btnChiTietDoanhThu = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
             this.pnKhachHang = new System.Windows.Forms.Panel();
-            this.btnDanhSachKhachHang = new System.Windows.Forms.Button();
-            this.btnKhachHangDatPhong = new System.Windows.Forms.Button();
+            this.btnKhachHangCu = new System.Windows.Forms.Button();
+            this.btnKhachHangDangDat = new System.Windows.Forms.Button();
             this.btnKhachHangDangO = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.pnTaiKhoan = new System.Windows.Forms.Panel();
@@ -360,8 +360,8 @@
             // pnKhachHang
             // 
             this.pnKhachHang.BackColor = System.Drawing.Color.White;
-            this.pnKhachHang.Controls.Add(this.btnDanhSachKhachHang);
-            this.pnKhachHang.Controls.Add(this.btnKhachHangDatPhong);
+            this.pnKhachHang.Controls.Add(this.btnKhachHangCu);
+            this.pnKhachHang.Controls.Add(this.btnKhachHangDangDat);
             this.pnKhachHang.Controls.Add(this.btnKhachHangDangO);
             this.pnKhachHang.Controls.Add(this.btnKhachHang);
             this.pnKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -371,51 +371,51 @@
             this.pnKhachHang.Size = new System.Drawing.Size(210, 160);
             this.pnKhachHang.TabIndex = 0;
             // 
-            // btnDanhSachKhachHang
+            // btnKhachHangCu
             // 
-            this.btnDanhSachKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnDanhSachKhachHang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDanhSachKhachHang.FlatAppearance.BorderSize = 0;
-            this.btnDanhSachKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
-            this.btnDanhSachKhachHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
-            this.btnDanhSachKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhSachKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDanhSachKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnDanhSachKhachHang.Image = global::PresentationLayer.Properties.Resources.white_people_out;
-            this.btnDanhSachKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhSachKhachHang.Location = new System.Drawing.Point(0, 120);
-            this.btnDanhSachKhachHang.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDanhSachKhachHang.Name = "btnDanhSachKhachHang";
-            this.btnDanhSachKhachHang.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnDanhSachKhachHang.Size = new System.Drawing.Size(210, 40);
-            this.btnDanhSachKhachHang.TabIndex = 6;
-            this.btnDanhSachKhachHang.Text = " Khách Hàng Cũ";
-            this.btnDanhSachKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDanhSachKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDanhSachKhachHang.UseVisualStyleBackColor = false;
+            this.btnKhachHangCu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnKhachHangCu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKhachHangCu.FlatAppearance.BorderSize = 0;
+            this.btnKhachHangCu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
+            this.btnKhachHangCu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
+            this.btnKhachHangCu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHangCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHangCu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnKhachHangCu.Image = global::PresentationLayer.Properties.Resources.white_people_out;
+            this.btnKhachHangCu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHangCu.Location = new System.Drawing.Point(0, 120);
+            this.btnKhachHangCu.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKhachHangCu.Name = "btnKhachHangCu";
+            this.btnKhachHangCu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnKhachHangCu.Size = new System.Drawing.Size(210, 40);
+            this.btnKhachHangCu.TabIndex = 6;
+            this.btnKhachHangCu.Text = " Khách Hàng Cũ";
+            this.btnKhachHangCu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHangCu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhachHangCu.UseVisualStyleBackColor = false;
             // 
-            // btnKhachHangDatPhong
+            // btnKhachHangDangDat
             // 
-            this.btnKhachHangDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnKhachHangDatPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnKhachHangDatPhong.FlatAppearance.BorderSize = 0;
-            this.btnKhachHangDatPhong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
-            this.btnKhachHangDatPhong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
-            this.btnKhachHangDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhachHangDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhachHangDatPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnKhachHangDatPhong.Image = global::PresentationLayer.Properties.Resources.white_folder_account;
-            this.btnKhachHangDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKhachHangDatPhong.Location = new System.Drawing.Point(0, 80);
-            this.btnKhachHangDatPhong.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKhachHangDatPhong.Name = "btnKhachHangDatPhong";
-            this.btnKhachHangDatPhong.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnKhachHangDatPhong.Size = new System.Drawing.Size(210, 40);
-            this.btnKhachHangDatPhong.TabIndex = 5;
-            this.btnKhachHangDatPhong.Text = "  Khách Hàng Đang Đặt";
-            this.btnKhachHangDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKhachHangDatPhong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKhachHangDatPhong.UseVisualStyleBackColor = false;
+            this.btnKhachHangDangDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnKhachHangDangDat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnKhachHangDangDat.FlatAppearance.BorderSize = 0;
+            this.btnKhachHangDangDat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
+            this.btnKhachHangDangDat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
+            this.btnKhachHangDangDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHangDangDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHangDangDat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnKhachHangDangDat.Image = global::PresentationLayer.Properties.Resources.white_folder_account;
+            this.btnKhachHangDangDat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHangDangDat.Location = new System.Drawing.Point(0, 80);
+            this.btnKhachHangDangDat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnKhachHangDangDat.Name = "btnKhachHangDangDat";
+            this.btnKhachHangDangDat.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnKhachHangDangDat.Size = new System.Drawing.Size(210, 40);
+            this.btnKhachHangDangDat.TabIndex = 5;
+            this.btnKhachHangDangDat.Text = "  Khách Hàng Đang Đặt";
+            this.btnKhachHangDangDat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKhachHangDangDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKhachHangDangDat.UseVisualStyleBackColor = false;
             // 
             // btnKhachHangDangO
             // 
@@ -638,10 +638,10 @@
         private System.Windows.Forms.Timer tmDanhThu;
         private System.Windows.Forms.Panel pnBody;
         private System.Windows.Forms.Panel pnKhachHang;
-        private System.Windows.Forms.Button btnKhachHangDatPhong;
+        private System.Windows.Forms.Button btnKhachHangDangDat;
         private System.Windows.Forms.Button btnKhachHangDangO;
         private System.Windows.Forms.Timer tmKhachHang;
-        private System.Windows.Forms.Button btnDanhSachKhachHang;
+        private System.Windows.Forms.Button btnKhachHangCu;
         private System.Windows.Forms.Label lbDangXuat;
         private System.Windows.Forms.Label lbTaiKhoan;
         private System.Windows.Forms.Panel pnTaiKhoan;

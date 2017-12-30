@@ -85,7 +85,7 @@ namespace PresentationLayer
 
             // btn child Khach Hang
             btnKhachHangDangO.BackColor = BUTTON_PRIMERY;
-            btnKhachHangDatPhong.BackColor = BUTTON_PRIMERY;
+            btnKhachHangDangDat.BackColor = BUTTON_PRIMERY;
             //btnKhachHangCu.BackColor = BUTTON_PRIMERY;
 
             btnKhachHang.ForeColor = TEXT_PRIMARY;
@@ -117,13 +117,13 @@ namespace PresentationLayer
             btnKhachHangDangO.MouseLeave += button_MouseLeave;
             btnKhachHangDangO.MouseUp += BtnKhachHangDangO_MouseUp;
 
-            btnKhachHangDatPhong.MouseHover += button_MouseHover;
-            btnKhachHangDatPhong.MouseLeave += button_MouseLeave;
-            btnKhachHangDatPhong.MouseUp += BtnKhachHangDatPhong_MouseUp;
+            btnKhachHangDangDat.MouseHover += button_MouseHover;
+            btnKhachHangDangDat.MouseLeave += button_MouseLeave;
+            btnKhachHangDangDat.MouseUp += BtnKhachHangDatPhong_MouseUp;
 
-            btnDanhSachKhachHang.MouseHover += button_MouseHover;
-            btnDanhSachKhachHang.MouseLeave += button_MouseLeave;
-            btnDanhSachKhachHang.MouseUp += BtnDanhSachKhachHang_MouseUp;
+            btnKhachHangCu.MouseHover += button_MouseHover;
+            btnKhachHangCu.MouseLeave += button_MouseLeave;
+            btnKhachHangCu.MouseUp += BtnDanhSachKhachHang_MouseUp;
 
             // khởi tạo sự kiện cho group button tài khoản
             btnDoiMatKhau.MouseHover += button_MouseHover;
@@ -269,8 +269,8 @@ namespace PresentationLayer
             btnDoanhThuGanDay.BackColor = BUTTON_PRIMERY;
             btnPhanTichBieuDo.BackColor = BUTTON_PRIMERY;
             btnKhachHangDangO.BackColor = BUTTON_PRIMERY;
-            btnKhachHangDatPhong.BackColor = BUTTON_PRIMERY;
-            btnDanhSachKhachHang.BackColor = BUTTON_PRIMERY;
+            btnKhachHangDangDat.BackColor = BUTTON_PRIMERY;
+            btnKhachHangCu.BackColor = BUTTON_PRIMERY;
             btnTaiKhoan.BackColor = BUTTON_PRIMERY;
             btnDoiMatKhau.BackColor = BUTTON_PRIMERY;
             btnQuanLyTaiKhoan.BackColor = BUTTON_PRIMERY;
@@ -287,7 +287,7 @@ namespace PresentationLayer
                 resetDefaulForMenuDropdown(tmDanhThu, pnDoanhThu,ref heightOfPanelDoanhThu);
             }
             // group KhachHang
-            if(!(btn == btnKhachHang || btn == btnKhachHangDangO || btn == btnKhachHangDatPhong || btn == btnDanhSachKhachHang))
+            if(!(btn == btnKhachHang || btn == btnKhachHangDangO || btn == btnKhachHangDangDat || btn == btnKhachHangCu))
             {
                 resetDefaulForMenuDropdown(tmKhachHang, pnKhachHang, ref heightOfPanelKhachHang);
             }
