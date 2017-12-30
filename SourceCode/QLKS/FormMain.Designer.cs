@@ -33,7 +33,7 @@
             this.lbTaiKhoan = new System.Windows.Forms.Label();
             this.lbDangXuat = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.IconLoGo = new System.Windows.Forms.Button();
             this.lbTitleText = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSoDoKhachSan = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@
             this.pnBody = new System.Windows.Forms.Panel();
             this.tmKhachHang = new System.Windows.Forms.Timer(this.components);
             this.tmTaiKhoan = new System.Windows.Forms.Timer(this.components);
+            this.cbbChangeTheme = new System.Windows.Forms.ComboBox();
             this.pnTitle.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pnDoanhThu.SuspendLayout();
@@ -69,10 +70,11 @@
             // 
             this.pnTitle.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.pnTitle.BackColor = System.Drawing.Color.White;
+            this.pnTitle.Controls.Add(this.cbbChangeTheme);
             this.pnTitle.Controls.Add(this.lbTaiKhoan);
             this.pnTitle.Controls.Add(this.lbDangXuat);
             this.pnTitle.Controls.Add(this.btnClose);
-            this.pnTitle.Controls.Add(this.button1);
+            this.pnTitle.Controls.Add(this.IconLoGo);
             this.pnTitle.Controls.Add(this.lbTitleText);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
@@ -114,7 +116,7 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::PresentationLayer.Properties.Resources.White_close_circle_outline;
+            this.btnClose.Image = global::PresentationLayer.Properties.Resources.white_close_circle_outline;
             this.btnClose.Location = new System.Drawing.Point(982, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 26);
@@ -123,20 +125,20 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button1
+            // IconLoGo
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::PresentationLayer.Properties.Resources.white_bank;
-            this.button1.Location = new System.Drawing.Point(6, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 35);
-            this.button1.TabIndex = 1;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.IconLoGo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.IconLoGo.FlatAppearance.BorderSize = 0;
+            this.IconLoGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IconLoGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconLoGo.ForeColor = System.Drawing.Color.White;
+            this.IconLoGo.Image = global::PresentationLayer.Properties.Resources.white_bank;
+            this.IconLoGo.Location = new System.Drawing.Point(6, 4);
+            this.IconLoGo.Name = "IconLoGo";
+            this.IconLoGo.Size = new System.Drawing.Size(23, 35);
+            this.IconLoGo.TabIndex = 1;
+            this.IconLoGo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.IconLoGo.UseVisualStyleBackColor = true;
             // 
             // lbTitleText
             // 
@@ -389,7 +391,7 @@
             this.btnKhachHangCu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnKhachHangCu.Size = new System.Drawing.Size(210, 40);
             this.btnKhachHangCu.TabIndex = 6;
-            this.btnKhachHangCu.Text = " Khách Hàng Cũ";
+            this.btnKhachHangCu.Text = "  Khách Hàng Cũ";
             this.btnKhachHangCu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHangCu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachHangCu.UseVisualStyleBackColor = false;
@@ -404,7 +406,7 @@
             this.btnKhachHangDangDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHangDangDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHangDangDat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnKhachHangDangDat.Image = global::PresentationLayer.Properties.Resources.white_folder_account;
+            this.btnKhachHangDangDat.Image = global::PresentationLayer.Properties.Resources.white_check_in;
             this.btnKhachHangDangDat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHangDangDat.Location = new System.Drawing.Point(0, 80);
             this.btnKhachHangDangDat.Margin = new System.Windows.Forms.Padding(0);
@@ -450,7 +452,7 @@
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btnKhachHang.Image = global::PresentationLayer.Properties.Resources.white_account;
+            this.btnKhachHang.Image = global::PresentationLayer.Properties.Resources.white_account_multiple_outline;
             this.btnKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 0);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(0);
@@ -468,7 +470,7 @@
             // 
             // pnTaiKhoan
             // 
-            this.pnTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.pnTaiKhoan.BackColor = System.Drawing.Color.White;
             this.pnTaiKhoan.Controls.Add(this.btnQuanLyTaiKhoan);
             this.pnTaiKhoan.Controls.Add(this.btnDoiMatKhau);
             this.pnTaiKhoan.Controls.Add(this.btnTaiKhoan);
@@ -476,18 +478,20 @@
             this.pnTaiKhoan.Location = new System.Drawing.Point(0, 440);
             this.pnTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
             this.pnTaiKhoan.Name = "pnTaiKhoan";
-            this.pnTaiKhoan.Size = new System.Drawing.Size(210, 200);
+            this.pnTaiKhoan.Size = new System.Drawing.Size(210, 120);
             this.pnTaiKhoan.TabIndex = 3;
             // 
             // btnQuanLyTaiKhoan
             // 
+            this.btnQuanLyTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnQuanLyTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnQuanLyTaiKhoan.FlatAppearance.BorderSize = 0;
             this.btnQuanLyTaiKhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
             this.btnQuanLyTaiKhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
             this.btnQuanLyTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuanLyTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyTaiKhoan.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnQuanLyTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnQuanLyTaiKhoan.Image = global::PresentationLayer.Properties.Resources.white_folder_account;
             this.btnQuanLyTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(0, 80);
             this.btnQuanLyTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
@@ -495,20 +499,22 @@
             this.btnQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(210, 40);
             this.btnQuanLyTaiKhoan.TabIndex = 5;
-            this.btnQuanLyTaiKhoan.Text = "Quản Lý Tài Khoản";
+            this.btnQuanLyTaiKhoan.Text = "  Quản Lý Tài Khoản";
             this.btnQuanLyTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnQuanLyTaiKhoan.UseVisualStyleBackColor = false;
             // 
             // btnDoiMatKhau
             // 
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnDoiMatKhau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDoiMatKhau.FlatAppearance.BorderSize = 0;
             this.btnDoiMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
             this.btnDoiMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(43)))), ((int)(((byte)(65)))));
             this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiMatKhau.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnDoiMatKhau.Image = global::PresentationLayer.Properties.Resources.white_lock_reset;
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(0, 40);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(0);
@@ -516,10 +522,10 @@
             this.btnDoiMatKhau.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnDoiMatKhau.Size = new System.Drawing.Size(210, 40);
             this.btnDoiMatKhau.TabIndex = 4;
-            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhau.Text = "  Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoiMatKhau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
             // 
             // btnTaiKhoan
             // 
@@ -531,6 +537,7 @@
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnTaiKhoan.Image = global::PresentationLayer.Properties.Resources.white_account;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.Location = new System.Drawing.Point(0, 0);
             this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
@@ -538,7 +545,7 @@
             this.btnTaiKhoan.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTaiKhoan.Size = new System.Drawing.Size(210, 40);
             this.btnTaiKhoan.TabIndex = 5;
-            this.btnTaiKhoan.Text = "Tài Khoản";
+            this.btnTaiKhoan.Text = "  Tài Khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
@@ -556,8 +563,9 @@
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btnAbout.Image = global::PresentationLayer.Properties.Resources.white_about;
             this.btnAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbout.Location = new System.Drawing.Point(210, 0);
+            this.btnAbout.Location = new System.Drawing.Point(0, 560);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -596,6 +604,18 @@
             this.tmTaiKhoan.Interval = 10;
             this.tmTaiKhoan.Tick += new System.EventHandler(this.tmTaiKhoan_Tick);
             // 
+            // cbbChangeTheme
+            // 
+            this.cbbChangeTheme.FormattingEnabled = true;
+            this.cbbChangeTheme.Items.AddRange(new object[] {
+            "White",
+            "Darg"});
+            this.cbbChangeTheme.Location = new System.Drawing.Point(639, 13);
+            this.cbbChangeTheme.Name = "cbbChangeTheme";
+            this.cbbChangeTheme.Size = new System.Drawing.Size(105, 21);
+            this.cbbChangeTheme.TabIndex = 5;
+            this.cbbChangeTheme.SelectedIndexChanged += new System.EventHandler(this.cbbChangeTheme_SelectedIndexChanged);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,7 +643,7 @@
         #endregion
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button IconLoGo;
         private System.Windows.Forms.Label lbTitleText;
         private System.Windows.Forms.Button btnSoDoKhachSan;
         private System.Windows.Forms.Button btnDoanhThu;
@@ -650,5 +670,6 @@
         private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Timer tmTaiKhoan;
+        private System.Windows.Forms.ComboBox cbbChangeTheme;
     }
 }

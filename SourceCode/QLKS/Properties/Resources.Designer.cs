@@ -63,16 +63,6 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap account {
-            get {
-                object obj = ResourceManager.GetObject("account", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap account_card_details {
             get {
                 object obj = ResourceManager.GetObject("account_card_details", resourceCulture);
@@ -113,16 +103,6 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alert_circle_outline {
-            get {
-                object obj = ResourceManager.GetObject("alert-circle-outline", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap arrow_down_bold_circle_outline {
             get {
                 object obj = ResourceManager.GetObject("arrow_down_bold_circle_outline", resourceCulture);
@@ -136,16 +116,6 @@ namespace PresentationLayer.Properties {
         internal static System.Drawing.Bitmap av_timer {
             get {
                 object obj = ResourceManager.GetObject("av_timer", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bank {
-            get {
-                object obj = ResourceManager.GetObject("bank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,46 +163,6 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cash_100 {
-            get {
-                object obj = ResourceManager.GetObject("cash_100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cash_multiple {
-            get {
-                object obj = ResourceManager.GetObject("cash_multiple", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cash_usd {
-            get {
-                object obj = ResourceManager.GetObject("cash_usd", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chart_bar {
-            get {
-                object obj = ResourceManager.GetObject("chart_bar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap chevron_left {
             get {
                 object obj = ResourceManager.GetObject("chevron_left", resourceCulture);
@@ -253,39 +183,9 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_circle_outline {
-            get {
-                object obj = ResourceManager.GetObject("close-circle-outline", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap content_save {
             get {
                 object obj = ResourceManager.GetObject("content_save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap content_save__1_ {
-            get {
-                object obj = ResourceManager.GetObject("content_save__1_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap content_save__3_ {
-            get {
-                object obj = ResourceManager.GetObject("content_save__3_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +203,29 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_about {
+            get {
+                object obj = ResourceManager.GetObject("dark_about", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_account {
+            get {
+                object obj = ResourceManager.GetObject("dark_account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dark_account_multiple_outline {
             get {
-                object obj = ResourceManager.GetObject("dark_account-multiple-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_account_multiple_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +243,19 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_cash_100 {
+            get {
+                object obj = ResourceManager.GetObject("dark_cash_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dark_cash_multiple {
             get {
-                object obj = ResourceManager.GetObject("dark_cash-multiple", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_cash_multiple", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -335,7 +265,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_cash_usd {
             get {
-                object obj = ResourceManager.GetObject("dark_cash-usd", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_cash_usd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -345,7 +275,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_chart_bar {
             get {
-                object obj = ResourceManager.GetObject("dark_chart-bar", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_chart_bar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -355,7 +285,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_check_in {
             get {
-                object obj = ResourceManager.GetObject("dark_check-in", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_check_in", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -365,7 +295,17 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_close_circle_outline {
             get {
-                object obj = ResourceManager.GetObject("dark_close-circle-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_close_circle_outline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_folder_account {
+            get {
+                object obj = ResourceManager.GetObject("dark_folder_account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -385,7 +325,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_home_modern {
             get {
-                object obj = ResourceManager.GetObject("dark_home-modern", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_home_modern", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -395,7 +335,17 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_in_home {
             get {
-                object obj = ResourceManager.GetObject("dark_in-home", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_in_home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_lock_reset {
+            get {
+                object obj = ResourceManager.GetObject("dark_lock_reset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -415,7 +365,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dark_people_out {
             get {
-                object obj = ResourceManager.GetObject("dark_people-out", resourceCulture);
+                object obj = ResourceManager.GetObject("dark_people_out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -445,7 +395,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap eye_off {
             get {
-                object obj = ResourceManager.GetObject("eye-off", resourceCulture);
+                object obj = ResourceManager.GetObject("eye_off", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -467,16 +417,6 @@ namespace PresentationLayer.Properties {
         internal static System.Drawing.Bitmap fail {
             get {
                 object obj = ResourceManager.GetObject("fail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap folder_account {
-            get {
-                object obj = ResourceManager.GetObject("folder-account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -614,16 +554,6 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lock_reset {
-            get {
-                object obj = ResourceManager.GetObject("lock-reset", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap minus_box {
             get {
                 object obj = ResourceManager.GetObject("minus_box", resourceCulture);
@@ -694,6 +624,16 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap white_about {
+            get {
+                object obj = ResourceManager.GetObject("white_about", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap white_account {
             get {
                 object obj = ResourceManager.GetObject("white_account", resourceCulture);
@@ -706,7 +646,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_account_multiple_outline {
             get {
-                object obj = ResourceManager.GetObject("white_account-multiple-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("white_account_multiple_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -726,7 +666,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_cash_100 {
             get {
-                object obj = ResourceManager.GetObject("white_cash-100", resourceCulture);
+                object obj = ResourceManager.GetObject("white_cash_100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -736,7 +676,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_cash_multiple {
             get {
-                object obj = ResourceManager.GetObject("white_cash-multiple", resourceCulture);
+                object obj = ResourceManager.GetObject("white_cash_multiple", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -746,7 +686,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_cash_usd {
             get {
-                object obj = ResourceManager.GetObject("white_cash-usd", resourceCulture);
+                object obj = ResourceManager.GetObject("white_cash_usd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -756,7 +696,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_chart_bar {
             get {
-                object obj = ResourceManager.GetObject("white_chart-bar", resourceCulture);
+                object obj = ResourceManager.GetObject("white_chart_bar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -766,7 +706,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_check_in {
             get {
-                object obj = ResourceManager.GetObject("white_check-in", resourceCulture);
+                object obj = ResourceManager.GetObject("white_check_in", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -774,9 +714,9 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap White_close_circle_outline {
+        internal static System.Drawing.Bitmap white_close_circle_outline {
             get {
-                object obj = ResourceManager.GetObject("White_close-circle-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("white_close_circle_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -786,7 +726,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_folder_account {
             get {
-                object obj = ResourceManager.GetObject("white_folder-account", resourceCulture);
+                object obj = ResourceManager.GetObject("white_folder_account", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -806,7 +746,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_home_modern {
             get {
-                object obj = ResourceManager.GetObject("white_home-modern", resourceCulture);
+                object obj = ResourceManager.GetObject("white_home_modern", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -816,7 +756,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_in_home {
             get {
-                object obj = ResourceManager.GetObject("white_in-home", resourceCulture);
+                object obj = ResourceManager.GetObject("white_in_home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -826,7 +766,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_lock_reset {
             get {
-                object obj = ResourceManager.GetObject("white_lock-reset", resourceCulture);
+                object obj = ResourceManager.GetObject("white_lock_reset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -846,7 +786,7 @@ namespace PresentationLayer.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap white_people_out {
             get {
-                object obj = ResourceManager.GetObject("white_people-out", resourceCulture);
+                object obj = ResourceManager.GetObject("white_people_out", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

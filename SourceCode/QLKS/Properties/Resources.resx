@@ -121,9 +121,6 @@
   <data name="minus_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus-box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="content_save__3_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\content-save (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="calculator_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculator-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,23 +130,20 @@
   <data name="calendar_clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar-clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close-circle-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_close-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_folder_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_folder-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cash_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cash-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chevron_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chevron-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loadding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadding.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page_first" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page-first.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_check-in" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_check-in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_home_modern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_home-modern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_close_black_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_close_black_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,17 +157,20 @@
   <data name="warnig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warnig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lock-reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_lock-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_in_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_in-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendar_multiple_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar-multiple-check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye-off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="eye_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye-off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_close-circle-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_close-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="content_save_wwhile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\content-save-wwhile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="account_multiple1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account-multiple1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,38 +178,35 @@
   <data name="arrow_down_bold_circle_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-down-bold-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_people-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_people-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_in_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_in-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="White_close-circle-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\White_close-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_lock_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_lock-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_account_multiple_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_account-multiple-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_mode_edit_white_18dp_1x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_mode_edit_white_18dp_1x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_cash-usd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_cash-usd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_cash_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_cash-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white_check_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_check-in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="av_timer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\av-timer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alert-circle-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="content_save__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\content-save (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_chart_bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_chart-bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_mode_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_mode_edit.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_cash-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_cash-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_cash-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,11 +214,8 @@
   <data name="dark_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_chart-bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_chart-bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_cash-multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_cash-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_lock_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_lock-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,23 +223,20 @@
   <data name="open_in_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-in-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dark_cash_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_cash-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_cash-usd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_cash-usd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="account_card_details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account-card-details.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_in-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_in-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_home_modern" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_home-modern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loadding" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loadding.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dark_cash-multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_cash-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_people_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_people-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_forever" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-forever.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,20 +244,26 @@
   <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_folder-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="chart_bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_chart-bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="white_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_chart-bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_chart-bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_account_multiple_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_account-multiple-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_cash_usd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_cash-usd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white_food" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dark_food" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="food_fork_drink1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\food-fork-drink1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,14 +274,14 @@
   <data name="food_fork_drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\food-fork-drink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_food" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="page_last" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page-last.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_check-in" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_check-in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_people_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_people-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dark_bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,14 +289,11 @@
   <data name="forum" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\forum.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_account-multiple-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_account-multiple-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chevron_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_home-modern" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_home-modern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="f639e29ce6a6ac1da59a6c1456bef6cd_calculator_icon_clip_art_free_calculator_icon_vector_clipart_285_298" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f639e29ce6a6ac1da59a6c1456bef6cd_calculator-icon-clip-art-free-calculator-icon-vector-clipart_285-298.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,38 +301,32 @@
   <data name="account_multiple_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account-multiple-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_account-multiple-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_account-multiple-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_check_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_check-in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_in-home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_in-home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_close_circle_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_close-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="account_multiple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\account-multiple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dark_home-modern" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_home-modern.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_cash_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_cash-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cash_usd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="white_cash_usd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_cash-usd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chevron_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chevron-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_close_circle_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\White_close-circle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="content_save_wwhile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\content-save-wwhile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dark_people-out" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dark_people-out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_chart_bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_chart-bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="library_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\library-plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_folder_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_folder-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="content_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\content-save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,10 +334,7 @@
   <data name="ic_replay_black_48dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_replay_black_48dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_folder-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_folder-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="white_lock-reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_lock-reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dark_cash_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dark_cash-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

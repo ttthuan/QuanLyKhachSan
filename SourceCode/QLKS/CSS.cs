@@ -15,6 +15,7 @@ namespace PresentationLayer
         public static Color DARK_TEXT_PRIMARY = Color.LightGray;
         public static Color DARK_TITLE_PRIMARY = Color.FromArgb(74, 0, 115); // title 
         public static Color DARK_BACKGROUND_PANEL = Color.FromArgb(41, 53, 65);
+        public static Color DARK_BUTTON_HOVER = Color.FromArgb(74, 0, 115);
 
         public static Color WHITE_BUTTON = Color.FromArgb(250, 250, 250);
         public static Color WHITE_ACTIVEBUTTON = Color.FromArgb(224, 224, 224);
@@ -22,6 +23,7 @@ namespace PresentationLayer
         public static Color WHITE_TEXT_PRIMARY = Color.FromArgb(33,33,33);
         public static Color WHITE_TITLE_PRIMARY = Color.FromArgb(255, 255, 255); // title 
         public static Color WHITE_BACKGROUND_PANEL = Color.FromArgb(255,255,255);
+        public static Color WHITE_BUTTON_HOVER = Color.FromArgb(255,255,255);
 
         //public static Color RED = Color.FromArgb(229, 57, 53);
         //public static Color LIGHTRED = Color.FromArgb(239, 83, 80);

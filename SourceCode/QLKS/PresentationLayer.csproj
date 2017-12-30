@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -194,14 +195,12 @@
     <None Include="Resources\account-multiple.png" />
     <None Include="Resources\account-multiple1.png" />
     <None Include="Resources\account-multiple-plus.png" />
-    <None Include="Resources\alert-circle-outline.png" />
     <None Include="Resources\arrow-down-bold-circle-outline.png" />
     <None Include="Resources\av-timer.png" />
     <None Include="Resources\calculator.png" />
     <None Include="Resources\calculator-white.png" />
     <None Include="Resources\calendar-clock.png" />
     <None Include="Resources\calendar-multiple-check.png" />
-    <None Include="Resources\cash-100.png" />
     <None Include="Resources\content-save %281%29.png" />
     <None Include="Resources\content-save %283%29.png" />
     <None Include="Resources\content-save.png" />
@@ -331,6 +330,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\white_lock-reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_folder-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_lock-reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_cash-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
