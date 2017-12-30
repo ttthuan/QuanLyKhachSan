@@ -31,8 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DanhSachKhachHang));
 			this.bntDatPhong = new System.Windows.Forms.Button();
-			this.bntChiTietPhong = new System.Windows.Forms.Button();
-			this.bntThemMoi = new System.Windows.Forms.Button();
+			this.bntChiTietThuePhong = new System.Windows.Forms.Button();
 			this.bntChiTiet = new System.Windows.Forms.Button();
 			this.bntUpdateDS = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -41,11 +40,11 @@
 			this.chitietKhachHang = new System.Windows.Forms.ToolStripMenuItem();
 			this.chitietPhongdangthue = new System.Windows.Forms.ToolStripMenuItem();
 			this.txtTimKH = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lbTittle = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
 			this.ctMenuGv.SuspendLayout();
@@ -60,7 +59,7 @@
 			this.bntDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntDatPhong.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntDatPhong.Location = new System.Drawing.Point(23, 232);
+			this.bntDatPhong.Location = new System.Drawing.Point(23, 184);
 			this.bntDatPhong.Name = "bntDatPhong";
 			this.bntDatPhong.Size = new System.Drawing.Size(106, 42);
 			this.bntDatPhong.TabIndex = 30;
@@ -68,33 +67,19 @@
 			this.bntDatPhong.UseVisualStyleBackColor = false;
 			this.bntDatPhong.Visible = false;
 			// 
-			// bntChiTietPhong
+			// bntChiTietThuePhong
 			// 
-			this.bntChiTietPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntChiTietPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntChiTietPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntChiTietPhong.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntChiTietPhong.Location = new System.Drawing.Point(23, 232);
-			this.bntChiTietPhong.Name = "bntChiTietPhong";
-			this.bntChiTietPhong.Size = new System.Drawing.Size(106, 42);
-			this.bntChiTietPhong.TabIndex = 29;
-			this.bntChiTietPhong.Text = "  Chi tiết \r\nThuê phòng";
-			this.bntChiTietPhong.UseVisualStyleBackColor = false;
-			this.bntChiTietPhong.Visible = false;
-			// 
-			// bntThemMoi
-			// 
-			this.bntThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntThemMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntThemMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntThemMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntThemMoi.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntThemMoi.Location = new System.Drawing.Point(23, 170);
-			this.bntThemMoi.Name = "bntThemMoi";
-			this.bntThemMoi.Size = new System.Drawing.Size(106, 42);
-			this.bntThemMoi.TabIndex = 28;
-			this.bntThemMoi.Text = " Thêm mới \r\nKhách hàng";
-			this.bntThemMoi.UseVisualStyleBackColor = false;
+			this.bntChiTietThuePhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+			this.bntChiTietThuePhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bntChiTietThuePhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.bntChiTietThuePhong.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.bntChiTietThuePhong.Location = new System.Drawing.Point(23, 184);
+			this.bntChiTietThuePhong.Name = "bntChiTietThuePhong";
+			this.bntChiTietThuePhong.Size = new System.Drawing.Size(106, 42);
+			this.bntChiTietThuePhong.TabIndex = 29;
+			this.bntChiTietThuePhong.Text = "  Chi tiết \r\nThuê phòng";
+			this.bntChiTietThuePhong.UseVisualStyleBackColor = false;
+			this.bntChiTietThuePhong.Visible = false;
 			// 
 			// bntChiTiet
 			// 
@@ -177,16 +162,16 @@
 			this.txtTimKH.Size = new System.Drawing.Size(198, 20);
 			this.txtTimKH.TabIndex = 13;
 			// 
-			// label1
+			// lbTittle
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(52, 5);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(129, 18);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Tất cả khách hàng";
+			this.lbTittle.AutoSize = true;
+			this.lbTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTittle.ForeColor = System.Drawing.Color.White;
+			this.lbTittle.Location = new System.Drawing.Point(52, 5);
+			this.lbTittle.Name = "lbTittle";
+			this.lbTittle.Size = new System.Drawing.Size(129, 18);
+			this.lbTittle.TabIndex = 0;
+			this.lbTittle.Text = "Tất cả khách hàng";
 			// 
 			// label3
 			// 
@@ -208,25 +193,12 @@
 			this.panel2.AutoSize = true;
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(36)))), ((int)(((byte)(170)))));
 			this.panel2.Controls.Add(this.button1);
-			this.panel2.Controls.Add(this.label1);
+			this.panel2.Controls.Add(this.lbTittle);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(835, 31);
 			this.panel2.TabIndex = 24;
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.AutoSize = true;
-			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.panel1.Controls.Add(this.txtTimKH);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Location = new System.Drawing.Point(0, 37);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(835, 41);
-			this.panel1.TabIndex = 25;
 			// 
 			// button1
 			// 
@@ -243,14 +215,26 @@
 			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.button1.UseVisualStyleBackColor = true;
 			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.AutoSize = true;
+			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.panel1.Controls.Add(this.txtTimKH);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Location = new System.Drawing.Point(0, 37);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(835, 41);
+			this.panel1.TabIndex = 25;
+			// 
 			// DanhSachKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(835, 486);
 			this.Controls.Add(this.bntDatPhong);
-			this.Controls.Add(this.bntChiTietPhong);
-			this.Controls.Add(this.bntThemMoi);
+			this.Controls.Add(this.bntChiTietThuePhong);
 			this.Controls.Add(this.bntChiTiet);
 			this.Controls.Add(this.bntUpdateDS);
 			this.Controls.Add(this.panel3);
@@ -273,8 +257,7 @@
 
 		#endregion
 		private System.Windows.Forms.Button bntDatPhong;
-		private System.Windows.Forms.Button bntChiTietPhong;
-		private System.Windows.Forms.Button bntThemMoi;
+		private System.Windows.Forms.Button bntChiTietThuePhong;
 		private System.Windows.Forms.Button bntChiTiet;
 		private System.Windows.Forms.Button bntUpdateDS;
 		private System.Windows.Forms.Panel panel3;
@@ -283,7 +266,7 @@
 		private System.Windows.Forms.ToolStripMenuItem chitietKhachHang;
 		private System.Windows.Forms.ToolStripMenuItem chitietPhongdangthue;
 		private System.Windows.Forms.TextBox txtTimKH;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lbTittle;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panel2;

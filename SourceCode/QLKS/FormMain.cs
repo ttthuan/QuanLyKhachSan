@@ -149,31 +149,48 @@ namespace PresentationLayer
 
         private void BtnDanhSachKhachHang_MouseUp(object sender, MouseEventArgs e)
         {
-            setColorActiveForButton((Button)sender);
-
-            
-            onlyShowOneFormOnPannelBody(khachHang);
-
-        }
+			setColorActiveForButton((Button)sender);
+			if (khachHang != null)
+			{
+				khachHang.Dispose();
+			}
+			khachHang = new DanhSachKhachHang(3);
+			khachHang.Dock = DockStyle.Fill;
+			khachHang.TopLevel = false;
+			pnBody.Controls.Add(khachHang);
+			khachHang.Show();
+			onlyShowOneFormOnPannelBody(khachHang);
+		}
 
         private void BtnKhachHangDatPhong_MouseUp(object sender, MouseEventArgs e)
         {
-            setColorActiveForButton((Button)sender);
-
-
-           
-            onlyShowOneFormOnPannelBody(khachHang);
-
-        }
+			setColorActiveForButton((Button)sender);
+			if (khachHang != null)
+			{
+				khachHang.Dispose();
+			}
+			khachHang = new DanhSachKhachHang(2);
+			khachHang.Dock = DockStyle.Fill;
+			khachHang.TopLevel = false;
+			pnBody.Controls.Add(khachHang);
+			khachHang.Show();
+			onlyShowOneFormOnPannelBody(khachHang);
+		}
 
         private void BtnKhachHangDangO_MouseUp(object sender, MouseEventArgs e)
         {
-            setColorActiveForButton((Button)sender);
-            
-
-
-            onlyShowOneFormOnPannelBody(khachHang);
-        }
+			setColorActiveForButton((Button)sender);
+			if (khachHang != null)
+			{
+				khachHang.Dispose();
+			}
+			khachHang = new DanhSachKhachHang(1);
+			khachHang.Dock = DockStyle.Fill;
+			khachHang.TopLevel = false;
+			pnBody.Controls.Add(khachHang);
+			khachHang.Show();
+			onlyShowOneFormOnPannelBody(khachHang);
+		}
 
         private void Button_MouseDown(object sender, MouseEventArgs e)
         {
