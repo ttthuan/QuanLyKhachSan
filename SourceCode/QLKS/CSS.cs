@@ -25,16 +25,18 @@ namespace PresentationLayer
         public static Color WHITE_BACKGROUND_PANEL = Color.FromArgb(255,255,255);
         public static Color WHITE_BUTTON_HOVER = Color.FromArgb(255,255,255);
 
-        //public static Color RED = Color.FromArgb(229, 57, 53);
-        //public static Color LIGHTRED = Color.FromArgb(239, 83, 80);
-        //public static Color ORANGE = Color.FromArgb(255, 87, 34);
-        //public static Color LIGHTORANGE = Color.FromArgb(255, 112, 67);
-        //public static Color BLUE = Color.FromArgb(30, 136, 229);
-        //public static Color LIGHTBLUE = Color.FromArgb(66, 165, 245);
-        //public static Color GREEN = Color.FromArgb(124, 179, 66);
-        //public static Color LIGHTGREEN = Color.FromArgb(139, 195, 74);
-        //public static Color PURPLE = Color.FromArgb(156, 39, 176);
-        //public static Color BROWN = Color.FromArgb(121, 85, 72);
+        public static Color RED = Color.FromArgb(229, 57, 53);
+        public static Color LIGHTRED = Color.FromArgb(239, 83, 80);
+        public static Color ORANGE = Color.FromArgb(255, 87, 34);
+        public static Color LIGHTORANGE = Color.FromArgb(255, 112, 67);
+        public static Color BLUE = Color.FromArgb(30, 136, 229);
+        public static Color LIGHTBLUE = Color.FromArgb(66, 165, 245);
+        public static Color GREEN = Color.FromArgb(124, 179, 66);
+        public static Color LIGHTGREEN = Color.FromArgb(139, 195, 74);
+        public static Color PURPLE = Color.FromArgb(123, 31, 162);
+        public static Color LIGHTPURPLE = Color.FromArgb(156, 39, 176);
+        public static Color BROWN = Color.FromArgb(121, 85, 72);
+        public static Color LIGHTBROWN = Color.FromArgb(141, 110, 99);
 
 
         //public static Color Primary = Color.FromArgb(124, 30, 163); 

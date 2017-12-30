@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DataTranferObject;
+using BusinessLayer;
 
 namespace PresentationLayer
 {
@@ -26,8 +27,9 @@ namespace PresentationLayer
         public SoDoKhachSan()
         {
             InitializeComponent();
-			
+
             //formLoad();
+            LoadPhong();
             timerAutoChange.Start();
         }
 
@@ -35,6 +37,13 @@ namespace PresentationLayer
         //{
         //    this.nhanVien = nhanVien;
         //}
+
+        public void LoadPhong()
+        {
+            PhongBUS phongBUS = new PhongBUS();
+            PhongDTO[] phongs = phongBUS.LayDanhSachPhong();
+            
+        }
 
         //public void formLoad()
         //{

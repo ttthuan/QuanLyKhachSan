@@ -42,7 +42,6 @@
             this.btnPhongChoKhach = new System.Windows.Forms.Button();
             this.btnPhongDangO = new System.Windows.Forms.Button();
             this.btnPhongTrong = new System.Windows.Forms.Button();
-            this.flowFloor = new System.Windows.Forms.FlowLayoutPanel();
             this.flowBody = new System.Windows.Forms.FlowLayoutPanel();
             this.timerAutoChange = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
@@ -221,25 +220,14 @@
             this.btnPhongTrong.Text = "03 Trống";
             this.btnPhongTrong.UseVisualStyleBackColor = false;
             // 
-            // flowFloor
-            // 
-            this.flowFloor.BackColor = System.Drawing.Color.White;
-            this.flowFloor.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowFloor.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowFloor.Location = new System.Drawing.Point(0, 86);
-            this.flowFloor.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.flowFloor.Name = "flowFloor";
-            this.flowFloor.Size = new System.Drawing.Size(60, 614);
-            this.flowFloor.TabIndex = 5;
-            // 
             // flowBody
             // 
             this.flowBody.BackColor = System.Drawing.Color.White;
             this.flowBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowBody.Location = new System.Drawing.Point(60, 86);
+            this.flowBody.Location = new System.Drawing.Point(0, 86);
             this.flowBody.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.flowBody.Name = "flowBody";
-            this.flowBody.Size = new System.Drawing.Size(775, 614);
+            this.flowBody.Size = new System.Drawing.Size(835, 614);
             this.flowBody.TabIndex = 6;
             // 
             // timerAutoChange
@@ -253,7 +241,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 700);
             this.Controls.Add(this.flowBody);
-            this.Controls.Add(this.flowFloor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Noto Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,7 +265,6 @@
         private System.Windows.Forms.Button btnPhongChoKhach;
         private System.Windows.Forms.Button btnPhongDangO;
         private System.Windows.Forms.Button btnPhongTrong;
-        private System.Windows.Forms.FlowLayoutPanel flowFloor;
         private System.Windows.Forms.FlowLayoutPanel flowBody;
         private System.Windows.Forms.Button btnRefesh;
         private System.Windows.Forms.Button btnQuaHan;

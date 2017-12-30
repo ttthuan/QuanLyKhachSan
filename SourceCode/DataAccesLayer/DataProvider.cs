@@ -47,6 +47,7 @@ namespace DataAccesLayer
 			cm.Connection = this.conn;
 			cm.CommandType = CommandType.Text;
 			cm.ExecuteNonQuery();
+            DisConnect();
 		}
 
 		public void ExecuteUpdateQuery(string sql)

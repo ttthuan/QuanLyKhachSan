@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="ControllerSV.cs" />
     <Compile Include="CSS.cs" />
+    <Compile Include="CustomePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomePhong.Designer.cs">
+      <DependentUpon>CustomePhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="ChiTietKhachHang.resx">
       <DependentUpon>ChiTietKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomePhong.resx">
+      <DependentUpon>CustomePhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
