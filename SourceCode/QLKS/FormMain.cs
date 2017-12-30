@@ -66,17 +66,27 @@ namespace PresentationLayer
             lbTitleText.BackColor = TITLE_PRIMERY;
             lbTaiKhoan.ForeColor = TEXT_PRIMARY;
             pnMenu.BackColor = BACKGROUND_PANEL;
+            pnDoanhThu.BackColor = BACKGROUND_PANEL;
+            pnKhachHang.BackColor = BACKGROUND_PANEL;
+            pnTaiKhoan.BackColor = BACKGROUND_PANEL;
 
             btnKhachHang.BackColor = BUTTON_PRIMERY;
             btnSoDoKhachSan.BackColor = BUTTON_PRIMERY;
             btnLoaiPhong.BackColor = BUTTON_PRIMERY;
             btnDichVu.BackColor = BUTTON_PRIMERY;
             btnDoanhThu.BackColor = BUTTON_PRIMERY;
+            btnTaiKhoan.BackColor = BUTTON_PRIMERY;
+            btnAbout.BackColor = BUTTON_PRIMERY;
+
+            // btn child Doanh Thu
             btnChiTietDoanhThu.BackColor = BUTTON_PRIMERY;
             btnDoanhThuGanDay.BackColor = BUTTON_PRIMERY;
             btnPhanTichBieuDo.BackColor = BUTTON_PRIMERY;
-            btnTaiKhoan.BackColor = BUTTON_PRIMERY;
-            btnAbout.BackColor = BUTTON_PRIMERY;
+
+            // btn child Khach Hang
+            btnKhachHangDangO.BackColor = BUTTON_PRIMERY;
+            btnKhachHangDatPhong.BackColor = BUTTON_PRIMERY;
+            //btnKhachHangCu.BackColor = BUTTON_PRIMERY;
 
             btnKhachHang.ForeColor = TEXT_PRIMARY;
             btnSoDoKhachSan.ForeColor = TEXT_PRIMARY;
@@ -144,7 +154,7 @@ namespace PresentationLayer
             plbDangXuat = lbDangXuat;
 
 			//taikhoan
-			lbTaiKhoan.Text = objSV.taiKhoan.Tendangnhap;
+			//lbTaiKhoan.Text = objSV.taiKhoan.Tendangnhap;
 		}
 
         private void BtnQuanLyTaiKhoan_MouseUp(object sender, MouseEventArgs e)

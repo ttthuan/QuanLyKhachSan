@@ -101,6 +101,11 @@
     <Compile Include="PhieuThuePhong.Designer.cs">
       <DependentUpon>PhieuThuePhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SIZE.cs" />
     <Compile Include="SoDoKhachSan.cs">
       <SubType>Form</SubType>
@@ -154,14 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ThayDoiMatKhau.resx">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,12 +190,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\account.png" />
     <None Include="Resources\account-card-details.png" />
     <None Include="Resources\account-multiple.png" />
     <None Include="Resources\account-multiple1.png" />
     <None Include="Resources\account-multiple-plus.png" />
-    <None Include="Resources\bank.png" />
     <None Include="Resources\alert-circle-outline.png" />
     <None Include="Resources\arrow-down-bold-circle-outline.png" />
     <None Include="Resources\av-timer.png" />
@@ -204,14 +202,10 @@
     <None Include="Resources\calendar-clock.png" />
     <None Include="Resources\calendar-multiple-check.png" />
     <None Include="Resources\cash-100.png" />
-    <None Include="Resources\cash-multiple.png" />
-    <None Include="Resources\cash-usd.png" />
-    <None Include="Resources\close-circle-outline.png" />
     <None Include="Resources\content-save %281%29.png" />
     <None Include="Resources\content-save %283%29.png" />
     <None Include="Resources\content-save.png" />
     <None Include="Resources\content-save-wwhile.png" />
-    <None Include="Resources\chart-bar.png" />
     <None Include="Resources\chevron-left.png" />
     <None Include="Resources\chevron-right.png" />
     <None Include="Resources\delete-forever.png" />
@@ -219,7 +213,6 @@
     <None Include="Resources\eye-off.png" />
     <None Include="Resources\f639e29ce6a6ac1da59a6c1456bef6cd_calculator-icon-clip-art-free-calculator-icon-vector-clipart_285-298.png" />
     <None Include="Resources\fail.png" />
-    <None Include="Resources\folder-account.png" />
     <None Include="Resources\food-fork-drink.png" />
     <None Include="Resources\food-fork-drink1.png" />
     <None Include="Resources\forum.png" />
@@ -233,9 +226,6 @@
     <None Include="Resources\loadding.png" />
     <None Include="Resources\loadding_larg.gif" />
     <None Include="Resources\loading.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lock-reset.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minus-box.png" />
@@ -257,6 +247,90 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warnig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_cash-multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_cash-usd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_chart-bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_close-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_home-modern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_cash-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_cash-multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_cash-usd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White_close-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_home-modern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_chart-bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_account-multiple-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_account-multiple-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_in-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_in-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_check-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_check-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_people-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_people-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_folder-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white_lock-reset.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
