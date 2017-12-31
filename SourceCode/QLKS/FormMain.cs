@@ -150,10 +150,6 @@ namespace PresentationLayer
         private void BtnDanhSachKhachHang_MouseUp(object sender, MouseEventArgs e)
         {
 			setColorActiveForButton((Button)sender);
-			if (khachHang != null)
-			{
-				khachHang.Dispose();
-			}
 			khachHang = new DanhSachKhachHang(3);
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
@@ -165,10 +161,6 @@ namespace PresentationLayer
         private void BtnKhachHangDatPhong_MouseUp(object sender, MouseEventArgs e)
         {
 			setColorActiveForButton((Button)sender);
-			if (khachHang != null)
-			{
-				khachHang.Dispose();
-			}
 			khachHang = new DanhSachKhachHang(2);
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
@@ -180,10 +172,6 @@ namespace PresentationLayer
         private void BtnKhachHangDangO_MouseUp(object sender, MouseEventArgs e)
         {
 			setColorActiveForButton((Button)sender);
-			if (khachHang != null)
-			{
-				khachHang.Dispose();
-			}
 			khachHang = new DanhSachKhachHang(1);
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
