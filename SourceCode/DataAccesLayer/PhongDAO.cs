@@ -31,10 +31,10 @@ namespace DataAccesLayer
         public PhongDTO ChuyenRowThanhObject(DataRow row)
         {
             PhongDTO phong = new PhongDTO();
-            phong.MA = int.Parse(row[0].ToString());
-            phong.TEN = row[1].ToString();
-            phong.TANG = int.Parse(row[2].ToString());
-            phong.MALOAIPHONG = int.Parse(row[3].ToString());
+            phong.Ma = int.Parse(row[0].ToString());
+            phong.Ten = row[1].ToString();
+            phong.Tang = int.Parse(row[2].ToString());
+            phong.MaLoaiPhong = int.Parse(row[3].ToString());
 
             return phong;
         }

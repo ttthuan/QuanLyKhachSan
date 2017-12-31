@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataTranferObject
 {
-    public class PhongDTO
+    public class LoaiThuePhongDTO
     {
         public int Ma { get; set; }
         public string Ten { get; set; }
-        public int Tang { get; set; }
-        public int MaLoaiPhong { get; set; }
     }
 }
