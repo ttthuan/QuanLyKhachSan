@@ -46,6 +46,8 @@
             this.lbBotton.TabIndex = 0;
             this.lbBotton.Text = "trịnh thanh thuận";
             this.lbBotton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbBotton.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
+            this.lbBotton.MouseLeave += new System.EventHandler(this.CustomePhong_MouseLeave);
             // 
             // lbCenter
             // 
@@ -62,6 +64,8 @@
             this.lbCenter.TabIndex = 1;
             this.lbCenter.Text = "101";
             this.lbCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCenter.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
+            this.lbCenter.MouseLeave += new System.EventHandler(this.CustomePhong_MouseLeave);
             // 
             // lbTop
             // 
@@ -76,6 +80,8 @@
             this.lbTop.TabIndex = 2;
             this.lbTop.Text = "ngày 28-30/5";
             this.lbTop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTop.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
+            this.lbTop.MouseHover += new System.EventHandler(this.CustomePhong_MouseLeave);
             // 
             // CustomePhong
             // 

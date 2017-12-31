@@ -23,7 +23,7 @@ namespace DataAccesLayer
 
             for (int i = 0; i < n; i++)
             {
-                phongs[0] = ChuyenRowThanhObject(tb.Rows[i]);
+                phongs[i] = ChuyenRowThanhObject(tb.Rows[i]);
             }
             return phongs;
         }

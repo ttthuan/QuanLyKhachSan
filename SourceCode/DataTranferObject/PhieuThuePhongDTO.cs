@@ -15,5 +15,6 @@ namespace DataTranferObject
         public DateTime ThoiGianTraPhong { get; set; }
         public int MaLoaiThuePhong { get; set; }
         public float Gia { get; set; }
+        public int TrangThai { get; set; }
     }
 }

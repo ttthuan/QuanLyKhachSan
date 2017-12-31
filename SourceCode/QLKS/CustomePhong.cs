@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataTranferObject;
 
 namespace PresentationLayer
 {
@@ -14,10 +15,13 @@ namespace PresentationLayer
     {
         public Color MOUSE_HOVER;
         public Color PRIMERY;
+        public PhongDTO Phong { get; set; }
 
-        public CustomePhong()
+        public CustomePhong(PhongDTO phong)
         {
             InitializeComponent();
+            this.Phong = phong;
+            lbCenter.Text = phong.Ten;
         }
         
         public void ThayDoiTrangThaiDangO(string time, string name)
