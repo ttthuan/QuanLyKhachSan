@@ -16,6 +16,7 @@ namespace PresentationLayer
         public Color MOUSE_HOVER;
         public Color PRIMERY;
         public PhongDTO Phong { get; set; }
+        public List<ToolStripItem> listToolTripItem = new List<ToolStripItem>();
 
         public CustomePhong(PhongDTO phong)
         {

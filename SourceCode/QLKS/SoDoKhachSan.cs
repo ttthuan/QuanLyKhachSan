@@ -50,11 +50,14 @@ namespace PresentationLayer
 
             int i;
             int j, coTrongPhieuThuePhong = 0;
+            int numberPhong = phongBUS.LaySoLuongPhongLonNhatTrongCacTang();
+            int with_sizeCustomePhong = flowBody.Size.Width / numberPhong - numberPhong-1;
 
             for (i = 0; i < phongs.Length; i++)
             {
                 // khai báo control customePhong
                 CustomePhong customePhong = new CustomePhong(phongs[i]);
+                customePhong.Size = new Size(with_sizeCustomePhong, customePhong.Size.Height);
 
                 coTrongPhieuThuePhong = 0;
 

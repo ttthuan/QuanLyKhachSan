@@ -58,7 +58,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(835, 40);
+            this.panel2.Size = new System.Drawing.Size(805, 40);
             this.panel2.TabIndex = 2;
             // 
             // btnRefesh
@@ -116,7 +116,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 46);
+            this.panel1.Size = new System.Drawing.Size(805, 46);
             this.panel1.TabIndex = 3;
             // 
             // btnHienTrangVsDatPhong
@@ -128,7 +128,7 @@
             this.btnHienTrangVsDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnHienTrangVsDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnHienTrangVsDatPhong.Image")));
             this.btnHienTrangVsDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(629, 6);
+            this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(619, 6);
             this.btnHienTrangVsDatPhong.Name = "btnHienTrangVsDatPhong";
             this.btnHienTrangVsDatPhong.Size = new System.Drawing.Size(182, 31);
             this.btnHienTrangVsDatPhong.TabIndex = 7;
@@ -227,7 +227,7 @@
             this.flowBody.Location = new System.Drawing.Point(0, 86);
             this.flowBody.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.flowBody.Name = "flowBody";
-            this.flowBody.Size = new System.Drawing.Size(835, 614);
+            this.flowBody.Size = new System.Drawing.Size(805, 614);
             this.flowBody.TabIndex = 6;
             // 
             // timerAutoChange
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 700);
+            this.ClientSize = new System.Drawing.Size(805, 700);
             this.Controls.Add(this.flowBody);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

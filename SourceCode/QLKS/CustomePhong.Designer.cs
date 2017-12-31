@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbBotton = new System.Windows.Forms.Label();
             this.lbCenter = new System.Windows.Forms.Label();
             this.lbTop = new System.Windows.Forms.Label();
+            this.ctmnt = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lbBotton
@@ -42,7 +44,7 @@
             this.lbBotton.ForeColor = System.Drawing.Color.White;
             this.lbBotton.Location = new System.Drawing.Point(3, 57);
             this.lbBotton.Name = "lbBotton";
-            this.lbBotton.Size = new System.Drawing.Size(167, 13);
+            this.lbBotton.Size = new System.Drawing.Size(155, 13);
             this.lbBotton.TabIndex = 0;
             this.lbBotton.Text = "trịnh thanh thuận";
             this.lbBotton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -60,7 +62,7 @@
             this.lbCenter.Location = new System.Drawing.Point(3, 20);
             this.lbCenter.Margin = new System.Windows.Forms.Padding(3);
             this.lbCenter.Name = "lbCenter";
-            this.lbCenter.Size = new System.Drawing.Size(167, 28);
+            this.lbCenter.Size = new System.Drawing.Size(155, 28);
             this.lbCenter.TabIndex = 1;
             this.lbCenter.Text = "101";
             this.lbCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,12 +78,17 @@
             this.lbTop.ForeColor = System.Drawing.Color.White;
             this.lbTop.Location = new System.Drawing.Point(0, 0);
             this.lbTop.Name = "lbTop";
-            this.lbTop.Size = new System.Drawing.Size(170, 13);
+            this.lbTop.Size = new System.Drawing.Size(158, 13);
             this.lbTop.TabIndex = 2;
             this.lbTop.Text = "ngày 28-30/5";
             this.lbTop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbTop.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
             this.lbTop.MouseHover += new System.EventHandler(this.CustomePhong_MouseLeave);
+            // 
+            // ctmnt
+            // 
+            this.ctmnt.Name = "ctmnt";
+            this.ctmnt.Size = new System.Drawing.Size(153, 26);
             // 
             // CustomePhong
             // 
@@ -92,7 +99,7 @@
             this.Controls.Add(this.lbCenter);
             this.Controls.Add(this.lbBotton);
             this.Name = "CustomePhong";
-            this.Size = new System.Drawing.Size(173, 71);
+            this.Size = new System.Drawing.Size(161, 71);
             this.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.CustomePhong_MouseLeave);
             this.ResumeLayout(false);
@@ -104,5 +111,6 @@
         private System.Windows.Forms.Label lbBotton;
         private System.Windows.Forms.Label lbCenter;
         private System.Windows.Forms.Label lbTop;
+        private System.Windows.Forms.ContextMenuStrip ctmnt;
     }
 }

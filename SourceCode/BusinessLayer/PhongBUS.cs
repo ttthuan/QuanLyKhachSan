@@ -16,5 +16,10 @@ namespace BusinessLayer
         {
             return phongDAO.LayDanhSachPhong();
         }
+
+        public int LaySoLuongPhongLonNhatTrongCacTang()
+        {
+            return phongDAO.LaySoLuongPhongLonNhatTrongCacTang();
+        }
     }
 }

@@ -38,5 +38,19 @@ namespace DataAccesLayer
 
             return phong;
         }
+
+        public int LaySoLuongPhongLonNhatTrongCacTang()
+        {
+            string query = "select p.Tang , COUNT(p.Ma) as Maxnumber " +
+                "from Phong as p " +
+                "group by p.Tang having COUNT(p.Ma) >= all ( " +
+                "select COUNT(ph.Ma) as countmax " +
+                "from Phong as ph " +
+                "group by ph.Tang" +
+                ")";
+            DataTable tb = new DataTable();
+            tb = dataProvider.ExecuteQuery_DataTble(query);
+            return int.Parse(tb.Rows[0][1].ToString());
+        }
     }
 }
