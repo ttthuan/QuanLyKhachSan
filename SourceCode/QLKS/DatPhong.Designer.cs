@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatPhong));
 			this.errorProviderApp = new System.Windows.Forms.ErrorProvider(this.components);
 			this.bntDatPhong = new System.Windows.Forms.Button();
 			this.bntHuy = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.btnHienTrangVsDatPhong = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -88,7 +90,7 @@
 			// 
 			// bntDatPhong
 			// 
-			this.bntDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+			this.bntDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
 			this.bntDatPhong.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.bntDatPhong.FlatAppearance.BorderSize = 0;
 			this.bntDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,10 +102,11 @@
 			this.bntDatPhong.TabIndex = 30;
 			this.bntDatPhong.Text = "Đặt phòng";
 			this.bntDatPhong.UseVisualStyleBackColor = false;
+			this.bntDatPhong.Click += new System.EventHandler(this.bntDatPhong_Click);
 			// 
 			// bntHuy
 			// 
-			this.bntHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+			this.bntHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
 			this.bntHuy.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.bntHuy.FlatAppearance.BorderSize = 0;
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,6 +118,7 @@
 			this.bntHuy.TabIndex = 31;
 			this.bntHuy.Text = "Hủy";
 			this.bntHuy.UseVisualStyleBackColor = false;
+			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
 			// 
 			// txtTraTruoc
 			// 
@@ -140,6 +144,7 @@
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.White;
+			this.panel2.Controls.Add(this.btnHienTrangVsDatPhong);
 			this.panel2.Controls.Add(this.txtTraTruoc);
 			this.panel2.Controls.Add(this.txtGiaPhong);
 			this.panel2.Controls.Add(this.label15);
@@ -541,6 +546,7 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(509, 40);
 			this.panlTieuDe.TabIndex = 28;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// lbTitleTenPhong
 			// 
@@ -552,6 +558,7 @@
 			this.lbTitleTenPhong.Size = new System.Drawing.Size(36, 20);
 			this.lbTitleTenPhong.TabIndex = 2;
 			this.lbTitleTenPhong.Text = "101";
+			this.lbTitleTenPhong.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// label1
 			// 
@@ -563,10 +570,12 @@
 			this.label1.Size = new System.Drawing.Size(93, 20);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Đặt Phòng :";
+			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
+			this.pictureBox1.Location = new System.Drawing.Point(5, 7);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -575,12 +584,30 @@
 			// 
 			// pictureBox2
 			// 
+			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
 			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 25;
 			this.pictureBox2.TabStop = false;
+			// 
+			// btnHienTrangVsDatPhong
+			// 
+			this.btnHienTrangVsDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.btnHienTrangVsDatPhong.FlatAppearance.BorderSize = 0;
+			this.btnHienTrangVsDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnHienTrangVsDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnHienTrangVsDatPhong.ForeColor = System.Drawing.Color.White;
+			this.btnHienTrangVsDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnHienTrangVsDatPhong.Image")));
+			this.btnHienTrangVsDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(290, 8);
+			this.btnHienTrangVsDatPhong.Name = "btnHienTrangVsDatPhong";
+			this.btnHienTrangVsDatPhong.Size = new System.Drawing.Size(182, 31);
+			this.btnHienTrangVsDatPhong.TabIndex = 64;
+			this.btnHienTrangVsDatPhong.Text = "Chọn phòng để đặt";
+			this.btnHienTrangVsDatPhong.UseVisualStyleBackColor = false;
+			this.btnHienTrangVsDatPhong.Click += new System.EventHandler(this.btnHienTrangVsDatPhong_Click);
 			// 
 			// DatPhong
 			// 
@@ -594,7 +621,9 @@
 			this.Controls.Add(this.panlTieuDe);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "DatPhong";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "DatPhong";
+			this.Load += new System.EventHandler(this.DatPhong_Load);
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
@@ -655,5 +684,6 @@
 		private System.Windows.Forms.Panel panlTieuDe;
 		private System.Windows.Forms.Label lbTitleTenPhong;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btnHienTrangVsDatPhong;
 	}
 }

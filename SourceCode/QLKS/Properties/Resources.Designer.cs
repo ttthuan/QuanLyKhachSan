@@ -73,6 +73,16 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_card_details_black {
+            get {
+                object obj = ResourceManager.GetObject("account_card_details_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap account_multiple {
             get {
                 object obj = ResourceManager.GetObject("account_multiple", resourceCulture);
@@ -153,6 +163,16 @@ namespace PresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_clock_black {
+            get {
+                object obj = ResourceManager.GetObject("calendar_clock_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar_multiple_check {
             get {
                 object obj = ResourceManager.GetObject("calendar_multiple_check", resourceCulture);
@@ -176,6 +196,16 @@ namespace PresentationLayer.Properties {
         internal static System.Drawing.Bitmap chevron_right {
             get {
                 object obj = ResourceManager.GetObject("chevron_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clipboard_text {
+            get {
+                object obj = ResourceManager.GetObject("clipboard_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
