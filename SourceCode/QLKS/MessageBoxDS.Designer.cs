@@ -64,6 +64,7 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(429, 40);
 			this.panlTieuDe.TabIndex = 37;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// label1
 			// 
@@ -114,6 +115,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "MessageBoxDS";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "MessageBoxDS";
 			this.Load += new System.EventHandler(this.MessageBoxDS_Load);
 			this.panlTieuDe.ResumeLayout(false);

@@ -27,5 +27,28 @@ namespace BusinessLayer
 
             return null;
         }
-    }
+
+		public KhachHangDTO[] LayDanhSachKhachHangDangO()
+		{
+			KhachHangDTO[] khachHangs = khachHangDAO.LayDanhSachKhachHangDangO();
+			return khachHangs;
+		}
+
+		public KhachHangDTO[] LayDanhSachKhachHangDatPhong()
+		{
+			KhachHangDTO[] khachHangs = khachHangDAO.LayDanhSachKhachHangDatPhong();
+			return khachHangs;
+		}
+
+		public KhachHangDTO[] LayDanhSachKhachHangCu()
+		{
+			KhachHangDTO[] khachHangs = khachHangDAO.LayDanhSachKhachHangCu();
+			return khachHangs;
+		}
+
+		public bool CapnhatThongTinKhachHang(KhachHangDTO khachHangDTO)
+		{
+			return khachHangDAO.CapnhatThongTinKhachHang(khachHangDTO);
+		}
+	}
 }

@@ -28,12 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.bntThem = new System.Windows.Forms.Button();
 			this.bntCapNhat = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lbValidationSoLuongKH = new System.Windows.Forms.Label();
-			this.txtGhichuKH = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.txtDiaChi = new System.Windows.Forms.TextBox();
 			this.txtQuocTich = new System.Windows.Forms.TextBox();
 			this.txtCMND = new System.Windows.Forms.TextBox();
@@ -55,20 +52,6 @@
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// bntThem
-			// 
-			this.bntThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntThem.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntThem.ForeColor = System.Drawing.Color.Snow;
-			this.bntThem.Location = new System.Drawing.Point(153, 325);
-			this.bntThem.Name = "bntThem";
-			this.bntThem.Size = new System.Drawing.Size(89, 28);
-			this.bntThem.TabIndex = 26;
-			this.bntThem.Text = "Thêm";
-			this.bntThem.UseVisualStyleBackColor = false;
-			// 
 			// bntCapNhat
 			// 
 			this.bntCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
@@ -76,12 +59,13 @@
 			this.bntCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntCapNhat.ForeColor = System.Drawing.Color.Snow;
-			this.bntCapNhat.Location = new System.Drawing.Point(153, 325);
+			this.bntCapNhat.Location = new System.Drawing.Point(157, 244);
 			this.bntCapNhat.Name = "bntCapNhat";
 			this.bntCapNhat.Size = new System.Drawing.Size(89, 28);
-			this.bntCapNhat.TabIndex = 24;
+			this.bntCapNhat.TabIndex = 26;
 			this.bntCapNhat.Text = "Cập nhật";
 			this.bntCapNhat.UseVisualStyleBackColor = false;
+			this.bntCapNhat.Click += new System.EventHandler(this.bntCapNhat_Click);
 			// 
 			// label1
 			// 
@@ -106,23 +90,6 @@
 			this.lbValidationSoLuongKH.TabIndex = 67;
 			this.lbValidationSoLuongKH.Text = "(*)";
 			this.lbValidationSoLuongKH.Visible = false;
-			// 
-			// txtGhichuKH
-			// 
-			this.txtGhichuKH.Location = new System.Drawing.Point(90, 175);
-			this.txtGhichuKH.Multiline = true;
-			this.txtGhichuKH.Name = "txtGhichuKH";
-			this.txtGhichuKH.Size = new System.Drawing.Size(375, 77);
-			this.txtGhichuKH.TabIndex = 48;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(26, 175);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 13);
-			this.label2.TabIndex = 49;
-			this.label2.Text = "Ghi chú :";
 			// 
 			// txtDiaChi
 			// 
@@ -164,12 +131,13 @@
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntHuy.ForeColor = System.Drawing.Color.Snow;
-			this.bntHuy.Location = new System.Drawing.Point(260, 325);
+			this.bntHuy.Location = new System.Drawing.Point(264, 244);
 			this.bntHuy.Name = "bntHuy";
 			this.bntHuy.Size = new System.Drawing.Size(94, 28);
 			this.bntHuy.TabIndex = 25;
 			this.bntHuy.Text = "Đóng";
 			this.bntHuy.UseVisualStyleBackColor = false;
+			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
 			// 
 			// rbNam
 			// 
@@ -268,6 +236,7 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(501, 40);
 			this.panlTieuDe.TabIndex = 22;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// txtSDT
 			// 
@@ -281,8 +250,6 @@
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.lbValidationSoLuongKH);
-			this.panel1.Controls.Add(this.txtGhichuKH);
-			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.txtDiaChi);
 			this.panel1.Controls.Add(this.txtQuocTich);
 			this.panel1.Controls.Add(this.txtCMND);
@@ -298,22 +265,23 @@
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Location = new System.Drawing.Point(0, 43);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(498, 268);
+			this.panel1.Size = new System.Drawing.Size(498, 172);
 			this.panel1.TabIndex = 23;
 			// 
 			// ChiTietKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(500, 365);
-			this.Controls.Add(this.bntThem);
+			this.ClientSize = new System.Drawing.Size(500, 289);
 			this.Controls.Add(this.bntCapNhat);
 			this.Controls.Add(this.bntHuy);
 			this.Controls.Add(this.panlTieuDe);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "ChiTietKhachHang";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "ChiTietKhachHang";
+			this.Load += new System.EventHandler(this.ChiTietKhachHang_Load);
 			this.panlTieuDe.ResumeLayout(false);
 			this.panlTieuDe.PerformLayout();
 			this.panel1.ResumeLayout(false);
@@ -324,12 +292,9 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button bntThem;
 		private System.Windows.Forms.Button bntCapNhat;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lbValidationSoLuongKH;
-		private System.Windows.Forms.TextBox txtGhichuKH;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtDiaChi;
 		private System.Windows.Forms.TextBox txtQuocTich;
 		private System.Windows.Forms.TextBox txtCMND;
