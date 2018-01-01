@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnTitle = new System.Windows.Forms.Panel();
+            this.cbbChangeTheme = new System.Windows.Forms.ComboBox();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
             this.lbDangXuat = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.pnBody = new System.Windows.Forms.Panel();
             this.tmKhachHang = new System.Windows.Forms.Timer(this.components);
             this.tmTaiKhoan = new System.Windows.Forms.Timer(this.components);
-            this.cbbChangeTheme = new System.Windows.Forms.ComboBox();
             this.pnTitle.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pnDoanhThu.SuspendLayout();
@@ -82,6 +82,19 @@
             this.pnTitle.Size = new System.Drawing.Size(1015, 45);
             this.pnTitle.TabIndex = 1;
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // cbbChangeTheme
+            // 
+            this.cbbChangeTheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbChangeTheme.FormattingEnabled = true;
+            this.cbbChangeTheme.Items.AddRange(new object[] {
+            "White",
+            "Darg"});
+            this.cbbChangeTheme.Location = new System.Drawing.Point(639, 13);
+            this.cbbChangeTheme.Name = "cbbChangeTheme";
+            this.cbbChangeTheme.Size = new System.Drawing.Size(65, 21);
+            this.cbbChangeTheme.TabIndex = 5;
+            this.cbbChangeTheme.SelectedIndexChanged += new System.EventHandler(this.cbbChangeTheme_SelectedIndexChanged);
             // 
             // lbTaiKhoan
             // 
@@ -569,7 +582,7 @@
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAbout.Size = new System.Drawing.Size(200, 40);
+            this.btnAbout.Size = new System.Drawing.Size(210, 40);
             this.btnAbout.TabIndex = 6;
             this.btnAbout.Text = "About";
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -603,18 +616,6 @@
             // 
             this.tmTaiKhoan.Interval = 10;
             this.tmTaiKhoan.Tick += new System.EventHandler(this.tmTaiKhoan_Tick);
-            // 
-            // cbbChangeTheme
-            // 
-            this.cbbChangeTheme.FormattingEnabled = true;
-            this.cbbChangeTheme.Items.AddRange(new object[] {
-            "White",
-            "Darg"});
-            this.cbbChangeTheme.Location = new System.Drawing.Point(639, 13);
-            this.cbbChangeTheme.Name = "cbbChangeTheme";
-            this.cbbChangeTheme.Size = new System.Drawing.Size(105, 21);
-            this.cbbChangeTheme.TabIndex = 5;
-            this.cbbChangeTheme.SelectedIndexChanged += new System.EventHandler(this.cbbChangeTheme_SelectedIndexChanged);
             // 
             // FormMain
             // 

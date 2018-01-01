@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbBotton = new System.Windows.Forms.Label();
             this.lbCenter = new System.Windows.Forms.Label();
             this.lbTop = new System.Windows.Forms.Label();
-            this.ctmnt = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lbBotton
@@ -85,11 +83,6 @@
             this.lbTop.MouseEnter += new System.EventHandler(this.CustomePhong_MouseEnter);
             this.lbTop.MouseHover += new System.EventHandler(this.CustomePhong_MouseLeave);
             // 
-            // ctmnt
-            // 
-            this.ctmnt.Name = "ctmnt";
-            this.ctmnt.Size = new System.Drawing.Size(153, 26);
-            // 
             // CustomePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +104,5 @@
         private System.Windows.Forms.Label lbBotton;
         private System.Windows.Forms.Label lbCenter;
         private System.Windows.Forms.Label lbTop;
-        private System.Windows.Forms.ContextMenuStrip ctmnt;
     }
 }

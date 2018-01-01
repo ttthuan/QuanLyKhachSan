@@ -66,22 +66,59 @@ namespace PresentationLayer
                     if(phongs[i].Ma == phieuThuePhongs[j].MaPhong)
                     {
                         coTrongPhieuThuePhong = 1;
-                        
-                        if(phieuThuePhongs[j].TrangThai == 1)
-                            // khách hàng chưa nhận phòng
-                        {
-                            string time = String.Format("{0:MM/dd/yyyy HH:mm}", phieuThuePhongs[j].ThoiGianNhanPhong);
-                            KhachHangDTO khachHang = khachHangBUS.LayKhachHangCoMaSo(phieuThuePhongs[j].MaKhachHang);
-                            string tenKhachHang = "";
 
-                            if(khachHang != null)
+                        if (phieuThuePhongs[j].TrangThai == 1)
+                        // khách hàng chưa nhận phòng
+                        {
+                            PhieuThuePhongDTO phieuThuePhongKiemTra = phieuThuePhongBUS.CoPhaiPhongCoNguoiDangO(phongs[i].Ma);
+                            if (phieuThuePhongKiemTra != null)
                             {
-                                tenKhachHang = khachHang.Ten;
+                                string strtime = String.Format("{0:MM/dd/yyyy HH:mm}", phieuThuePhongKiemTra.ThoiGianTraPhong);
+                                KhachHangDTO khachHang = khachHangBUS.LayKhachHangCoMaSo(phieuThuePhongKiemTra.MaKhachHang);
+                                string tenKhachHang = "";
+
+                                if (khachHang != null)
+                                {
+                                    tenKhachHang = khachHang.Ten;
+                                }
+
+                                customePhong.ThayDoiTrangThaiDangO(strtime, tenKhachHang);
+
+                                // kiểm tra khách hàng có quá hạn hay không
+                                int time = (int)(DateTime.Now - phieuThuePhongKiemTra.ThoiGianTraPhong).TotalMinutes;
+                                if (time > 0)
+                                {
+                                    if (time < 60) // nhỏ hơn 60 phút
+                                    {
+                                        strtime = time + " phút ";
+                                    }
+                                    else if (time < 60 * 24) // nhỏ hơn 24h
+                                    {
+                                        strtime = time / 60 + " giờ ";
+                                    }
+                                    else // lớn hơn 24h
+                                    {
+                                        strtime = time / (60 * 24) + " ngày ";
+                                    }
+                                    strtime += String.Format("{0:MM/dd/yyyy HH:mm}", phieuThuePhongKiemTra.ThoiGianTraPhong);
+                                    customePhong.ThayDoiTrangThaiQuaHan(strtime, tenKhachHang);
+                                }
                             }
-                            customePhong.ThayDoiTrangThaiDaDat(time, tenKhachHang);
+                            else
+                            {
+                                string time = String.Format("{0:MM/dd/yyyy HH:mm}", phieuThuePhongs[j].ThoiGianNhanPhong);
+                                KhachHangDTO khachHang = khachHangBUS.LayKhachHangCoMaSo(phieuThuePhongs[j].MaKhachHang);
+                                string tenKhachHang = "";
+
+                                if (khachHang != null)
+                                {
+                                    tenKhachHang = khachHang.Ten;
+                                }
+                                customePhong.ThayDoiTrangThaiDaDat(time, tenKhachHang);
+                            }
                         }
-                        else if(phieuThuePhongs[j].TrangThai == 2)
-                            // khách hàng đã nhận phòng
+                        else if (phieuThuePhongs[j].TrangThai == 2)
+                        // khách hàng đã nhận phòng
                         {
                             string strtime = String.Format("{0:MM/dd/yyyy HH:mm}", phieuThuePhongs[j].ThoiGianTraPhong);
                             KhachHangDTO khachHang = khachHangBUS.LayKhachHangCoMaSo(phieuThuePhongs[j].MaKhachHang);
@@ -104,7 +141,7 @@ namespace PresentationLayer
                                 }
                                 else if (time < 60 * 24) // nhỏ hơn 24h
                                 {
-                                    strtime = time/60 + " giờ ";
+                                    strtime = time / 60 + " giờ ";
                                 }
                                 else // lớn hơn 24h
                                 {
@@ -114,7 +151,7 @@ namespace PresentationLayer
                                 customePhong.ThayDoiTrangThaiQuaHan(strtime, tenKhachHang);
                             }
                         }
-
+                         
                         break;
                     }
                 }
@@ -127,6 +164,7 @@ namespace PresentationLayer
                 flowBody.Controls.Add(customePhong);
             }
         }
+        
 
         //public void formLoad()
         //{

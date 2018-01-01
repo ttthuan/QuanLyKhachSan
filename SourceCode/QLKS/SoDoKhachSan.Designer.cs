@@ -38,7 +38,6 @@
             this.btnHienTrangVsDatPhong = new System.Windows.Forms.Button();
             this.btnQuaHan = new System.Windows.Forms.Button();
             this.btnTongSoPhong = new System.Windows.Forms.Button();
-            this.btnPhongDangDon = new System.Windows.Forms.Button();
             this.btnPhongChoKhach = new System.Windows.Forms.Button();
             this.btnPhongDangO = new System.Windows.Forms.Button();
             this.btnPhongTrong = new System.Windows.Forms.Button();
@@ -109,7 +108,6 @@
             this.panel1.Controls.Add(this.btnHienTrangVsDatPhong);
             this.panel1.Controls.Add(this.btnQuaHan);
             this.panel1.Controls.Add(this.btnTongSoPhong);
-            this.panel1.Controls.Add(this.btnPhongDangDon);
             this.panel1.Controls.Add(this.btnPhongChoKhach);
             this.panel1.Controls.Add(this.btnPhongDangO);
             this.panel1.Controls.Add(this.btnPhongTrong);
@@ -128,7 +126,7 @@
             this.btnHienTrangVsDatPhong.ForeColor = System.Drawing.Color.White;
             this.btnHienTrangVsDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnHienTrangVsDatPhong.Image")));
             this.btnHienTrangVsDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(619, 6);
+            this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(612, 6);
             this.btnHienTrangVsDatPhong.Name = "btnHienTrangVsDatPhong";
             this.btnHienTrangVsDatPhong.Size = new System.Drawing.Size(182, 31);
             this.btnHienTrangVsDatPhong.TabIndex = 7;
@@ -143,7 +141,7 @@
             this.btnQuaHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuaHan.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuaHan.ForeColor = System.Drawing.Color.White;
-            this.btnQuaHan.Location = new System.Drawing.Point(390, 7);
+            this.btnQuaHan.Location = new System.Drawing.Point(285, 7);
             this.btnQuaHan.Name = "btnQuaHan";
             this.btnQuaHan.Size = new System.Drawing.Size(100, 31);
             this.btnQuaHan.TabIndex = 6;
@@ -157,26 +155,12 @@
             this.btnTongSoPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTongSoPhong.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongSoPhong.ForeColor = System.Drawing.Color.White;
-            this.btnTongSoPhong.Location = new System.Drawing.Point(496, 6);
+            this.btnTongSoPhong.Location = new System.Drawing.Point(392, 7);
             this.btnTongSoPhong.Name = "btnTongSoPhong";
             this.btnTongSoPhong.Size = new System.Drawing.Size(117, 31);
             this.btnTongSoPhong.TabIndex = 5;
             this.btnTongSoPhong.Text = "Tổng phòng: 40";
             this.btnTongSoPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnPhongDangDon
-            // 
-            this.btnPhongDangDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(136)))), ((int)(((byte)(229)))));
-            this.btnPhongDangDon.FlatAppearance.BorderSize = 0;
-            this.btnPhongDangDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhongDangDon.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhongDangDon.ForeColor = System.Drawing.Color.White;
-            this.btnPhongDangDon.Location = new System.Drawing.Point(284, 7);
-            this.btnPhongDangDon.Name = "btnPhongDangDon";
-            this.btnPhongDangDon.Size = new System.Drawing.Size(100, 31);
-            this.btnPhongDangDon.TabIndex = 3;
-            this.btnPhongDangDon.Text = "03 Đang dọn";
-            this.btnPhongDangDon.UseVisualStyleBackColor = false;
             // 
             // btnPhongChoKhach
             // 
@@ -185,7 +169,7 @@
             this.btnPhongChoKhach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhongChoKhach.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhongChoKhach.ForeColor = System.Drawing.Color.White;
-            this.btnPhongChoKhach.Location = new System.Drawing.Point(180, 7);
+            this.btnPhongChoKhach.Location = new System.Drawing.Point(179, 7);
             this.btnPhongChoKhach.Name = "btnPhongChoKhach";
             this.btnPhongChoKhach.Size = new System.Drawing.Size(98, 31);
             this.btnPhongChoKhach.TabIndex = 2;
@@ -199,7 +183,7 @@
             this.btnPhongDangO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhongDangO.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhongDangO.ForeColor = System.Drawing.Color.White;
-            this.btnPhongDangO.Location = new System.Drawing.Point(96, 7);
+            this.btnPhongDangO.Location = new System.Drawing.Point(94, 7);
             this.btnPhongDangO.Name = "btnPhongDangO";
             this.btnPhongDangO.Size = new System.Drawing.Size(78, 31);
             this.btnPhongDangO.TabIndex = 1;
@@ -213,7 +197,7 @@
             this.btnPhongTrong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhongTrong.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhongTrong.ForeColor = System.Drawing.Color.White;
-            this.btnPhongTrong.Location = new System.Drawing.Point(12, 7);
+            this.btnPhongTrong.Location = new System.Drawing.Point(9, 7);
             this.btnPhongTrong.Name = "btnPhongTrong";
             this.btnPhongTrong.Size = new System.Drawing.Size(78, 31);
             this.btnPhongTrong.TabIndex = 0;
@@ -261,7 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTongSoPhong;
-        private System.Windows.Forms.Button btnPhongDangDon;
         private System.Windows.Forms.Button btnPhongChoKhach;
         private System.Windows.Forms.Button btnPhongDangO;
         private System.Windows.Forms.Button btnPhongTrong;

@@ -28,5 +28,20 @@ namespace BusinessLayer
 
             return lsPhieuThuePhong.ToArray();
         }
+
+        public PhieuThuePhongDTO CoPhaiPhongCoNguoiDangO(int maPhong)
+        {
+            PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongDAO.LayDanhSachPhieuThuePhong();
+
+            int n = phieuThuePhongs.Length;
+            for (int i = 0; i < n; i++)
+            {
+                if (phieuThuePhongs[i].MaPhong == maPhong && phieuThuePhongs[i].TrangThai == 2)
+                {
+                    return phieuThuePhongs[i];
+                }
+            }
+            return null;
+        }
     }
 }
