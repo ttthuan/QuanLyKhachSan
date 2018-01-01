@@ -45,6 +45,13 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SoCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Quoctich = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
 			this.ctMenuGv.SuspendLayout();
@@ -94,6 +101,7 @@
 			this.bntChiTiet.TabIndex = 27;
 			this.bntChiTiet.Text = "  Chi tiết\r\n Khách hàng";
 			this.bntChiTiet.UseVisualStyleBackColor = false;
+			this.bntChiTiet.Click += new System.EventHandler(this.bntChiTiet_Click);
 			// 
 			// bntUpdateDS
 			// 
@@ -125,6 +133,14 @@
 			// 
 			this.gridKhachHang.AllowUserToAddRows = false;
 			this.gridKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ma,
+            this.Ten,
+            this.Diachi,
+            this.Sdt,
+            this.Gioitinh,
+            this.SoCMND,
+            this.Quoctich});
 			this.gridKhachHang.ContextMenuStrip = this.ctMenuGv;
 			this.gridKhachHang.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.gridKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -228,6 +244,58 @@
 			this.panel1.Size = new System.Drawing.Size(835, 41);
 			this.panel1.TabIndex = 25;
 			// 
+			// Ma
+			// 
+			this.Ma.DataPropertyName = "Ma";
+			this.Ma.HeaderText = "Mã";
+			this.Ma.Name = "Ma";
+			this.Ma.ReadOnly = true;
+			// 
+			// Ten
+			// 
+			this.Ten.DataPropertyName = "Ten";
+			this.Ten.HeaderText = "Tên";
+			this.Ten.Name = "Ten";
+			this.Ten.ReadOnly = true;
+			// 
+			// Diachi
+			// 
+			this.Diachi.DataPropertyName = "DiaChi";
+			this.Diachi.HeaderText = "Địa chỉ";
+			this.Diachi.Name = "Diachi";
+			this.Diachi.ReadOnly = true;
+			this.Diachi.Visible = false;
+			// 
+			// Sdt
+			// 
+			this.Sdt.DataPropertyName = "Sdt";
+			this.Sdt.HeaderText = "Số điện thoại";
+			this.Sdt.Name = "Sdt";
+			this.Sdt.ReadOnly = true;
+			// 
+			// Gioitinh
+			// 
+			this.Gioitinh.DataPropertyName = "GioiTinh";
+			this.Gioitinh.HeaderText = "Giới tính";
+			this.Gioitinh.Name = "Gioitinh";
+			this.Gioitinh.ReadOnly = true;
+			this.Gioitinh.Visible = false;
+			// 
+			// SoCMND
+			// 
+			this.SoCMND.DataPropertyName = "Scmnd";
+			this.SoCMND.HeaderText = "Số CMND";
+			this.SoCMND.Name = "SoCMND";
+			this.SoCMND.ReadOnly = true;
+			// 
+			// Quoctich
+			// 
+			this.Quoctich.DataPropertyName = "QuocTich";
+			this.Quoctich.HeaderText = "Quốc tịch";
+			this.Quoctich.Name = "Quoctich";
+			this.Quoctich.ReadOnly = true;
+			this.Quoctich.Visible = false;
+			// 
 			// DanhSachKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +339,12 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn SoCMND;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Quoctich;
 	}
 }
