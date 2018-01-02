@@ -89,7 +89,7 @@
             this.cbbChangeTheme.FormattingEnabled = true;
             this.cbbChangeTheme.Items.AddRange(new object[] {
             "White",
-            "Darg"});
+            "Dark"});
             this.cbbChangeTheme.Location = new System.Drawing.Point(639, 13);
             this.cbbChangeTheme.Name = "cbbChangeTheme";
             this.cbbChangeTheme.Size = new System.Drawing.Size(65, 21);

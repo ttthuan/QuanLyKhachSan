@@ -1,4 +1,4 @@
-﻿namespace DataTranferObject
+﻿namespace PresentationLayer
 {
 	partial class MessageBoxDS
 	{

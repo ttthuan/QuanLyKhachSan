@@ -35,6 +35,9 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDoanhThu.Designer.cs">
+      <DependentUpon>ChiTietDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +116,12 @@
     </Compile>
     <Compile Include="PhieuThuePhong.Designer.cs">
       <DependentUpon>PhieuThuePhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickDateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PickDateTime.Designer.cs">
+      <DependentUpon>PickDateTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

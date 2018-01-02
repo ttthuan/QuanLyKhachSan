@@ -43,6 +43,6 @@ namespace PresentationLayer
         //public static Color lightPrimary = Color.FromArgb(175, 82, 213);
         //public static Color nenXam = Color.FromArgb(225, 226, 225);
 
-        //public static Color rowHilight = Color.FromArgb(209, 196, 233);
+        public static Color rowHilight = Color.FromArgb(209, 196, 233);
     }
 }
