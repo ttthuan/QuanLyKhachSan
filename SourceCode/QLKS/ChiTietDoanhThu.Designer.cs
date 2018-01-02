@@ -136,7 +136,8 @@
             this.btnRefesh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefesh.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefesh.Image")));
+            this.btnRefesh.Image = global::PresentationLayer.Properties.Resources.replay;
+
             this.btnRefesh.Location = new System.Drawing.Point(172, 6);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.Size = new System.Drawing.Size(23, 24);
@@ -151,7 +152,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::PresentationLayer.Properties.Resources.dark_cash_multiple;
             this.button1.Location = new System.Drawing.Point(5, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 24);

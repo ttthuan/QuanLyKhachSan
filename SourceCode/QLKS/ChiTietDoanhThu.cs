@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace PresentationLayer
 {
@@ -36,7 +37,7 @@ namespace PresentationLayer
         {
             InitializeComponent();
 
-            //ls = BUS.BUS_HOADON.getCusTomHoaDons(bd, kt);
+            ls = hoaDonBUS.getCusTomHoaDons(bd, kt);
             load();
         }
         
@@ -138,7 +139,7 @@ namespace PresentationLayer
             {
                 bd = formPickTime.batDau;
                 kt = formPickTime.ketThuc;
-                ls = hoaDonBUS.getCusTomHoaDons(bd, kt).ToList();
+                ls = hoaDonBUS.getCusTomHoaDons(bd, kt);
 
                 lbThoiGian.Text = bd.Date.ToShortDateString() + " - " + kt.Date.ToShortDateString();
 
@@ -186,7 +187,7 @@ namespace PresentationLayer
             }
             else
             {
-                ls = hoaDonBUS.getCusTomHoaDons(bd, kt).ToList();
+                ls = hoaDonBUS.getCusTomHoaDons(bd, kt);
                 lbThoiGian.Text = bd.Date.ToShortDateString() + " - " + kt.Date.ToShortDateString();
                 max = int.Parse(cbbNumber.SelectedItem.ToString());
                 index = 0;
@@ -267,12 +268,11 @@ namespace PresentationLayer
             string fileName = ((DataParameter)e.Argument).fileName;
             List<BusinessLayer.CustomDisplayHoaDon> lsData = ((DataParameter)e.Argument).ls;
             // Creating a Excel object. 
-            Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Workbook workbook = excel.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel.Worksheet worksheet = null;
 
             try
             {
-
                 worksheet = workbook.ActiveSheet;
 
                 worksheet.Name = "DanhSachHoaDon";

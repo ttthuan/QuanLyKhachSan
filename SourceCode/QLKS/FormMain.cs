@@ -197,6 +197,15 @@ namespace PresentationLayer
         {
             setColorActiveForButton((Button)sender);
 
+            if(chiTietDoanhThu == null)
+            {
+                chiTietDoanhThu = new ChiTietDoanhThu();
+                chiTietDoanhThu.Dock = DockStyle.Fill;
+                chiTietDoanhThu.TopLevel = false;
+                pnBody.Controls.Add(chiTietDoanhThu);
+
+                chiTietDoanhThu.Show();
+            }
            
             onlyShowOneFormOnPannelBody(chiTietDoanhThu);
         }

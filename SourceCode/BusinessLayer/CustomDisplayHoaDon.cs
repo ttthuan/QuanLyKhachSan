@@ -14,7 +14,7 @@ namespace BusinessLayer
         public string TENKH { get; set; }
         public DateTime THOIGIANVAO { get; set; }
         public DateTime THOIGIANTRA { get; set; }
-        public int TONG { get; set; }
+        public float TONG { get; set; }
         public string NVCHECKIN { get; set; }
         public int TIENPHONG { get; set; }
         public int TIENPHUTHU { get; set; }
