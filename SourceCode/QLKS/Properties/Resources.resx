@@ -337,4 +337,13 @@
   <data name="dark_cash_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dark_cash-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clipboard_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboard-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_card_details_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account-card-details-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_clock_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-clock-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

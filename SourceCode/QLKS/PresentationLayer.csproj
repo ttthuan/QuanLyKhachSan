@@ -143,6 +143,12 @@
     <Compile Include="ThayDoiMatKhau.Designer.cs">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimPhongTrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimPhongTrong.Designer.cs">
+      <DependentUpon>TimPhongTrong.cs</DependentUpon>
+    </Compile>
     <Compile Include="TraPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThayDoiMatKhau.resx">
       <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimPhongTrong.resx">
+      <DependentUpon>TimPhongTrong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraPhong.resx">
       <DependentUpon>TraPhong.cs</DependentUpon>
@@ -372,6 +381,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dark_cash-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-card-details-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-clock-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

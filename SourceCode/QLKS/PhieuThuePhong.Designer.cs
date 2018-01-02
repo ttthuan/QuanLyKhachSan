@@ -63,37 +63,34 @@
 			this.label16 = new System.Windows.Forms.Label();
 			this.lbTenPhong = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
-			this.lbThongTinDangKy = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.label2 = new System.Windows.Forms.Label();
-			this.txtCMND = new System.Windows.Forms.TextBox();
-			this.txtTenKH = new System.Windows.Forms.TextBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.bntCapNhat = new System.Windows.Forms.Button();
-			this.bntHuy = new System.Windows.Forms.Button();
-			this.panlTieuDe = new System.Windows.Forms.Panel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBoxChitietKH = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.picboxChiTietDV = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
+			this.bntCapNhat = new System.Windows.Forms.Button();
+			this.bntHuy = new System.Windows.Forms.Button();
+			this.panlTieuDe = new System.Windows.Forms.Panel();
+			this.lbCMND = new System.Windows.Forms.Label();
+			this.lbTenKH = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.lbThongTinDangKy = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
-			this.panel1.SuspendLayout();
-			this.panel3.SuspendLayout();
-			this.panlTieuDe.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxChitietKH)).BeginInit();
+			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			this.panlTieuDe.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label20
@@ -492,43 +489,21 @@
 			this.label13.TabIndex = 42;
 			this.label13.Text = "Mã số phòng :";
 			// 
-			// lbThongTinDangKy
+			// pictureBox1
 			// 
-			this.lbThongTinDangKy.AutoSize = true;
-			this.lbThongTinDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbThongTinDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.lbThongTinDangKy.Location = new System.Drawing.Point(77, 15);
-			this.lbThongTinDangKy.Name = "lbThongTinDangKy";
-			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
-			this.lbThongTinDangKy.TabIndex = 41;
-			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label5.Location = new System.Drawing.Point(83, 58);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(61, 13);
-			this.label5.TabIndex = 28;
-			this.label5.Text = "Số CMND :";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label4.Location = new System.Drawing.Point(83, 27);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(50, 13);
-			this.label4.TabIndex = 27;
-			this.label4.Text = "Tên KH :";
+			this.pictureBox1.Location = new System.Drawing.Point(3, 6);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 33;
+			this.pictureBox1.TabStop = false;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label3.Location = new System.Drawing.Point(80, 3);
+			this.label3.Location = new System.Drawing.Point(80, 4);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(118, 13);
 			this.label3.TabIndex = 26;
@@ -538,10 +513,8 @@
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
 			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.pictureBoxChitietKH);
-			this.panel1.Controls.Add(this.txtCMND);
-			this.panel1.Controls.Add(this.txtTenKH);
+			this.panel1.Controls.Add(this.lbCMND);
+			this.panel1.Controls.Add(this.lbTenKH);
 			this.panel1.Controls.Add(this.label5);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.label3);
@@ -551,36 +524,14 @@
 			this.panel1.Size = new System.Drawing.Size(509, 92);
 			this.panel1.TabIndex = 37;
 			// 
-			// label2
+			// pictureBox2
 			// 
-			this.label2.AutoSize = true;
-			this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label2.Location = new System.Drawing.Point(406, 63);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(86, 13);
-			this.label2.TabIndex = 30;
-			this.label2.Text = "Thông tin chi tiết";
-			// 
-			// txtCMND
-			// 
-			this.txtCMND.BackColor = System.Drawing.Color.White;
-			this.txtCMND.Location = new System.Drawing.Point(166, 51);
-			this.txtCMND.MaxLength = 11;
-			this.txtCMND.Name = "txtCMND";
-			this.txtCMND.ReadOnly = true;
-			this.txtCMND.Size = new System.Drawing.Size(207, 20);
-			this.txtCMND.TabIndex = 2;
-			// 
-			// txtTenKH
-			// 
-			this.txtTenKH.BackColor = System.Drawing.Color.White;
-			this.txtTenKH.Location = new System.Drawing.Point(166, 20);
-			this.txtTenKH.MaxLength = 50;
-			this.txtTenKH.Name = "txtTenKH";
-			this.txtTenKH.ReadOnly = true;
-			this.txtTenKH.Size = new System.Drawing.Size(207, 20);
-			this.txtTenKH.TabIndex = 1;
+			this.pictureBox2.Location = new System.Drawing.Point(3, 4);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 25;
+			this.pictureBox2.TabStop = false;
 			// 
 			// label1
 			// 
@@ -613,6 +564,44 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(509, 94);
 			this.panel3.TabIndex = 41;
+			// 
+			// pictureBox4
+			// 
+			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pictureBox4.Location = new System.Drawing.Point(205, 7);
+			this.pictureBox4.Name = "pictureBox4";
+			this.pictureBox4.Size = new System.Drawing.Size(24, 21);
+			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox4.TabIndex = 75;
+			this.pictureBox4.TabStop = false;
+			// 
+			// pictureBox5
+			// 
+			this.pictureBox5.Location = new System.Drawing.Point(392, 59);
+			this.pictureBox5.Name = "pictureBox5";
+			this.pictureBox5.Size = new System.Drawing.Size(24, 21);
+			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox5.TabIndex = 73;
+			this.pictureBox5.TabStop = false;
+			// 
+			// picboxChiTietDV
+			// 
+			this.picboxChiTietDV.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picboxChiTietDV.Location = new System.Drawing.Point(166, 7);
+			this.picboxChiTietDV.Name = "picboxChiTietDV";
+			this.picboxChiTietDV.Size = new System.Drawing.Size(27, 21);
+			this.picboxChiTietDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.picboxChiTietDV.TabIndex = 71;
+			this.picboxChiTietDV.TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this.pictureBox3.Location = new System.Drawing.Point(7, 5);
+			this.pictureBox3.Name = "pictureBox3";
+			this.pictureBox3.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox3.TabIndex = 67;
+			this.pictureBox3.TabStop = false;
 			// 
 			// bntCapNhat
 			// 
@@ -655,70 +644,56 @@
 			this.panlTieuDe.Size = new System.Drawing.Size(509, 40);
 			this.panlTieuDe.TabIndex = 36;
 			// 
-			// pictureBox1
+			// lbCMND
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(1, 13);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 33;
-			this.pictureBox1.TabStop = false;
+			this.lbCMND.AutoSize = true;
+			this.lbCMND.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbCMND.Location = new System.Drawing.Point(161, 60);
+			this.lbCMND.Name = "lbCMND";
+			this.lbCMND.Size = new System.Drawing.Size(33, 13);
+			this.lbCMND.TabIndex = 34;
+			this.lbCMND.Text = "cmnd";
 			// 
-			// pictureBoxChitietKH
+			// lbTenKH
 			// 
-			this.pictureBoxChitietKH.Location = new System.Drawing.Point(438, 25);
-			this.pictureBoxChitietKH.Name = "pictureBoxChitietKH";
-			this.pictureBoxChitietKH.Size = new System.Drawing.Size(29, 27);
-			this.pictureBoxChitietKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBoxChitietKH.TabIndex = 29;
-			this.pictureBoxChitietKH.TabStop = false;
+			this.lbTenKH.AutoSize = true;
+			this.lbTenKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbTenKH.Location = new System.Drawing.Point(161, 29);
+			this.lbTenKH.Name = "lbTenKH";
+			this.lbTenKH.Size = new System.Drawing.Size(22, 13);
+			this.lbTenKH.TabIndex = 33;
+			this.lbTenKH.Text = "tên";
 			// 
-			// pictureBox2
+			// label5
 			// 
-			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox2.TabIndex = 25;
-			this.pictureBox2.TabStop = false;
+			this.label5.AutoSize = true;
+			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label5.Location = new System.Drawing.Point(83, 60);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(61, 13);
+			this.label5.TabIndex = 32;
+			this.label5.Text = "Số CMND :";
 			// 
-			// pictureBox4
+			// label4
 			// 
-			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox4.Location = new System.Drawing.Point(205, 7);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(24, 21);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 75;
-			this.pictureBox4.TabStop = false;
+			this.label4.AutoSize = true;
+			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label4.Location = new System.Drawing.Point(112, 29);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(32, 13);
+			this.label4.TabIndex = 31;
+			this.label4.Text = "Tên :";
 			// 
-			// pictureBox5
+			// lbThongTinDangKy
 			// 
-			this.pictureBox5.Location = new System.Drawing.Point(392, 59);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(24, 21);
-			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox5.TabIndex = 73;
-			this.pictureBox5.TabStop = false;
-			// 
-			// picboxChiTietDV
-			// 
-			this.picboxChiTietDV.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.picboxChiTietDV.Location = new System.Drawing.Point(166, 7);
-			this.picboxChiTietDV.Name = "picboxChiTietDV";
-			this.picboxChiTietDV.Size = new System.Drawing.Size(27, 21);
-			this.picboxChiTietDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picboxChiTietDV.TabIndex = 71;
-			this.picboxChiTietDV.TabStop = false;
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Location = new System.Drawing.Point(7, 7);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox3.TabIndex = 67;
-			this.pictureBox3.TabStop = false;
+			this.lbThongTinDangKy.AutoSize = true;
+			this.lbThongTinDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbThongTinDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.lbThongTinDangKy.Location = new System.Drawing.Point(77, 7);
+			this.lbThongTinDangKy.Name = "lbThongTinDangKy";
+			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
+			this.lbThongTinDangKy.TabIndex = 41;
+			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
 			// 
 			// PhieuThuePhong
 			// 
@@ -736,19 +711,18 @@
 			this.Text = "PhieuThuePhong";
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			this.panlTieuDe.ResumeLayout(false);
-			this.panlTieuDe.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxChitietKH)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+			this.panlTieuDe.ResumeLayout(false);
+			this.panlTieuDe.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -795,20 +769,18 @@
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label lbTenPhong;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label lbThongTinDangKy;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.PictureBox pictureBoxChitietKH;
-		private System.Windows.Forms.TextBox txtCMND;
-		private System.Windows.Forms.TextBox txtTenKH;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Button bntCapNhat;
 		private System.Windows.Forms.Button bntHuy;
 		private System.Windows.Forms.Panel panlTieuDe;
+		private System.Windows.Forms.Label lbThongTinDangKy;
+		private System.Windows.Forms.Label lbCMND;
+		private System.Windows.Forms.Label lbTenKH;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label4;
 	}
 }

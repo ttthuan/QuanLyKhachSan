@@ -52,5 +52,32 @@ namespace DataAccesLayer
             tb = dataProvider.ExecuteQuery_DataTble(query);
             return int.Parse(tb.Rows[0][1].ToString());
         }
-    }
+
+		public DataTable LayDanhSachPhongTrong(string time1, string time2, int maLoaiPhong)
+		{
+			DataTable dataTable = new DataTable();
+			string query = "Select Ma,Ten,Tang From Phong where Ma not in " +
+				"( Select Maphong from Phieuthuephong where ('" + time1 + "' < Thoigiannhanphong and '" + time2 + "' > Thoigiannhanphong )" +
+				"or ('" + time1 + "' > Thoigiannhanphong and '" + time2 + "' < Thoigiantraphong ) or ('" + time1 + 
+				"' < Thoigiantraphong and '" + time2+"' > Thoigiantraphong ) and Maloaiphong = "+ maLoaiPhong + ")";
+			dataTable = dataProvider.ExecuteQuery_DataTble(query);
+			return dataTable;
+		}
+
+		public PhongDTO LayPhongTheoMaSo(int maPhong)
+		{
+			PhongDTO phongDTO = new PhongDTO();
+			string query = "Select * from Phong where Ma = "+maPhong+"";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if(tb.Rows.Count != 0)
+			{
+				phongDTO.Ma = maPhong;
+				phongDTO.Ten = tb.Rows[0]["Ten"].ToString();
+				phongDTO.Tang = int.Parse(tb.Rows[0]["Tang"].ToString());
+				phongDTO.MaLoaiPhong = int.Parse(tb.Rows[0]["Maloaiphong"].ToString());
+			}
+			return phongDTO;
+		}
+	}
 }

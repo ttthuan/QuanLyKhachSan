@@ -2,6 +2,7 @@
 using DataTranferObject;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,5 +22,15 @@ namespace BusinessLayer
         {
             return phongDAO.LaySoLuongPhongLonNhatTrongCacTang();
         }
+
+		public DataTable LayDanhSachPhongTrong(string time1, string time2, int maLoaiPhong)
+		{
+			return phongDAO.LayDanhSachPhongTrong(time1, time2, maLoaiPhong);
+		}
+
+		public PhongDTO LayPhongTheoMaSo(int maPhong)
+		{
+			return phongDAO.LayPhongTheoMaSo(maPhong);
+		}
     }
 }

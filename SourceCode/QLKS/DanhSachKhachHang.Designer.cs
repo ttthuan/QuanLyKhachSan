@@ -73,6 +73,7 @@
 			this.bntDatPhong.Text = "Đặt Phòng";
 			this.bntDatPhong.UseVisualStyleBackColor = false;
 			this.bntDatPhong.Visible = false;
+			this.bntDatPhong.Click += new System.EventHandler(this.bntDatPhong_Click);
 			// 
 			// bntChiTietThuePhong
 			// 
@@ -87,6 +88,7 @@
 			this.bntChiTietThuePhong.Text = "  Chi tiết \r\nThuê phòng";
 			this.bntChiTietThuePhong.UseVisualStyleBackColor = false;
 			this.bntChiTietThuePhong.Visible = false;
+			this.bntChiTietThuePhong.Click += new System.EventHandler(this.bntChiTietThuePhong_Click);
 			// 
 			// bntChiTiet
 			// 
