@@ -36,15 +36,6 @@
 			this.bntUpdateDS = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.gridKhachHang = new System.Windows.Forms.DataGridView();
-			this.ctMenuGv = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.chitietKhachHang = new System.Windows.Forms.ToolStripMenuItem();
-			this.chitietPhongdangthue = new System.Windows.Forms.ToolStripMenuItem();
-			this.txtTimKH = new System.Windows.Forms.TextBox();
-			this.lbTittle = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +43,15 @@
 			this.Gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SoCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Quoctich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ctMenuGv = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.chitietKhachHang = new System.Windows.Forms.ToolStripMenuItem();
+			this.chitietPhongdangthue = new System.Windows.Forms.ToolStripMenuItem();
+			this.txtTimKH = new System.Windows.Forms.TextBox();
+			this.lbTittle = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
 			this.ctMenuGv.SuspendLayout();
@@ -122,9 +122,9 @@
 			// 
 			// panel3
 			// 
-			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.panel3.Controls.Add(this.gridKhachHang);
 			this.panel3.Location = new System.Drawing.Point(151, 78);
 			this.panel3.Name = "panel3";
@@ -136,13 +136,13 @@
 			this.gridKhachHang.AllowUserToAddRows = false;
 			this.gridKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ma,
-            this.Ten,
-            this.Diachi,
-            this.Sdt,
-            this.Gioitinh,
-            this.SoCMND,
-            this.Quoctich});
+			this.Ma,
+			this.Ten,
+			this.Diachi,
+			this.Sdt,
+			this.Gioitinh,
+			this.SoCMND,
+			this.Quoctich});
 			this.gridKhachHang.ContextMenuStrip = this.ctMenuGv;
 			this.gridKhachHang.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.gridKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,101 +150,6 @@
 			this.gridKhachHang.Name = "gridKhachHang";
 			this.gridKhachHang.Size = new System.Drawing.Size(681, 402);
 			this.gridKhachHang.TabIndex = 0;
-			// 
-			// ctMenuGv
-			// 
-			this.ctMenuGv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chitietKhachHang,
-            this.chitietPhongdangthue});
-			this.ctMenuGv.Name = "ctMenuGv";
-			this.ctMenuGv.Size = new System.Drawing.Size(179, 48);
-			// 
-			// chitietKhachHang
-			// 
-			this.chitietKhachHang.Name = "chitietKhachHang";
-			this.chitietKhachHang.Size = new System.Drawing.Size(178, 22);
-			this.chitietKhachHang.Text = "Chi tiết Khách hàng";
-			// 
-			// chitietPhongdangthue
-			// 
-			this.chitietPhongdangthue.Name = "chitietPhongdangthue";
-			this.chitietPhongdangthue.Size = new System.Drawing.Size(178, 22);
-			this.chitietPhongdangthue.Text = "Chi tiết thuê Phòng";
-			// 
-			// txtTimKH
-			// 
-			this.txtTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-			this.txtTimKH.Location = new System.Drawing.Point(103, 13);
-			this.txtTimKH.Name = "txtTimKH";
-			this.txtTimKH.Size = new System.Drawing.Size(198, 20);
-			this.txtTimKH.TabIndex = 13;
-			// 
-			// lbTittle
-			// 
-			this.lbTittle.AutoSize = true;
-			this.lbTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbTittle.ForeColor = System.Drawing.Color.White;
-			this.lbTittle.Location = new System.Drawing.Point(52, 5);
-			this.lbTittle.Name = "lbTittle";
-			this.lbTittle.Size = new System.Drawing.Size(129, 18);
-			this.lbTittle.TabIndex = 0;
-			this.lbTittle.Text = "Tất cả khách hàng";
-			// 
-			// label3
-			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label3.Location = new System.Drawing.Point(20, 14);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(69, 16);
-			this.label3.TabIndex = 12;
-			this.label3.Text = "Tìm kiếm :";
-			// 
-			// panel2
-			// 
-			this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-			this.panel2.AutoSize = true;
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(36)))), ((int)(((byte)(170)))));
-			this.panel2.Controls.Add(this.button1);
-			this.panel2.Controls.Add(this.lbTittle);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(0, 0);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(835, 31);
-			this.panel2.TabIndex = 24;
-			// 
-			// button1
-			// 
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(23, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(23, 28);
-			this.button1.TabIndex = 10;
-			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.AutoSize = true;
-			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.panel1.Controls.Add(this.txtTimKH);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Location = new System.Drawing.Point(0, 37);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(835, 41);
-			this.panel1.TabIndex = 25;
 			// 
 			// Ma
 			// 
@@ -297,6 +202,101 @@
 			this.Quoctich.Name = "Quoctich";
 			this.Quoctich.ReadOnly = true;
 			this.Quoctich.Visible = false;
+			// 
+			// ctMenuGv
+			// 
+			this.ctMenuGv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.chitietKhachHang,
+			this.chitietPhongdangthue});
+			this.ctMenuGv.Name = "ctMenuGv";
+			this.ctMenuGv.Size = new System.Drawing.Size(179, 48);
+			// 
+			// chitietKhachHang
+			// 
+			this.chitietKhachHang.Name = "chitietKhachHang";
+			this.chitietKhachHang.Size = new System.Drawing.Size(178, 22);
+			this.chitietKhachHang.Text = "Chi tiết Khách hàng";
+			// 
+			// chitietPhongdangthue
+			// 
+			this.chitietPhongdangthue.Name = "chitietPhongdangthue";
+			this.chitietPhongdangthue.Size = new System.Drawing.Size(178, 22);
+			this.chitietPhongdangthue.Text = "Chi tiết thuê Phòng";
+			// 
+			// txtTimKH
+			// 
+			this.txtTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)));
+			this.txtTimKH.Location = new System.Drawing.Point(103, 13);
+			this.txtTimKH.Name = "txtTimKH";
+			this.txtTimKH.Size = new System.Drawing.Size(198, 20);
+			this.txtTimKH.TabIndex = 13;
+			// 
+			// lbTittle
+			// 
+			this.lbTittle.AutoSize = true;
+			this.lbTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbTittle.ForeColor = System.Drawing.Color.White;
+			this.lbTittle.Location = new System.Drawing.Point(52, 5);
+			this.lbTittle.Name = "lbTittle";
+			this.lbTittle.Size = new System.Drawing.Size(129, 18);
+			this.lbTittle.TabIndex = 0;
+			this.lbTittle.Text = "Tất cả khách hàng";
+			// 
+			// label3
+			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.label3.Location = new System.Drawing.Point(20, 14);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(69, 16);
+			this.label3.TabIndex = 12;
+			this.label3.Text = "Tìm kiếm :";
+			// 
+			// panel2
+			// 
+			this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+			this.panel2.AutoSize = true;
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(36)))), ((int)(((byte)(170)))));
+			this.panel2.Controls.Add(this.button1);
+			this.panel2.Controls.Add(this.lbTittle);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(0, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(835, 31);
+			this.panel2.TabIndex = 24;
+			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.AutoSize = true;
+			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.panel1.Controls.Add(this.txtTimKH);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Location = new System.Drawing.Point(0, 37);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(835, 41);
+			this.panel1.TabIndex = 25;
+			// 
+			// button1
+			// 
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.White;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(23, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(23, 28);
+			this.button1.TabIndex = 10;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// DanhSachKhachHang
 			// 

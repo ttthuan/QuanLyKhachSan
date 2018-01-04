@@ -42,5 +42,39 @@ namespace DataAccesLayer
 
             return phieuThuePhong;
         }
-    }
+
+		public DataTable DanhSachDatPhong(int maKH)
+		{
+			DataTable table = new DataTable();
+			string query = "Select Phieuthuephong.Ma,Phieuthuephong.Thoigiannhanphong,Phieuthuephong.Thoigiantraphong," +
+				"Phong.Ten as Tenphong, Khachhang.Ten as Tenkhachhang From Phieuthuephong,Phong,KhachHang Where Phieuthuephong.Maphong = Phong.Ma " +
+				" and Phieuthuephong.Makhachhang = Khachhang.Ma and Phieuthuephong.Makhachhang = " + maKH + " " +
+				" and Phieuthuephong.Thoigiannhanphong >= GETDATE() and Phieuthuephong.TrangThai = 1";
+			table = dataProvider.ExecuteQuery_DataTble(query);
+			return table;
+		}
+
+		public PhieuThuePhongDTO LayPhieuthuephongTheoma(int maPhieuthue)
+		{
+			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+			string query = "Select * From Phieuthuephong Where Ma = " + maPhieuthue + "";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count > 0 && tb != null)
+			{
+				foreach (DataRow row in tb.Rows)
+				{
+					phieuThuePhongDTO.Ma = int.Parse(row[0].ToString());
+					phieuThuePhongDTO.MaPhong = int.Parse(row[1].ToString());
+					phieuThuePhongDTO.MaKhachHang = int.Parse(row[2].ToString());
+					phieuThuePhongDTO.ThoiGianNhanPhong = DateTime.Parse(row[3].ToString());
+					phieuThuePhongDTO.ThoiGianTraPhong = DateTime.Parse(row[4].ToString());
+					phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(row[5].ToString());
+					phieuThuePhongDTO.Gia = float.Parse(row[6].ToString());
+				}
+				return phieuThuePhongDTO;
+			}
+			return null;
+		}
+	}
 }

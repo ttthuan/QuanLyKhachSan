@@ -36,6 +36,7 @@
 			this.txtTraTruoc = new System.Windows.Forms.TextBox();
 			this.txtGiaPhong = new System.Windows.Forms.TextBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnHienTrangVsDatPhong = new System.Windows.Forms.Button();
 			this.label15 = new System.Windows.Forms.Label();
 			this.txtSoLuongKH = new System.Windows.Forms.TextBox();
 			this.label14 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
 			this.lbTang = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.lbThongTinDangKy = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -70,18 +72,18 @@
 			this.txtTenKH = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panlTieuDe = new System.Windows.Forms.Panel();
 			this.lbTitleTenPhong = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.btnHienTrangVsDatPhong = new System.Windows.Forms.Button();
+			this.lbloaiPhong = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
 			this.panel2.SuspendLayout();
-			this.panel1.SuspendLayout();
-			this.panlTieuDe.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.panlTieuDe.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// errorProviderApp
@@ -124,10 +126,10 @@
 			// 
 			this.txtTraTruoc.BackColor = System.Drawing.Color.White;
 			this.txtTraTruoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.txtTraTruoc.Location = new System.Drawing.Point(395, 67);
+			this.txtTraTruoc.Location = new System.Drawing.Point(395, 68);
 			this.txtTraTruoc.MaxLength = 10;
 			this.txtTraTruoc.Name = "txtTraTruoc";
-			this.txtTraTruoc.Size = new System.Drawing.Size(77, 20);
+			this.txtTraTruoc.Size = new System.Drawing.Size(92, 20);
 			this.txtTraTruoc.TabIndex = 7;
 			// 
 			// txtGiaPhong
@@ -138,12 +140,14 @@
 			this.txtGiaPhong.Location = new System.Drawing.Point(395, 100);
 			this.txtGiaPhong.Name = "txtGiaPhong";
 			this.txtGiaPhong.ReadOnly = true;
-			this.txtGiaPhong.Size = new System.Drawing.Size(77, 20);
+			this.txtGiaPhong.Size = new System.Drawing.Size(92, 20);
 			this.txtGiaPhong.TabIndex = 62;
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.White;
+			this.panel2.Controls.Add(this.lbloaiPhong);
+			this.panel2.Controls.Add(this.label10);
 			this.panel2.Controls.Add(this.btnHienTrangVsDatPhong);
 			this.panel2.Controls.Add(this.txtTraTruoc);
 			this.panel2.Controls.Add(this.txtGiaPhong);
@@ -172,6 +176,23 @@
 			this.panel2.Size = new System.Drawing.Size(509, 198);
 			this.panel2.TabIndex = 32;
 			// 
+			// btnHienTrangVsDatPhong
+			// 
+			this.btnHienTrangVsDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.btnHienTrangVsDatPhong.FlatAppearance.BorderSize = 0;
+			this.btnHienTrangVsDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnHienTrangVsDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnHienTrangVsDatPhong.ForeColor = System.Drawing.Color.White;
+			this.btnHienTrangVsDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnHienTrangVsDatPhong.Image")));
+			this.btnHienTrangVsDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(163, 3);
+			this.btnHienTrangVsDatPhong.Name = "btnHienTrangVsDatPhong";
+			this.btnHienTrangVsDatPhong.Size = new System.Drawing.Size(182, 31);
+			this.btnHienTrangVsDatPhong.TabIndex = 64;
+			this.btnHienTrangVsDatPhong.Text = "Chọn phòng để đặt";
+			this.btnHienTrangVsDatPhong.UseVisualStyleBackColor = false;
+			this.btnHienTrangVsDatPhong.Click += new System.EventHandler(this.btnHienTrangVsDatPhong_Click);
+			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
@@ -196,7 +217,7 @@
 			// 
 			this.label14.AutoSize = true;
 			this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label14.Location = new System.Drawing.Point(6, 102);
+			this.label14.Location = new System.Drawing.Point(2, 102);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(115, 13);
 			this.label14.TabIndex = 61;
@@ -228,6 +249,31 @@
 			this.cbmGioketthuc.DropDownHeight = 90;
 			this.cbmGioketthuc.FormattingEnabled = true;
 			this.cbmGioketthuc.IntegralHeight = false;
+			this.cbmGioketthuc.Items.AddRange(new object[] {
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"10",
+			"11",
+			"12",
+			"13",
+			"14",
+			"15",
+			"16",
+			"17",
+			"18",
+			"19",
+			"20",
+			"21",
+			"22",
+			"23",
+			"24"});
 			this.cbmGioketthuc.Location = new System.Drawing.Point(167, 163);
 			this.cbmGioketthuc.Name = "cbmGioketthuc";
 			this.cbmGioketthuc.Size = new System.Drawing.Size(47, 21);
@@ -249,7 +295,7 @@
 			this.dtpkNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpkNgayKT.Location = new System.Drawing.Point(303, 164);
 			this.dtpkNgayKT.Name = "dtpkNgayKT";
-			this.dtpkNgayKT.Size = new System.Drawing.Size(169, 20);
+			this.dtpkNgayKT.Size = new System.Drawing.Size(184, 20);
 			this.dtpkNgayKT.TabIndex = 12;
 			// 
 			// label23
@@ -278,6 +324,31 @@
 			this.cbmGioBatdau.DropDownHeight = 90;
 			this.cbmGioBatdau.FormattingEnabled = true;
 			this.cbmGioBatdau.IntegralHeight = false;
+			this.cbmGioBatdau.Items.AddRange(new object[] {
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"10",
+			"11",
+			"12",
+			"13",
+			"14",
+			"15",
+			"16",
+			"17",
+			"18",
+			"19",
+			"20",
+			"21",
+			"22",
+			"23",
+			"24"});
 			this.cbmGioBatdau.Location = new System.Drawing.Point(167, 132);
 			this.cbmGioBatdau.Name = "cbmGioBatdau";
 			this.cbmGioBatdau.Size = new System.Drawing.Size(47, 21);
@@ -299,7 +370,7 @@
 			this.dtpkNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpkNgayBD.Location = new System.Drawing.Point(303, 133);
 			this.dtpkNgayBD.Name = "dtpkNgayBD";
-			this.dtpkNgayBD.Size = new System.Drawing.Size(169, 20);
+			this.dtpkNgayBD.Size = new System.Drawing.Size(184, 20);
 			this.dtpkNgayBD.TabIndex = 10;
 			// 
 			// label17
@@ -317,16 +388,16 @@
 			this.cbmLoaiDangKy.BackColor = System.Drawing.Color.White;
 			this.cbmLoaiDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cbmLoaiDangKy.FormattingEnabled = true;
-			this.cbmLoaiDangKy.Location = new System.Drawing.Point(157, 67);
+			this.cbmLoaiDangKy.Location = new System.Drawing.Point(136, 67);
 			this.cbmLoaiDangKy.Name = "cbmLoaiDangKy";
-			this.cbmLoaiDangKy.Size = new System.Drawing.Size(121, 21);
+			this.cbmLoaiDangKy.Size = new System.Drawing.Size(154, 21);
 			this.cbmLoaiDangKy.TabIndex = 6;
 			// 
 			// label18
 			// 
 			this.label18.AutoSize = true;
 			this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label18.Location = new System.Drawing.Point(69, 70);
+			this.label18.Location = new System.Drawing.Point(43, 75);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(78, 13);
 			this.label18.TabIndex = 46;
@@ -362,6 +433,16 @@
 			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
 			this.lbThongTinDangKy.TabIndex = 41;
 			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
+			this.pictureBox1.Location = new System.Drawing.Point(5, 7);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 33;
+			this.pictureBox1.TabStop = false;
 			// 
 			// label7
 			// 
@@ -533,10 +614,20 @@
 			this.label8.TabIndex = 31;
 			this.label8.Text = "Quốc tịch :";
 			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
+			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 25;
+			this.pictureBox2.TabStop = false;
+			// 
 			// panlTieuDe
 			// 
-			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.panlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
 			this.panlTieuDe.Controls.Add(this.lbTitleTenPhong);
 			this.panlTieuDe.Controls.Add(this.label1);
@@ -572,42 +663,25 @@
 			this.label1.Text = "Đặt Phòng :";
 			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
-			// pictureBox1
+			// lbloaiPhong
 			// 
-			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
-			this.pictureBox1.Location = new System.Drawing.Point(5, 7);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 33;
-			this.pictureBox1.TabStop = false;
+			this.lbloaiPhong.AutoSize = true;
+			this.lbloaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbloaiPhong.Location = new System.Drawing.Point(392, 44);
+			this.lbloaiPhong.Name = "lbloaiPhong";
+			this.lbloaiPhong.Size = new System.Drawing.Size(54, 13);
+			this.lbloaiPhong.TabIndex = 66;
+			this.lbloaiPhong.Text = "loaiPhong";
 			// 
-			// pictureBox2
+			// label10
 			// 
-			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
-			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox2.TabIndex = 25;
-			this.pictureBox2.TabStop = false;
-			// 
-			// btnHienTrangVsDatPhong
-			// 
-			this.btnHienTrangVsDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.btnHienTrangVsDatPhong.FlatAppearance.BorderSize = 0;
-			this.btnHienTrangVsDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnHienTrangVsDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnHienTrangVsDatPhong.ForeColor = System.Drawing.Color.White;
-			this.btnHienTrangVsDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnHienTrangVsDatPhong.Image")));
-			this.btnHienTrangVsDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnHienTrangVsDatPhong.Location = new System.Drawing.Point(290, 8);
-			this.btnHienTrangVsDatPhong.Name = "btnHienTrangVsDatPhong";
-			this.btnHienTrangVsDatPhong.Size = new System.Drawing.Size(182, 31);
-			this.btnHienTrangVsDatPhong.TabIndex = 64;
-			this.btnHienTrangVsDatPhong.Text = "Chọn phòng để đặt";
-			this.btnHienTrangVsDatPhong.UseVisualStyleBackColor = false;
-			this.btnHienTrangVsDatPhong.Click += new System.EventHandler(this.btnHienTrangVsDatPhong_Click);
+			this.label10.AutoSize = true;
+			this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label10.Location = new System.Drawing.Point(311, 44);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(66, 13);
+			this.label10.TabIndex = 65;
+			this.label10.Text = "Loại phòng :";
 			// 
 			// DatPhong
 			// 
@@ -627,12 +701,12 @@
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panlTieuDe.ResumeLayout(false);
 			this.panlTieuDe.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -685,5 +759,7 @@
 		private System.Windows.Forms.Label lbTitleTenPhong;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnHienTrangVsDatPhong;
+		private System.Windows.Forms.Label lbloaiPhong;
+		private System.Windows.Forms.Label label10;
 	}
 }

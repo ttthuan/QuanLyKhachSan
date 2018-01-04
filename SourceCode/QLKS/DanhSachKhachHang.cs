@@ -81,10 +81,20 @@ namespace PresentationLayer
 		{
 			if (gridKhachHang.Rows.Count != 0)
 			{
-				PhieuThuePhong ct = new PhieuThuePhong();
-				ChiTietKhachHang.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
-				ct.ShowDialog();
-				Load();
+				if (_loaiKH == 1)
+				{
+					PhieuThuePhong ct = new PhieuThuePhong();
+					PhieuThuePhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+
+					ct.ShowDialog();
+					Load();
+				}
+				else if (_loaiKH == 2)
+				{
+					DanhSachDatPhongTheoKhachHang ds = new DanhSachDatPhongTheoKhachHang();
+					DanhSachDatPhongTheoKhachHang.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+					ds.ShowDialog();
+				}
 			}
 		}
 

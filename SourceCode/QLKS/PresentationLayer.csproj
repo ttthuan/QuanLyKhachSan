@@ -78,6 +78,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachDatPhongTheoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachDatPhongTheoKhachHang.Designer.cs">
+      <DependentUpon>DanhSachDatPhongTheoKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\replay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -92,6 +92,11 @@ namespace PresentationLayer
 			phongDTO = phongBUS.LayPhongTheoMaSo(maPhong);
 			lbTang.Text = phongDTO.Tang.ToString();
 			lbTitleTenPhong.Text = phongDTO.Ten.ToString();
+			dtpkNgayBD.Value = nhan.Date;
+			dtpkNgayKT.Value = tra.Date;
+			cbmGioBatdau.SelectedItem = nhan.Hour.ToString();
+			cbmGioketthuc.SelectedItem = tra.Hour.ToString();
+			lbloaiPhong.Text = phongDTO.MaLoaiPhong.ToString();
 		}
 		private void btnHienTrangVsDatPhong_Click(object sender, EventArgs e)
 		{
