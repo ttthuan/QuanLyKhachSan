@@ -74,5 +74,10 @@ namespace BusinessLayer
 		{
 			return phieuThuePhongDAO.LayPhieuthuephongTheoma(maPhieuthue);
 		}
+
+		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
+		{
+			return phieuThuePhongDAO.ThemPhieuThuePhong(phieuThuePhongDTO);
+		}
 	}
 }

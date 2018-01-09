@@ -50,5 +50,10 @@ namespace BusinessLayer
 		{
 			return khachHangDAO.CapnhatThongTinKhachHang(khachHangDTO);
 		}
+
+		public int ThemKhachHang(KhachHangDTO khachHangDTO)
+		{
+			return khachHangDAO.ThemKhachHang(khachHangDTO);
+		}
 	}
 }

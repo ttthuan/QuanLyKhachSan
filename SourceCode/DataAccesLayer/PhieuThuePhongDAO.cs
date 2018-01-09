@@ -76,5 +76,23 @@ namespace DataAccesLayer
 			}
 			return null;
 		}
+
+		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
+		{
+			string query = "INSERT INTO Phieuthuephong(Maphong,Makhachhang,Thoigiannhanphong,Thoigiantraphong," +
+				"Maloaithuephong,Gia,TrangThai,TraTruoc) VALUES ('" + phieuThuePhongDTO .MaPhong+ "','" + phieuThuePhongDTO.MaKhachHang +
+				"','" + phieuThuePhongDTO.ThoiGianNhanPhong.ToString("dd-MM-yyyy HH:mm:ss") + "','" + phieuThuePhongDTO.ThoiGianTraPhong.ToString("dd-MM-yyyy HH:mm:ss") + 
+				"','" + phieuThuePhongDTO.MaLoaiThuePhong +
+				"','" + phieuThuePhongDTO.Gia + "','" + phieuThuePhongDTO.TrangThai + "','" + phieuThuePhongDTO.TraTruoc + "')";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
 	}
 }

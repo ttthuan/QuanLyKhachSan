@@ -22,7 +22,8 @@ namespace PresentationLayer
 		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
 		public static extern bool ReleaseCapture();
 
-		public static int maKH;
+		public static int maKH = 0;
+		public static int maP = 0;
 		public static int maPhieuthuephong = -1;
 
 		public PhieuThuePhong()
@@ -30,6 +31,7 @@ namespace PresentationLayer
 			InitializeComponent();
 			HienthiComboboxLoaiDichVu();
 			HienthiComboboxDichVuTheoLoai(int.Parse(cbmLoaiDV.SelectedValue.ToString()));
+			HienthiComboboxLoaiGia();
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
@@ -48,7 +50,6 @@ namespace PresentationLayer
 
 		private void PhieuThuePhong_Load(object sender, EventArgs e)
 		{
-
 			if (maPhieuthuephong != -1)
 			{
 				Hienthithongtinthuephong(maPhieuthuephong);
@@ -61,21 +62,18 @@ namespace PresentationLayer
 			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
 			phieuThuePhongDTO = phieuThuePhongBUS.LayPhieuthuephongTheoma(maPhieuthuephong);
 
-			KhachHangDTO khachHangDTO = new KhachHangDTO();
-			KhachHangBUS khachHangBUS = new KhachHangBUS();
-			khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(phieuThuePhongDTO.MaKhachHang);
+			maP = phieuThuePhongDTO.MaPhong;
 
 			PhongDTO phongDTO = new PhongDTO();
 			PhongBUS phongBUS = new PhongBUS();
 			phongDTO = phongBUS.LayPhongTheoMaSo(phieuThuePhongDTO.MaPhong);
 
 			HienthiComboboxLoaiGia();
-
-			lbTenKH.Text = khachHangDTO.Ten;
-			lbCMND.Text = khachHangDTO.Scmnd;
+			HienthiKhachhang(phieuThuePhongDTO.MaKhachHang);
+			
 			lbTenPhong.Text = phongDTO.Ten;
 			lbTang.Text = phongDTO.Tang.ToString();
-			dtpkGioDB.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+			dtpkGioBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
 			dtpkGioKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
 			dtpkNgayBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
 			dtpkNgayKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
@@ -83,12 +81,23 @@ namespace PresentationLayer
 			lbLoaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
 
 			HienthiGiaPhong(int.Parse(cbmLoaiDangKy.SelectedValue.ToString()),phongDTO.MaLoaiPhong);
+			HienthiThoiGian();
 		}
 
+		private void HienthiKhachhang(int maKH)
+		{
+			KhachHangDTO khachHangDTO = new KhachHangDTO();
+			KhachHangBUS khachHangBUS = new KhachHangBUS();
+			khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(maKH);
+
+			lbTenKH.Text = khachHangDTO.Ten;
+			lbCMND.Text = khachHangDTO.Scmnd;
+		}
 		private void HienthiGiaPhong(int maLoaiGia, int maLoaiPhong)
 		{
 			PhongBUS phongBUS = new PhongBUS();
-			txtGiaPhong.Text = phongBUS.LayGiaPhong(maLoaiGia, maLoaiPhong).ToString();
+			lbGiaPhong.Text = phongBUS.LayGiaPhong(maLoaiGia, maLoaiPhong).ToString();
+			HienthiTraTruoc();
 		}
 
 		private void HienthiComboboxLoaiGia()
@@ -97,6 +106,11 @@ namespace PresentationLayer
 			cbmLoaiDangKy.DataSource = loaiGiaBUS.LayDanhSachLoaiGia();
 			cbmLoaiDangKy.DisplayMember = "Tenloaigia";
 			cbmLoaiDangKy.ValueMember = "Maloaigia";
+		}
+
+		private void HienthiTraTruoc()
+		{
+			lbTraTruoc.Text = (int.Parse(lbGiaPhong.Text) / 2).ToString();
 		}
 
 		private void HienthiComboboxLoaiDichVu()
@@ -123,6 +137,77 @@ namespace PresentationLayer
 			else
 			{
 				cbmDV.Text = "";
+			}
+		}
+
+		private void HienthiThoiGian()
+		{
+			string loaiDK = cbmLoaiDangKy.Text;
+			DateTime s = dtpkNgayBD.Value.Date;
+			TimeSpan ts = dtpkGioBD.Value.TimeOfDay;
+
+			switch (loaiDK)
+			{
+				case "theo ngay":
+					dtpkGioKT.Enabled = true;
+					dtpkNgayKT.Enabled = true;
+					dtpkGioBD.Enabled = true;
+					dtpkNgayBD.Enabled = true;
+					break;
+
+				case "qua dem":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = false;
+					dtpkGioBD.Text = "10:00:00 CH";
+					dtpkGioKT.Text = "06:00:00 SA";
+					dtpkNgayKT.Value = dtpkNgayBD.Value.AddDays(1);
+					break;
+
+				case "1h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+
+					s = s.Date + ts;
+					s = s.AddHours(1);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "2h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(2);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "3h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(3);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "4h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(4);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
 			}
 		}
 
@@ -156,6 +241,59 @@ namespace PresentationLayer
 		private void picboxChiTietDV_MouseLeave(object sender, EventArgs e)
 		{
 			lbtbDVdd.Visible = false;
+		}
+
+		private void cbmLoaiDangKy_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			PhongBUS phongBUS = new PhongBUS();
+			if (maP != 0)
+			{
+				HienthiGiaPhong(int.Parse(cbmLoaiDangKy.SelectedValue.ToString()), phongBUS.LayPhongTheoMaSo(maP).MaLoaiPhong);
+				HienthiTraTruoc();
+			}
+			HienthiThoiGian();
+		}
+
+		private void dtpkGioBD_ValueChanged(object sender, EventArgs e)
+		{
+			HienthiThoiGian();
+		}
+
+		private void lbThemsudungDV_Click(object sender, EventArgs e)
+		{
+			PhieuSuDungDichVuDTO phieuSuDungDichVuDTO = new PhieuSuDungDichVuDTO();
+			phieuSuDungDichVuDTO.Maphieuthuephong = maPhieuthuephong;
+			phieuSuDungDichVuDTO.Madichvu = int.Parse(cbmDV.SelectedValue.ToString());
+			phieuSuDungDichVuDTO.Soluong = int.Parse(txtSoLuong.Text);
+
+			PhieuSuDungDichVuBUS phieuSuDungDichVuBUS = new PhieuSuDungDichVuBUS();
+			if(phieuSuDungDichVuBUS.CapnhatSuDungDichVu(phieuSuDungDichVuDTO))
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Thêm sử dụng dịch vụ thành công!";
+				MessageBoxDS.maHinh = 1;
+				m.ShowDialog();
+			}
+			else
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Thêm sử dụng dịch vụ thất bại!";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
+		}
+
+		private void picboxChiTietDV_Click(object sender, EventArgs e)
+		{
+			PhieuSuDungDichVu phieuSuDungDichVu = new PhieuSuDungDichVu();
+			PhieuSuDungDichVu.maPhieuthuephong = maPhieuthuephong;
+			phieuSuDungDichVu.MyParent = this;
+			phieuSuDungDichVu.ShowDialog();
+		}
+
+		private void bntCapNhat_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

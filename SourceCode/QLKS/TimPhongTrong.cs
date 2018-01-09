@@ -15,6 +15,14 @@ namespace PresentationLayer
 {
 	public partial class TimPhongTrong : Form
 	{
+		public const int WM_NCLBUTTONDOWN = 0xA1;
+		public const int HT_CAPTION = 0x2;
+
+		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+		public static extern bool ReleaseCapture();
+
 		public TimPhongTrong()
 		{
 			InitializeComponent();
@@ -37,11 +45,7 @@ namespace PresentationLayer
 			gridviewPhong.RowHeadersVisible = false;
 			gridviewPhong.ColumnHeadersVisible = false;
 
-			dtpkNgayBD.Value = DateTime.Now.Date.AddDays(1);
-			dtpkNgayKT.Value = DateTime.Now.Date.AddDays(2);
-			dtpkGioDB.Value = DateTime.Now.Date.AddHours(1);
-			dtpkGioKT.Value = DateTime.Now.Date.AddHours(2);
-
+			Hienthithoigian();
 			LoadPhong();
 		}
 
@@ -55,6 +59,9 @@ namespace PresentationLayer
 
 		// khai báo biến
 		public bool isSoDoKSCall = false;
+		public bool isDatPhongCall = false;
+		public DateTime _thoigianNhan;
+		public DateTime _thoiGianTra;
 
 		private void LoadPhong()
 		{
@@ -126,6 +133,28 @@ namespace PresentationLayer
 			}
 		}
 
+		private void Hienthithoigian()
+		{
+			if(isDatPhongCall)
+			{
+				dtpkNgayBD.Value = _thoigianNhan.Date;
+				dtpkNgayKT.Value = _thoiGianTra.Date;
+				dtpkGioDB.Text = _thoigianNhan.TimeOfDay.ToString();
+				dtpkGioKT.Text = _thoiGianTra.TimeOfDay.ToString();
+				dtpkGioDB.Enabled = false;
+				dtpkGioKT.Enabled = false;
+				dtpkNgayBD.Enabled = false;
+				dtpkNgayKT.Enabled = false;
+			}
+			else if(isSoDoKSCall)
+			{
+				dtpkNgayBD.Value = DateTime.Now.Date.AddDays(1);
+				dtpkNgayKT.Value = DateTime.Now.Date.AddDays(2);
+				dtpkGioDB.Value = DateTime.Now.Date.AddHours(1);
+				dtpkGioKT.Value = DateTime.Now.Date.AddHours(2);
+			}
+		}
+
 		//Kiểm tra thời gian dtpk
 		private bool KTTG()
 		{
@@ -137,7 +166,7 @@ namespace PresentationLayer
 			TimeSpan tf = dtpkGioKT.Value.TimeOfDay;
 			f = f.Date + tf;
 
-			if (s.CompareTo(f) >= 0)
+			if (DateTime.Compare(f,s) < 0)
 			{
 				MessageBoxDS m = new MessageBoxDS();
 				MessageBoxDS.thongbao = "Thời gian đến phải nhỏ hơn thời gian đi";
@@ -145,7 +174,7 @@ namespace PresentationLayer
 				m.ShowDialog();
 				return false;
 			}
-			else if (s.CompareTo(DateTime.Now) <= 0)
+			else if (DateTime.Compare(s, DateTime.Now) < 0)
 			{
 				MessageBoxDS m = new MessageBoxDS();
 				MessageBoxDS.thongbao = "Thời gian đến phải lớn hơn hoặc bằng hiện tại";
@@ -197,13 +226,32 @@ namespace PresentationLayer
 						}
 						else
 						{
-							MyParent.thongTinDatPhong(maP, s, f);
+							MyParent.HienthithongTinDatPhong(maP, s, f);
 						}
 						this.Close();
 					}
 				}
 				gridviewPhong.CurrentCell = null;
 			}
+		}
+
+		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				ReleaseCapture();
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+			}
+		}
+
+		private void rdbPhongdon_CheckedChanged(object sender, EventArgs e)
+		{
+			LoadPhong();
+		}
+
+		private void rdbPhongdoi_CheckedChanged(object sender, EventArgs e)
+		{
+			LoadPhong();
 		}
 	}
 }

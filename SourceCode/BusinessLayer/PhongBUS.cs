@@ -33,7 +33,7 @@ namespace BusinessLayer
 			return phongDAO.LayPhongTheoMaSo(maPhong);
 		}
 
-		public float LayGiaPhong(int maLoaiGia, int maLoaiPhong)
+		public float LayGiaPhong(int maLoaiGia,int maLoaiPhong)
 		{
 			return phongDAO.LayGiaPhong(maLoaiGia,maLoaiPhong);
 		}

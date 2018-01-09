@@ -17,5 +17,10 @@ namespace DataAccesLayer
 			dataTable = dataProvider.ExecuteQuery_DataTble(query);
 			return dataTable;
 		}
+
+		public float LayGiaDichVu(int maDichVu)
+		{
+			return 0;
+		}
 	}
 }

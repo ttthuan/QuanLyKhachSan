@@ -24,9 +24,8 @@ namespace PresentationLayer
 
 		public static int maKH = 0;
 		public static int maP = 0;
-		private int _maLoaiphong = 0;
-		public static DateTime Ngayden;
-		public static DateTime Ngaydi;
+		public static DateTime _thoiGianNhan;
+		public static DateTime _thoiGianTra;
 
 		public DatPhong()
 		{
@@ -42,9 +41,58 @@ namespace PresentationLayer
 			}
 		}
 
+		private void bntHuy_Click(object sender, EventArgs e)
+		{
+			maP = 0;
+			maKH = 0;
+			this.Close();
+		}
+
+		private void bntDatPhong_Click(object sender, EventArgs e)
+		{
+			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+			phieuThuePhongDTO.MaPhong = maP;
+			if(maKH != 0)
+			{
+				phieuThuePhongDTO.MaKhachHang = maKH;
+			}
+			else
+			{
+				phieuThuePhongDTO.MaKhachHang =  ThemKhachHang();
+			}
+			phieuThuePhongDTO.ThoiGianNhanPhong = _thoiGianNhan;
+			phieuThuePhongDTO.ThoiGianTraPhong = _thoiGianTra;
+			phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(cbmLoaiDangKy.SelectedValue.ToString());
+			phieuThuePhongDTO.Gia = float.Parse(lbGiaPhong.Text);
+			phieuThuePhongDTO.TrangThai = 2;
+			phieuThuePhongDTO.TraTruoc = float.Parse(lbTraTruoc.Text);
+
+			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+			if(phieuThuePhongBUS.ThemPhieuThuePhong(phieuThuePhongDTO))
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Đặt phòng thành công!";
+				MessageBoxDS.maHinh = 1;
+				m.ShowDialog();
+			}
+			else
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Đặt phòng thất bại!";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
+		}
+
+		private void DatPhong_Load(object sender, EventArgs e)
+		{
+			formLoad();
+		}
+
 		private void formLoad()
 		{
-			if(maKH != 0)
+			HienthiComboboxLoaiGia();
+			if (maKH != 0)
 			{
 				KhachHangDTO khachHangDTO = new KhachHangDTO();
 				KhachHangBUS khachHangBUS = new KhachHangBUS();
@@ -64,45 +112,212 @@ namespace PresentationLayer
 				{
 					rbNu.Checked = true;
 				}
-
-				lbTitleTenPhong.Text = "...";
+				btnHienTrangVsDatPhong.Visible = true;
 			}
 		}
 
-		private void bntHuy_Click(object sender, EventArgs e)
+		public void HienthithongTinDatPhong(int maPhong, DateTime nhan, DateTime tra)
 		{
-			this.Close();
-		}
-
-		private void bntDatPhong_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void DatPhong_Load(object sender, EventArgs e)
-		{
-			formLoad();
-		}
-
-		public void thongTinDatPhong(int maPhong, DateTime nhan, DateTime tra)
-		{
+			maP = maPhong;
 			PhongDTO phongDTO = new PhongDTO();
 			PhongBUS phongBUS = new PhongBUS();
 
 			phongDTO = phongBUS.LayPhongTheoMaSo(maPhong);
 			lbTang.Text = phongDTO.Tang.ToString();
-			lbTitleTenPhong.Text = phongDTO.Ten.ToString();
+			lbPhong.Text = phongDTO.Ten.ToString();
 			dtpkNgayBD.Value = nhan.Date;
 			dtpkNgayKT.Value = tra.Date;
-			cbmGioBatdau.SelectedItem = nhan.Hour.ToString();
-			cbmGioketthuc.SelectedItem = tra.Hour.ToString();
-			lbloaiPhong.Text = phongDTO.MaLoaiPhong.ToString();
+			dtpkGioBD.Text = nhan.TimeOfDay.ToString();
+			dtpkGioKT.Text = tra.TimeOfDay.ToString();
+			lbloaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
+			HienthiGiaPhong(int.Parse(cbmLoaiDangKy.SelectedValue.ToString()),phongDTO.MaLoaiPhong);
+			HienthiTraTruoc();
+			_thoiGianNhan = nhan;
+			_thoiGianTra = tra;
 		}
+
+		private void HienthiGiaPhong(int maLoaiGia, int maLoaiPhong)
+		{
+			PhongBUS phongBUS = new PhongBUS();
+			if(cbmLoaiDangKy.Text.Equals("theo ngay"))
+			{
+				TimeSpan Time = dtpkNgayKT.Value - dtpkNgayBD.Value;
+				int TongSoNgay = Time.Days;
+				if(TongSoNgay ==0)
+				{
+					TongSoNgay = 1;
+				}
+				lbGiaPhong.Text = (float.Parse(phongBUS.LayGiaPhong(maLoaiGia, maLoaiPhong).ToString()) * TongSoNgay).ToString();
+			}
+			else
+			{
+				lbGiaPhong.Text = phongBUS.LayGiaPhong(maLoaiGia, maLoaiPhong).ToString();
+			}
+		}
+
+		private void HienthiTraTruoc()
+		{
+			lbTraTruoc.Text = (int.Parse(lbGiaPhong.Text) / 2).ToString();
+		}
+
+		private void HienthiComboboxLoaiGia()
+		{
+			LoaiGiaBUS loaiGiaBUS = new LoaiGiaBUS();
+			cbmLoaiDangKy.DataSource = loaiGiaBUS.LayDanhSachLoaiGia();
+			cbmLoaiDangKy.DisplayMember = "Tenloaigia";
+			cbmLoaiDangKy.ValueMember = "Maloaigia";
+		}
+
+		private void HienthiThoiGian()
+		{
+			string loaiDK = cbmLoaiDangKy.Text;
+			DateTime s = dtpkNgayBD.Value.Date;
+			TimeSpan ts = dtpkGioBD.Value.TimeOfDay;
+
+			switch (loaiDK)
+			{
+				case "theo ngay":
+					dtpkGioKT.Enabled = true;
+					dtpkNgayKT.Enabled = true;
+					dtpkGioBD.Enabled = true;
+					dtpkNgayBD.Enabled = true;
+					break;
+
+				case "qua dem":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = false;
+					dtpkGioBD.Text = "10:00:00 CH";
+					dtpkGioKT.Text = "06:00:00 SA";
+					dtpkNgayKT.Value = dtpkNgayBD.Value.AddDays(1);
+					break;
+
+				case "1h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					
+					s = s.Date + ts;
+					s = s.AddHours(1);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "2h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(2);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "3h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(3);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "4h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(4);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+			}
+		}
+
+		private int ThemKhachHang()
+		{
+			int maKH = 0;
+			KhachHangDTO khachHangDTO = new KhachHangDTO();
+			try
+			{
+				khachHangDTO.Ten = txtTenKH.Text;
+				khachHangDTO.DiaChi = txtDiaChi.Text;
+				khachHangDTO.Sdt = txtSDT.Text;
+				khachHangDTO.Scmnd = txtCMND.Text;
+				khachHangDTO.QuocTich = txtQuocTich.Text;
+				if(rbNam.Checked == true)
+				{
+					khachHangDTO.GioiTinh = "Nam";
+				}
+				else
+				{
+					khachHangDTO.GioiTinh = "Nữ";
+				}
+			}catch
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Thông tin khách hàng nhập thiếu hoặc không chính xác !";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
+			
+			return maKH;
+		}
+
 		private void btnHienTrangVsDatPhong_Click(object sender, EventArgs e)
 		{
 			TimPhongTrong pt = new TimPhongTrong();
 			pt.MyParent = this;
+			pt.isDatPhongCall = true;
+			DateTime s = dtpkNgayBD.Value.Date;
+			TimeSpan ts = dtpkGioBD.Value.TimeOfDay;
+			s = s.Date + ts;
+
+			DateTime f = dtpkNgayKT.Value.Date;
+			TimeSpan tf = dtpkGioKT.Value.TimeOfDay;
+			f = f.Date + tf;
+
+			pt._thoigianNhan = s;
+			pt._thoiGianTra = f;
 			pt.ShowDialog();
+		}
+
+		private void cbmLoaiDangKy_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			PhongBUS phongBUS = new PhongBUS();
+			if (maP != 0)
+			{
+				HienthiGiaPhong(int.Parse(cbmLoaiDangKy.SelectedValue.ToString()),phongBUS.LayPhongTheoMaSo(maP).MaLoaiPhong);
+				HienthiTraTruoc();
+			}
+			HienthiThoiGian();
+		}
+
+		private void dtpkNgayBD_ValueChanged(object sender, EventArgs e)
+		{
+			HienthiTraTruoc();
+			HienthiThoiGian();
+		}
+
+		private void dtpkNgayKT_ValueChanged(object sender, EventArgs e)
+		{
+			HienthiTraTruoc();
+
+		}
+
+		private void cbmLoaiDangKy_KeyDown(object sender, KeyEventArgs e)
+		{
+			e.SuppressKeyPress = true;
+		}
+
+		private void dtpkGioBD_ValueChanged(object sender, EventArgs e)
+		{
+			HienthiThoiGian();
 		}
 	}
 }
