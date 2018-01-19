@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pbloadding = new System.Windows.Forms.PictureBox();
+            this.btnGhiFile = new System.Windows.Forms.Button();
+            this.btnRefesh = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbThoiGian = new System.Windows.Forms.Label();
@@ -58,14 +62,12 @@
             this.btnLast = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
             this.btnLeft = new System.Windows.Forms.Button();
-            this.pbloadding = new System.Windows.Forms.PictureBox();
-            this.btnGhiFile = new System.Windows.Forms.Button();
-            this.btnRefesh = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lb10 = new System.Windows.Forms.Label();
+            this.lbDichVu = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbloadding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbloadding)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,6 +84,73 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(805, 40);
             this.panel2.TabIndex = 3;
+            // 
+            // pbloadding
+            // 
+            this.pbloadding.Image = global::PresentationLayer.Properties.Resources.loading;
+            this.pbloadding.Location = new System.Drawing.Point(696, 9);
+            this.pbloadding.Name = "pbloadding";
+            this.pbloadding.Size = new System.Drawing.Size(24, 24);
+            this.pbloadding.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbloadding.TabIndex = 4;
+            this.pbloadding.TabStop = false;
+            this.pbloadding.Visible = false;
+            // 
+            // btnGhiFile
+            // 
+            this.btnGhiFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGhiFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGhiFile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnGhiFile.FlatAppearance.BorderSize = 0;
+            this.btnGhiFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnGhiFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnGhiFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGhiFile.Font = new System.Drawing.Font("Noto Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGhiFile.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGhiFile.Image = global::PresentationLayer.Properties.Resources.arrow_down_bold_circle_outline;
+            this.btnGhiFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGhiFile.Location = new System.Drawing.Point(722, 0);
+            this.btnGhiFile.Name = "btnGhiFile";
+            this.btnGhiFile.Size = new System.Drawing.Size(81, 40);
+            this.btnGhiFile.TabIndex = 3;
+            this.btnGhiFile.Text = "Xuất file";
+            this.btnGhiFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGhiFile.UseVisualStyleBackColor = true;
+            this.btnGhiFile.Click += new System.EventHandler(this.btnGhiFile_Click);
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRefesh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefesh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnRefesh.FlatAppearance.BorderSize = 0;
+            this.btnRefesh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnRefesh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+            this.btnRefesh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefesh.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.ForeColor = System.Drawing.Color.White;
+            this.btnRefesh.Image = global::PresentationLayer.Properties.Resources.replay;
+            this.btnRefesh.Location = new System.Drawing.Point(172, 6);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(23, 24);
+            this.btnRefesh.TabIndex = 2;
+            this.btnRefesh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRefesh.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::PresentationLayer.Properties.Resources.dark_cash_multiple;
+            this.button1.Location = new System.Drawing.Point(5, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 24);
+            this.button1.TabIndex = 1;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -290,7 +359,7 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -298,11 +367,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Controls.Add(this.lbTongTien, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbLuotThue, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbTongTien, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lb10, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbDichVu, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 594);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -316,9 +387,9 @@
             // 
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTongTien.Location = new System.Drawing.Point(520, 38);
+            this.lbTongTien.Location = new System.Drawing.Point(583, 38);
             this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.Size = new System.Drawing.Size(252, 37);
+            this.lbTongTien.Size = new System.Drawing.Size(189, 37);
             this.lbTongTien.TabIndex = 9;
             this.lbTongTien.Text = "100";
             this.lbTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -327,9 +398,9 @@
             // 
             this.lbLuotThue.AutoSize = true;
             this.lbLuotThue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbLuotThue.Location = new System.Drawing.Point(262, 38);
+            this.lbLuotThue.Location = new System.Drawing.Point(197, 38);
             this.lbLuotThue.Name = "lbLuotThue";
-            this.lbLuotThue.Size = new System.Drawing.Size(251, 37);
+            this.lbLuotThue.Size = new System.Drawing.Size(186, 37);
             this.lbLuotThue.TabIndex = 8;
             this.lbLuotThue.Text = "4";
             this.lbLuotThue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,7 +411,7 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Location = new System.Drawing.Point(4, 38);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(251, 37);
+            this.label17.Size = new System.Drawing.Size(186, 37);
             this.label17.TabIndex = 7;
             this.label17.Text = "Tổng kết";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -349,9 +420,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(520, 1);
+            this.label11.Location = new System.Drawing.Point(583, 1);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(252, 36);
+            this.label11.Size = new System.Drawing.Size(189, 36);
             this.label11.TabIndex = 2;
             this.label11.Text = "Tổng Tiền";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -360,9 +431,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(262, 1);
+            this.label9.Location = new System.Drawing.Point(197, 1);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(251, 36);
+            this.label9.Size = new System.Drawing.Size(186, 36);
             this.label9.TabIndex = 0;
             this.label9.Text = "Lượt thuê";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -439,72 +510,27 @@
             this.btnLeft.UseVisualStyleBackColor = false;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
-            // pbloadding
+            // lb10
             // 
-            this.pbloadding.Image = global::PresentationLayer.Properties.Resources.loading;
-            this.pbloadding.Location = new System.Drawing.Point(696, 9);
-            this.pbloadding.Name = "pbloadding";
-            this.pbloadding.Size = new System.Drawing.Size(24, 24);
-            this.pbloadding.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbloadding.TabIndex = 4;
-            this.pbloadding.TabStop = false;
-            this.pbloadding.Visible = false;
+            this.lb10.AutoSize = true;
+            this.lb10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb10.Location = new System.Drawing.Point(390, 1);
+            this.lb10.Name = "lb10";
+            this.lb10.Size = new System.Drawing.Size(186, 36);
+            this.lb10.TabIndex = 10;
+            this.lb10.Text = "Dịch vụ";
+            this.lb10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnGhiFile
+            // lbDichVu
             // 
-            this.btnGhiFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnGhiFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGhiFile.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnGhiFile.FlatAppearance.BorderSize = 0;
-            this.btnGhiFile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnGhiFile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnGhiFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGhiFile.Font = new System.Drawing.Font("Noto Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGhiFile.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGhiFile.Image = global::PresentationLayer.Properties.Resources.arrow_down_bold_circle_outline;
-            this.btnGhiFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGhiFile.Location = new System.Drawing.Point(722, 0);
-            this.btnGhiFile.Name = "btnGhiFile";
-            this.btnGhiFile.Size = new System.Drawing.Size(81, 40);
-            this.btnGhiFile.TabIndex = 3;
-            this.btnGhiFile.Text = "Xuất file";
-            this.btnGhiFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGhiFile.UseVisualStyleBackColor = true;
-            this.btnGhiFile.Click += new System.EventHandler(this.btnGhiFile_Click);
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnRefesh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefesh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnRefesh.FlatAppearance.BorderSize = 0;
-            this.btnRefesh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnRefesh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-            this.btnRefesh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefesh.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefesh.ForeColor = System.Drawing.Color.White;
-            this.btnRefesh.Image = global::PresentationLayer.Properties.Resources.replay;
-            this.btnRefesh.Location = new System.Drawing.Point(172, 6);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(23, 24);
-            this.btnRefesh.TabIndex = 2;
-            this.btnRefesh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnRefesh.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Noto Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::PresentationLayer.Properties.Resources.dark_cash_multiple;
-            this.button1.Location = new System.Drawing.Point(5, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 24);
-            this.button1.TabIndex = 1;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbDichVu.AutoSize = true;
+            this.lbDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbDichVu.Location = new System.Drawing.Point(390, 38);
+            this.lbDichVu.Name = "lbDichVu";
+            this.lbDichVu.Size = new System.Drawing.Size(186, 37);
+            this.lbDichVu.TabIndex = 11;
+            this.lbDichVu.Text = "100";
+            this.lbDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ChiTietDoanhThu
             // 
@@ -542,10 +568,10 @@
             this.Load += new System.EventHandler(this.ChiTietDoanhThu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbloadding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbloadding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,5 +613,7 @@
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorkerApp;
         private System.Windows.Forms.PictureBox pbloadding;
+        private System.Windows.Forms.Label lb10;
+        private System.Windows.Forms.Label lbDichVu;
     }
 }

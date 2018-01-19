@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BieuDoKhachDen.cs" />
     <Compile Include="CustomDisplayHoaDon.cs" />
     <Compile Include="DichVuBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
+    <Compile Include="KhachDenTrongTuan.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LoaiDichVuBUS.cs" />
     <Compile Include="LoaiGiaBUS.cs" />

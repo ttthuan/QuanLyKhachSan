@@ -43,6 +43,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -52,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BieuDoKhachDen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BieuDoKhachDen.Designer.cs">
+      <DependentUpon>BieuDoKhachDen.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChiTietDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +109,23 @@
     <Compile Include="DichVuvaLoaiDichVu.Designer.cs">
       <DependentUpon>DichVuvaLoaiDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoanhThuGanDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhThuGanDay.Designer.cs">
+      <DependentUpon>DoanhThuGanDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="MessageBoxDS.cs">
       <SubType>Form</SubType>
@@ -176,6 +195,9 @@
     <Compile Include="TraPhong.Designer.cs">
       <DependentUpon>TraPhong.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BieuDoKhachDen.resx">
+      <DependentUpon>BieuDoKhachDen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietDoanhThu.resx">
       <DependentUpon>ChiTietDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DichVuvaLoaiDichVu.resx">
       <DependentUpon>DichVuvaLoaiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThuGanDay.resx">
+      <DependentUpon>DoanhThuGanDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
