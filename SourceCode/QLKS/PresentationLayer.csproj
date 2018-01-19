@@ -170,6 +170,9 @@
     <Compile Include="TraPhong.Designer.cs">
       <DependentUpon>TraPhong.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiTietDoanhThu.resx">
+      <DependentUpon>ChiTietDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChiTietKhachHang.resx">
       <DependentUpon>ChiTietKhachHang.cs</DependentUpon>
     </EmbeddedResource>

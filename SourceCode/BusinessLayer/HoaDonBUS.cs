@@ -18,21 +18,23 @@ namespace BusinessLayer
             List<CustomDisplayHoaDon> lsDisplayHoaDon = new List<CustomDisplayHoaDon>();
             PhongBUS phongBUS = new PhongBUS();
             KhachHangBUS khachHangBUS = new KhachHangBUS();
+            NhanVienBUS nhanVienBUS = new NhanVienBUS();
 
             if (hoaDons != null)
             {
                 PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
                 PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongBUS.LayDanhSachPhieuThuePhongTrangThai3();
-                int lengthOfPhieuThuePhong = phieuThuePhongs.Length;
+                int lengthOfPhieuThuePhong = 0;
 
                 if (phieuThuePhongs != null)
                 {
+                    lengthOfPhieuThuePhong = phieuThuePhongs.Length;
                     int n = hoaDons.Length;
                     int stt = 0;
 
                     for (int i = 0; i < n; i++)
                     {
-                        for(int j = 0; j < n; j++)
+                        for(int j = 0; j < lengthOfPhieuThuePhong; j++)
                         {
                             if(hoaDons[i].Maphieuthuephong == phieuThuePhongs[j].Ma)
                             {
@@ -46,7 +48,8 @@ namespace BusinessLayer
                                     customDisplayHoaDon.THOIGIANVAO = phieuThuePhongs[j].ThoiGianNhanPhong;
                                     customDisplayHoaDon.THOIGIANTRA = phieuThuePhongs[j].ThoiGianTraPhong;
                                     customDisplayHoaDon.TONG = hoaDons[i].Tongtien;
-                                    //customDisplayHoaDon.NVTAO = 
+                                    customDisplayHoaDon.NVTAO = nhanVienBUS.LayNhanVienCoMaSo(hoaDons[i].Manhanvienlap).Ten;
+                                    //customDisplayHoaDon.DICHVU = 
                                     lsDisplayHoaDon.Add(customDisplayHoaDon);
                                 }
                             }
@@ -57,6 +60,5 @@ namespace BusinessLayer
             
             return lsDisplayHoaDon;
         }
-        
     }
 }

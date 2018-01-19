@@ -16,9 +16,5 @@ namespace BusinessLayer
         public DateTime THOIGIANTRA { get; set; }
         public float TONG { get; set; }
         public string NVTAO { get; set; }
-        public int TIENPHONG { get; set; }
-        public int TIENPHUTHU { get; set; }
-        public int GIAMTRU { get; set; }
-        public int DICHVU { get; set; }
     }
 }

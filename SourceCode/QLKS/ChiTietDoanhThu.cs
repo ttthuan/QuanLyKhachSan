@@ -20,7 +20,7 @@ namespace PresentationLayer
         int index = 0;
         int max = 10;
         int page = 0;
-        DateTime bd = new DateTime(2017, 1, 1, 0, 0, 0);
+        DateTime bd = new DateTime(2018, 1, 1, 0, 0, 0);
         DateTime kt = DateTime.Now;
         SaveFileDialog saveDialog;
         Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -61,7 +61,7 @@ namespace PresentationLayer
             dtgvHoaDon.Columns[4].HeaderText = "Thời gian vào";
             dtgvHoaDon.Columns[5].HeaderText = "Thời gian ra";
             dtgvHoaDon.Columns[6].HeaderText = "Tổng tiền";
-            dtgvHoaDon.Columns[7].HeaderText = "Nhân viên tạo";
+            dtgvHoaDon.Columns[7].HeaderText = "Nhân viên lập";
 
             dtgvHoaDon.Columns[0].Width = 40;
             dtgvHoaDon.Columns[1].Width = 70;
@@ -209,19 +209,10 @@ namespace PresentationLayer
             if(ls != null)
             {
                 numberLuotThue = ls.Count();
-                sumPhuThu = ls.Sum(h => h.TIENPHUTHU);
-                sumTienPhong = ls.Sum(h => h.TIENPHONG);
-                sumTienDichVu = ls.Sum(h => h.DICHVU);
-                sumGiamTru = ls.Sum(h => h.GIAMTRU);
-                sumDoanhThu = (sumTienPhong + sumPhuThu + sumTienDichVu - sumGiamTru);
+                sumDoanhThu = int.Parse(ls.Sum(h=>h.TONG).ToString());
 
                 lbLuotThue.Text = numberLuotThue.ToString();
-                lbPhuThu.Text = sumPhuThu.ToString();
-                lbDichVu.Text = sumTienDichVu.ToString();
-                lbTienPhong.Text = sumTienPhong.ToString();
-                lbGiamTru.Text = sumGiamTru.ToString();
-
-                lbDoanhThu.Text = sumDoanhThu.ToString();
+                lbTongTien.Text = sumDoanhThu.ToString();
             }
         }
 
@@ -229,10 +220,6 @@ namespace PresentationLayer
             public string fileName;
             public List<BusinessLayer.CustomDisplayHoaDon> ls;
             public int TongLuotThue;
-            public int TongTienPhong;
-            public int TongTienDichVu;
-            public int TongTienPhuThu;
-            public int TongGiamTru;
             public int TongDoahThu;
         }
         DataParameter parameter;
@@ -252,10 +239,6 @@ namespace PresentationLayer
                     parameter.fileName = saveDialog.FileName;
                     parameter.ls = ls;
                     parameter.TongLuotThue = numberLuotThue;
-                    parameter.TongTienDichVu = sumTienDichVu;
-                    parameter.TongGiamTru = sumGiamTru;
-                    parameter.TongTienPhong = sumTienPhong;
-                    parameter.TongTienPhuThu = sumPhuThu;
                     parameter.TongDoahThu = sumDoanhThu;
                     pbloadding.Visible = true;
                     backgroundWorkerApp.RunWorkerAsync(parameter);
@@ -303,22 +286,14 @@ namespace PresentationLayer
                 worksheet.Cells[cellRowIndex, 5] = "Tổng doanh thu theo danh sách hóa đơn ở bảng trên";
                 // in table tổng kết
                 cellRowIndex += 3;
-                //worksheet.Cells[cellRowIndex, 1] = item.STT.ToString();
+                // worksheet.Cells[cellRowIndex, 1] = item.STT.ToString();
                 worksheet.Cells[cellRowIndex, 2] = "Lượt thuê";
-                worksheet.Cells[cellRowIndex, 3] = "Tiền phòng (1)";
-                worksheet.Cells[cellRowIndex, 4] = "Tiền dịch vụ (2)";
-                worksheet.Cells[cellRowIndex, 5] = "Phụ thu (3)";
-                worksheet.Cells[cellRowIndex, 6] = "Giảm trừ (4)";
-                worksheet.Cells[cellRowIndex, 7] = "Doanh thu (1+2+3-4)";
+                worksheet.Cells[cellRowIndex, 3] = "Tổng tiền";
 
                 cellRowIndex++;
                 worksheet.Cells[cellRowIndex, 1] = "Tổng kết";
                 worksheet.Cells[cellRowIndex, 2] = ((DataParameter)e.Argument).TongLuotThue.ToString();
-                worksheet.Cells[cellRowIndex, 3] = ((DataParameter)e.Argument).TongTienPhong.ToString();
-                worksheet.Cells[cellRowIndex, 4] = ((DataParameter)e.Argument).TongTienDichVu.ToString();
-                worksheet.Cells[cellRowIndex, 5] = ((DataParameter)e.Argument).TongTienPhuThu.ToString();
-                worksheet.Cells[cellRowIndex, 6] = ((DataParameter)e.Argument).TongGiamTru.ToString();
-                worksheet.Cells[cellRowIndex, 7] = ((DataParameter)e.Argument).TongDoahThu.ToString();
+                worksheet.Cells[cellRowIndex, 3] = ((DataParameter)e.Argument).TongDoahThu.ToString();
 
                 workbook.SaveAs(fileName);
 
