@@ -104,6 +104,34 @@ namespace BusinessLayer
             return bieuDoKhachDen;
         }
 
+        public void DuyetVaCapNhatTrangThai()
+        {
+            PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongDAO.LayDanhSachPhieuThuePhong();
+            DateTime date = DateTime.Now;
+            List<PhieuThuePhongDTO> list = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.ThoiGianTraPhong < date).ToList();
+            if(list.Count > 0)
+            {
+                foreach(var item in list)
+                {
+                    HuyDatPhong(item.Ma);
+                }
+            }
+        }
+
+        public void CapNhatTrangThaiPhieuThuePhongCoMaPhong(int maPhong)
+        {
+            PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongDAO.LayDanhSachPhieuThuePhong();
+            if(phieuThuePhongs != null)
+            {
+                DateTime date = DateTime.Now;
+                PhieuThuePhongDTO phieuThuePhong = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.MaPhong == maPhong && tp.ThoiGianNhanPhong < date).FirstOrDefault(null);
+                if (phieuThuePhong != null)
+                {
+                    CapNhatTinhTrang(phieuThuePhong.Ma, 2);
+                }
+            }
+        }
+
 		public DataTable DanhSachDatPhong(int maKH)
 		{
 			return phieuThuePhongDAO.DanhSachDatPhong(maKH);
