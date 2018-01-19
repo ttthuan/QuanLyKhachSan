@@ -26,7 +26,7 @@ namespace DataAccesLayer
 			if(them)
 			{
 				query = "INSERT INTO Phieusudungdichvu(Maphieuthuephong,Madichvu,Soluong)VALUES('" + phieuSuDungDichVuDTO.Maphieuthuephong + "','" + phieuSuDungDichVuDTO.Madichvu +
-				"'," + phieuSuDungDichVuDTO.Soluong + " + Phieusudungdichvu.Soluong)";
+				"'," + phieuSuDungDichVuDTO.Soluong + ")";
 			}
 			else
 			{
@@ -46,10 +46,10 @@ namespace DataAccesLayer
 
 		public bool KiemtraSuDungDichVu(PhieuSuDungDichVuDTO phieuSuDungDichVuDTO)
 		{
-			string query = "Select * From Phieusudungdichvu where Maphieusudungdichvu = "+phieuSuDungDichVuDTO.Maphieuthuephong+" and Madichvu = "+phieuSuDungDichVuDTO.Madichvu+"";
+			string query = "Select * From Phieusudungdichvu where Maphieuthuephong = " + phieuSuDungDichVuDTO.Maphieuthuephong+" and Madichvu = "+phieuSuDungDichVuDTO.Madichvu+"";
 			DataTable tb = new DataTable();
 			tb = dataProvider.ExecuteQuery_DataTble(query);
-			if (tb != null)
+			if (tb == null || tb.Rows.Count == 0)
 			{
 				return true;
 			}
@@ -66,6 +66,22 @@ namespace DataAccesLayer
 			}catch
 			{
 				return false;
+			}
+		}
+
+		public string TinhTongTienSuDungDichVu(int maPhieuSuDungDichVu)
+		{
+			string query = "Select Sum(Phieu.Soluong * dv.Gia) From Phieusudungdichvu Phieu, Dichvu dv where Phieu.Madichvu = dv.Ma and Phieu.Maphieuthuephong = " + maPhieuSuDungDichVu + "";
+			string TongTien = "";
+			try
+			{
+				DataTable dataTable = dataProvider.ExecuteQuery_DataTble(query);
+				TongTien = dataTable.Rows[0][0].ToString();
+				return TongTien;
+			}
+			catch
+			{
+				return TongTien;
 			}
 		}
 	}

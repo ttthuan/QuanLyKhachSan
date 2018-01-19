@@ -15,6 +15,7 @@ namespace PresentationLayer
 	public partial class PhieuSuDungDichVu : Form
 	{
 		public PhieuThuePhong MyParent { get; set; }
+		public TraPhong MyParent1 { get; set; }
 		public static int maPhieuthuephong = 0;
 		public static int slDVThem;
 		public PhieuSuDungDichVu()
@@ -166,8 +167,8 @@ namespace PresentationLayer
 			{
 				SoLuongDVthem sl = new SoLuongDVthem();
 				sl.ShowDialog();
-				if (slDVThem > Convert.ToInt32(gridDVdangSD.CurrentRow.Cells[6].Value)
-					|| slDVThem == Convert.ToInt32(gridDVdangSD.CurrentRow.Cells[6].Value))
+				if (slDVThem > Convert.ToInt32(gridDVdangSD.CurrentRow.Cells[7].Value)
+					|| slDVThem == Convert.ToInt32(gridDVdangSD.CurrentRow.Cells[7].Value))
 				{
 					MessageBoxDS m = new MessageBoxDS();
 					MessageBoxDS.thongbao = "Số lượng trừ bớt phải nhỏ hơn hiện dùng";
@@ -195,6 +196,24 @@ namespace PresentationLayer
 				phieuSuDungDichVuDTO.Madichvu = Convert.ToInt32(gridDVdangSD.CurrentRow.Cells["Madichvu"].Value);
 
 				XoaSuDungDichVu(phieuSuDungDichVuDTO);
+
+				HienthiSuDungDichVu();
+			}
+		}
+
+		private void gridDSDV_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (gridDSDV.CurrentCell.ColumnIndex == 0)
+			{
+				SoLuongDVthem sl = new SoLuongDVthem();
+				sl.ShowDialog();
+
+				PhieuSuDungDichVuDTO phieuSuDungDichVuDTO = new PhieuSuDungDichVuDTO();
+				phieuSuDungDichVuDTO.Maphieuthuephong = maPhieuthuephong;
+				phieuSuDungDichVuDTO.Madichvu = Convert.ToInt32(gridDSDV.CurrentRow.Cells["Ma"].Value);
+				phieuSuDungDichVuDTO.Soluong = slDVThem;
+
+				CapnhatSuDungDichVu(phieuSuDungDichVuDTO);
 
 				HienthiSuDungDichVu();
 			}

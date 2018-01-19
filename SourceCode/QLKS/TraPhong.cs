@@ -7,14 +7,182 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataTranferObject;
+using BusinessLayer;
 
 namespace PresentationLayer
 {
 	public partial class TraPhong : Form
 	{
+		public const int WM_NCLBUTTONDOWN = 0xA1;
+		public const int HT_CAPTION = 0x2;
+
+		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+		public static extern bool ReleaseCapture();
+
+		public static int maKH;
+		public static int maP;
+		public static int maPhieuthuephong;
+
 		public TraPhong()
 		{
 			InitializeComponent();
+		}
+
+		private void TraPhong_Load(object sender, EventArgs e)
+		{
+			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+			phieuThuePhongDTO = phieuThuePhongBUS.LayPhieuthuephongTheomaKhachHang(maKH);
+			maPhieuthuephong = phieuThuePhongDTO.Ma;
+
+			maP = phieuThuePhongDTO.MaPhong;
+
+			PhongDTO phongDTO = new PhongDTO();
+			PhongBUS phongBUS = new PhongBUS();
+			phongDTO = phongBUS.LayPhongTheoMaSo(phieuThuePhongDTO.MaPhong);
+
+			HienthiKhachhang(phieuThuePhongDTO.MaKhachHang);
+
+			lbTenPhong.Text = phongDTO.Ten;
+			dtpkGioBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+			dtpkGioKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+			dtpkNgayBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+			dtpkNgayKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+			lbLoaiDangKy.Text = phongBUS.LayLoaiDangKy(phieuThuePhongDTO.MaLoaiThuePhong);
+			lbLoaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
+
+			HienthiGiaPhong(phieuThuePhongDTO.MaLoaiThuePhong, phongDTO.MaLoaiPhong);
+			HienthiThoiGian();
+			HienthiTongTienDichVu();
+		}
+
+		private void HienthiThoiGian()
+		{
+			string loaiDK = lbLoaiDangKy.Text;
+			DateTime s = dtpkNgayBD.Value.Date;
+			TimeSpan ts = dtpkGioBD.Value.TimeOfDay;
+
+			switch (loaiDK)
+			{
+				case "theo ngay":
+					dtpkGioKT.Enabled = true;
+					dtpkNgayKT.Enabled = true;
+					dtpkGioBD.Enabled = true;
+					dtpkNgayBD.Enabled = true;
+					break;
+
+				case "qua dem":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = false;
+					dtpkGioBD.Text = "10:00:00 CH";
+					dtpkGioKT.Text = "06:00:00 SA";
+					dtpkNgayKT.Value = dtpkNgayBD.Value.AddDays(1);
+					break;
+
+				case "1h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+
+					s = s.Date + ts;
+					s = s.AddHours(1);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "2h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(2);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "3h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(3);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+
+				case "4h":
+					dtpkGioKT.Enabled = false;
+					dtpkNgayKT.Enabled = false;
+					dtpkGioBD.Enabled = true;
+					s = s.Date + ts;
+					s = s.AddHours(4);
+
+					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkNgayKT.Value = s.Date;
+					break;
+			}
+		}
+
+		private void HienthiKhachhang(int maKH)
+		{
+			KhachHangDTO khachHangDTO = new KhachHangDTO();
+			KhachHangBUS khachHangBUS = new KhachHangBUS();
+			khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(maKH);
+
+			lbTenKH.Text = khachHangDTO.Ten;
+			lbCMND.Text = khachHangDTO.Scmnd;
+		}
+
+		private void HienthiGiaPhong(int maLoaiGia, int maLoaiPhong)
+		{
+			PhongBUS phongBUS = new PhongBUS();
+			lbGiaPhong.Text = phongBUS.LayGiaPhong(maLoaiGia, maLoaiPhong).ToString();
+			HienthiTraTruoc();
+		}
+
+		private void HienthiTraTruoc()
+		{
+			lbTraTruoc.Text = (int.Parse(lbGiaPhong.Text) / 2).ToString();
+		}
+
+		private void HienthiTongTienDichVu()
+		{
+			PhieuSuDungDichVuBUS phieuSuDungDichVuBUS = new PhieuSuDungDichVuBUS();
+			lbTongTienDichVu.Text = phieuSuDungDichVuBUS.TinhTongTienSuDungDichVu(maPhieuthuephong);
+		}
+
+		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				ReleaseCapture();
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+			}
+		}
+
+		private void bntHuy_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void bntTraPhong_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void bntXemdsDv_Click(object sender, EventArgs e)
+		{
+			PhieuSuDungDichVu phieuSuDungDichVu = new PhieuSuDungDichVu();
+			PhieuSuDungDichVu.maPhieuthuephong = maPhieuthuephong;
+			phieuSuDungDichVu.MyParent1 = this;
+			phieuSuDungDichVu.ShowDialog();
 		}
 	}
 }

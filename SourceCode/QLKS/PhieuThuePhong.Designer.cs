@@ -51,6 +51,8 @@
 			this.dtpkNgayKT = new System.Windows.Forms.DateTimePicker();
 			this.label11 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.lbGiaPhong = new System.Windows.Forms.Label();
+			this.lbTraTruoc = new System.Windows.Forms.Label();
 			this.lbLoaiPhong = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.dtpkGioBD = new System.Windows.Forms.DateTimePicker();
@@ -59,35 +61,33 @@
 			this.lbTenPhong = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.lbThongTinDangKy = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lbCMND = new System.Windows.Forms.Label();
 			this.lbTenKH = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.bntTraPhong = new System.Windows.Forms.Button();
+			this.bntHuy = new System.Windows.Forms.Button();
+			this.panlTieuDe = new System.Windows.Forms.Panel();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.lbThemsudungDV = new System.Windows.Forms.PictureBox();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.picboxChiTietDV = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.bntCapNhat = new System.Windows.Forms.Button();
-			this.bntHuy = new System.Windows.Forms.Button();
-			this.panlTieuDe = new System.Windows.Forms.Panel();
-			this.lbTraTruoc = new System.Windows.Forms.Label();
-			this.lbGiaPhong = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel3.SuspendLayout();
+			this.panlTieuDe.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.lbThemsudungDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-			this.panlTieuDe.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label20
@@ -361,6 +361,26 @@
 			this.panel2.Size = new System.Drawing.Size(509, 195);
 			this.panel2.TabIndex = 38;
 			// 
+			// lbGiaPhong
+			// 
+			this.lbGiaPhong.AutoSize = true;
+			this.lbGiaPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbGiaPhong.Location = new System.Drawing.Point(392, 102);
+			this.lbGiaPhong.Name = "lbGiaPhong";
+			this.lbGiaPhong.Size = new System.Drawing.Size(13, 13);
+			this.lbGiaPhong.TabIndex = 73;
+			this.lbGiaPhong.Text = "0";
+			// 
+			// lbTraTruoc
+			// 
+			this.lbTraTruoc.AutoSize = true;
+			this.lbTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbTraTruoc.Location = new System.Drawing.Point(392, 66);
+			this.lbTraTruoc.Name = "lbTraTruoc";
+			this.lbTraTruoc.Size = new System.Drawing.Size(13, 13);
+			this.lbTraTruoc.TabIndex = 72;
+			this.lbTraTruoc.Text = "0";
+			// 
 			// lbLoaiPhong
 			// 
 			this.lbLoaiPhong.AutoSize = true;
@@ -428,11 +448,11 @@
 			// 
 			this.label13.AutoSize = true;
 			this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label13.Location = new System.Drawing.Point(77, 37);
+			this.label13.Location = new System.Drawing.Point(100, 37);
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(75, 13);
+			this.label13.Size = new System.Drawing.Size(44, 13);
 			this.label13.TabIndex = 42;
-			this.label13.Text = "Mã số phòng :";
+			this.label13.Text = "Phòng :";
 			// 
 			// lbThongTinDangKy
 			// 
@@ -444,16 +464,6 @@
 			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
 			this.lbThongTinDangKy.TabIndex = 41;
 			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
-			this.pictureBox1.Location = new System.Drawing.Point(3, 6);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 33;
-			this.pictureBox1.TabStop = false;
 			// 
 			// label3
 			// 
@@ -521,16 +531,6 @@
 			this.label4.TabIndex = 31;
 			this.label4.Text = "Tên :";
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
-			this.pictureBox2.Location = new System.Drawing.Point(3, 4);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox2.TabIndex = 25;
-			this.pictureBox2.TabStop = false;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -562,6 +562,70 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(509, 94);
 			this.panel3.TabIndex = 41;
+			// 
+			// bntTraPhong
+			// 
+			this.bntTraPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.bntTraPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.bntTraPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bntTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.bntTraPhong.ForeColor = System.Drawing.Color.Snow;
+			this.bntTraPhong.Location = new System.Drawing.Point(134, 441);
+			this.bntTraPhong.Name = "bntTraPhong";
+			this.bntTraPhong.Size = new System.Drawing.Size(89, 28);
+			this.bntTraPhong.TabIndex = 39;
+			this.bntTraPhong.Text = "Hủy đặt";
+			this.bntTraPhong.UseVisualStyleBackColor = false;
+			this.bntTraPhong.Click += new System.EventHandler(this.bntCapNhat_Click);
+			// 
+			// bntHuy
+			// 
+			this.bntHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.bntHuy.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.bntHuy.ForeColor = System.Drawing.Color.Snow;
+			this.bntHuy.Location = new System.Drawing.Point(248, 441);
+			this.bntHuy.Name = "bntHuy";
+			this.bntHuy.Size = new System.Drawing.Size(94, 28);
+			this.bntHuy.TabIndex = 40;
+			this.bntHuy.Text = "Đóng";
+			this.bntHuy.UseVisualStyleBackColor = false;
+			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
+			// 
+			// panlTieuDe
+			// 
+			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.panlTieuDe.Controls.Add(this.label1);
+			this.panlTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.panlTieuDe.Location = new System.Drawing.Point(0, 0);
+			this.panlTieuDe.Margin = new System.Windows.Forms.Padding(0);
+			this.panlTieuDe.Name = "panlTieuDe";
+			this.panlTieuDe.Size = new System.Drawing.Size(509, 40);
+			this.panlTieuDe.TabIndex = 36;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
+			this.pictureBox1.Location = new System.Drawing.Point(3, 6);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 33;
+			this.pictureBox1.TabStop = false;
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
+			this.pictureBox2.Location = new System.Drawing.Point(3, 4);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 25;
+			this.pictureBox2.TabStop = false;
 			// 
 			// lbThemsudungDV
 			// 
@@ -611,79 +675,16 @@
 			this.pictureBox3.TabIndex = 67;
 			this.pictureBox3.TabStop = false;
 			// 
-			// bntCapNhat
-			// 
-			this.bntCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntCapNhat.ForeColor = System.Drawing.Color.Snow;
-			this.bntCapNhat.Location = new System.Drawing.Point(155, 438);
-			this.bntCapNhat.Name = "bntCapNhat";
-			this.bntCapNhat.Size = new System.Drawing.Size(89, 28);
-			this.bntCapNhat.TabIndex = 39;
-			this.bntCapNhat.Text = "Cập nhật";
-			this.bntCapNhat.UseVisualStyleBackColor = false;
-			this.bntCapNhat.Click += new System.EventHandler(this.bntCapNhat_Click);
-			// 
-			// bntHuy
-			// 
-			this.bntHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntHuy.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntHuy.ForeColor = System.Drawing.Color.Snow;
-			this.bntHuy.Location = new System.Drawing.Point(264, 438);
-			this.bntHuy.Name = "bntHuy";
-			this.bntHuy.Size = new System.Drawing.Size(94, 28);
-			this.bntHuy.TabIndex = 40;
-			this.bntHuy.Text = "Đóng";
-			this.bntHuy.UseVisualStyleBackColor = false;
-			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
-			// 
-			// panlTieuDe
-			// 
-			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.panlTieuDe.Controls.Add(this.label1);
-			this.panlTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.panlTieuDe.Location = new System.Drawing.Point(0, 0);
-			this.panlTieuDe.Margin = new System.Windows.Forms.Padding(0);
-			this.panlTieuDe.Name = "panlTieuDe";
-			this.panlTieuDe.Size = new System.Drawing.Size(509, 40);
-			this.panlTieuDe.TabIndex = 36;
-			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
-			// 
-			// lbTraTruoc
-			// 
-			this.lbTraTruoc.AutoSize = true;
-			this.lbTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbTraTruoc.Location = new System.Drawing.Point(392, 66);
-			this.lbTraTruoc.Name = "lbTraTruoc";
-			this.lbTraTruoc.Size = new System.Drawing.Size(13, 13);
-			this.lbTraTruoc.TabIndex = 72;
-			this.lbTraTruoc.Text = "0";
-			// 
-			// lbGiaPhong
-			// 
-			this.lbGiaPhong.AutoSize = true;
-			this.lbGiaPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbGiaPhong.Location = new System.Drawing.Point(392, 102);
-			this.lbGiaPhong.Name = "lbGiaPhong";
-			this.lbGiaPhong.Size = new System.Drawing.Size(13, 13);
-			this.lbGiaPhong.TabIndex = 73;
-			this.lbGiaPhong.Text = "0";
-			// 
 			// PhieuThuePhong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(509, 473);
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
+			this.ClientSize = new System.Drawing.Size(509, 491);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.bntCapNhat);
+			this.Controls.Add(this.bntTraPhong);
 			this.Controls.Add(this.bntHuy);
 			this.Controls.Add(this.panlTieuDe);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -693,18 +694,18 @@
 			this.Load += new System.EventHandler(this.PhieuThuePhong_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
+			this.panlTieuDe.ResumeLayout(false);
+			this.panlTieuDe.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.lbThemsudungDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-			this.panlTieuDe.ResumeLayout(false);
-			this.panlTieuDe.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -749,7 +750,7 @@
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Button bntCapNhat;
+		private System.Windows.Forms.Button bntTraPhong;
 		private System.Windows.Forms.Button bntHuy;
 		private System.Windows.Forms.Panel panlTieuDe;
 		private System.Windows.Forms.Label lbThongTinDangKy;
