@@ -47,7 +47,7 @@ namespace DataAccesLayer
 		{
 			KhachHangDTO[] khachHangs = null;
 			string query = "Select * From KhachHang where Ma in " +
-				"( Select Makhachhang From Phieuthuephong where Thoigiantraphong >= GETDATE() and Thoigiannhanphong < GETDATE())";
+				"( Select Makhachhang From Phieuthuephong where TrangThai = 2)";
 			DataTable tb = new DataTable();
 			tb = dataProvider.ExecuteQuery_DataTble(query);
 			khachHangs = new KhachHangDTO[tb.Rows.Count];
@@ -66,7 +66,7 @@ namespace DataAccesLayer
 		{
 			KhachHangDTO[] khachHangs = null;
 			string query = "Select * From KhachHang where Ma in " +
-				"( Select Makhachhang From Phieuthuephong where Thoigiannhanphong >= GETDATE())";
+				"( Select Makhachhang From Phieuthuephong where TrangThai = 1)";
 			DataTable tb = new DataTable();
 			tb = dataProvider.ExecuteQuery_DataTble(query);
 			khachHangs = new KhachHangDTO[tb.Rows.Count];

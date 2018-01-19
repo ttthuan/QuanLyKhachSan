@@ -33,7 +33,6 @@
 			this.bntDatPhong = new System.Windows.Forms.Button();
 			this.bntChiTietThuePhong = new System.Windows.Forms.Button();
 			this.bntChiTiet = new System.Windows.Forms.Button();
-			this.bntUpdateDS = new System.Windows.Forms.Button();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.gridKhachHang = new System.Windows.Forms.DataGridView();
 			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
+			this.bntTraPhong = new System.Windows.Forms.Button();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
 			this.ctMenuGv.SuspendLayout();
@@ -105,26 +105,11 @@
 			this.bntChiTiet.UseVisualStyleBackColor = false;
 			this.bntChiTiet.Click += new System.EventHandler(this.bntChiTiet_Click);
 			// 
-			// bntUpdateDS
-			// 
-			this.bntUpdateDS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.bntUpdateDS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntUpdateDS.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntUpdateDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntUpdateDS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntUpdateDS.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntUpdateDS.Location = new System.Drawing.Point(23, 438);
-			this.bntUpdateDS.Name = "bntUpdateDS";
-			this.bntUpdateDS.Size = new System.Drawing.Size(106, 42);
-			this.bntUpdateDS.TabIndex = 23;
-			this.bntUpdateDS.Text = "Cập nhật";
-			this.bntUpdateDS.UseVisualStyleBackColor = false;
-			// 
 			// panel3
 			// 
-			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel3.Controls.Add(this.gridKhachHang);
 			this.panel3.Location = new System.Drawing.Point(151, 78);
 			this.panel3.Name = "panel3";
@@ -136,13 +121,13 @@
 			this.gridKhachHang.AllowUserToAddRows = false;
 			this.gridKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Ma,
-			this.Ten,
-			this.Diachi,
-			this.Sdt,
-			this.Gioitinh,
-			this.SoCMND,
-			this.Quoctich});
+            this.Ma,
+            this.Ten,
+            this.Diachi,
+            this.Sdt,
+            this.Gioitinh,
+            this.SoCMND,
+            this.Quoctich});
 			this.gridKhachHang.ContextMenuStrip = this.ctMenuGv;
 			this.gridKhachHang.Cursor = System.Windows.Forms.Cursors.IBeam;
 			this.gridKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,8 +191,8 @@
 			// ctMenuGv
 			// 
 			this.ctMenuGv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.chitietKhachHang,
-			this.chitietPhongdangthue});
+            this.chitietKhachHang,
+            this.chitietPhongdangthue});
 			this.ctMenuGv.Name = "ctMenuGv";
 			this.ctMenuGv.Size = new System.Drawing.Size(179, 48);
 			// 
@@ -225,8 +210,8 @@
 			// 
 			// txtTimKH
 			// 
-			this.txtTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)));
+			this.txtTimKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.txtTimKH.Location = new System.Drawing.Point(103, 13);
 			this.txtTimKH.Name = "txtTimKH";
 			this.txtTimKH.Size = new System.Drawing.Size(198, 20);
@@ -245,9 +230,9 @@
 			// 
 			// label3
 			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
@@ -272,8 +257,8 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.AutoSize = true;
 			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.panel1.Controls.Add(this.txtTimKH);
@@ -298,15 +283,31 @@
 			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.button1.UseVisualStyleBackColor = true;
 			// 
+			// bntTraPhong
+			// 
+			this.bntTraPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
+			this.bntTraPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.bntTraPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.bntTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.bntTraPhong.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.bntTraPhong.Location = new System.Drawing.Point(23, 257);
+			this.bntTraPhong.Name = "bntTraPhong";
+			this.bntTraPhong.Size = new System.Drawing.Size(106, 42);
+			this.bntTraPhong.TabIndex = 31;
+			this.bntTraPhong.Text = "Trả phòng";
+			this.bntTraPhong.UseVisualStyleBackColor = false;
+			this.bntTraPhong.Visible = false;
+			this.bntTraPhong.Click += new System.EventHandler(this.bntTraPhong_Click);
+			// 
 			// DanhSachKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(835, 486);
+			this.Controls.Add(this.bntTraPhong);
 			this.Controls.Add(this.bntDatPhong);
 			this.Controls.Add(this.bntChiTietThuePhong);
 			this.Controls.Add(this.bntChiTiet);
-			this.Controls.Add(this.bntUpdateDS);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
@@ -329,7 +330,6 @@
 		private System.Windows.Forms.Button bntDatPhong;
 		private System.Windows.Forms.Button bntChiTietThuePhong;
 		private System.Windows.Forms.Button bntChiTiet;
-		private System.Windows.Forms.Button bntUpdateDS;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.DataGridView gridKhachHang;
 		private System.Windows.Forms.ContextMenuStrip ctMenuGv;
@@ -348,5 +348,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Gioitinh;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SoCMND;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Quoctich;
+		private System.Windows.Forms.Button bntTraPhong;
 	}
 }

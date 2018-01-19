@@ -105,5 +105,18 @@ namespace DataAccesLayer
 			}
 			return loaiPhong;
 		}
+		
+		public string LayLoaiDangKy(int maLoaiDangKy)
+		{
+			string query = "Select Tenloaigia from LoaiGia where Maloaigia =  " + maLoaiDangKy + "";
+			string loaiDangKy = "";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count != 0)
+			{
+				loaiDangKy = tb.Rows[0]["Tenloaigia"].ToString();
+			}
+			return loaiDangKy;
+		}
 	}
 }

@@ -25,6 +25,7 @@ namespace PresentationLayer
 		public static int maKH = 0;
 		public static int maP = 0;
 		public static int maPhieuthuephong = -1;
+		public static bool dangO = false;
 
 		public PhieuThuePhong()
 		{
@@ -32,6 +33,10 @@ namespace PresentationLayer
 			HienthiComboboxLoaiDichVu();
 			HienthiComboboxDichVuTheoLoai(int.Parse(cbmLoaiDV.SelectedValue.ToString()));
 			HienthiComboboxLoaiGia();
+			if(dangO)
+			{
+				bntTraPhong.Text = "Trả phòng";
+			}
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
@@ -293,7 +298,28 @@ namespace PresentationLayer
 
 		private void bntCapNhat_Click(object sender, EventArgs e)
 		{
+			if(dangO)
+			{
 
+			}
+			else
+			{
+				PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+				if(phieuThuePhongBUS.HuyDatPhong(maPhieuthuephong))
+				{
+					MessageBoxDS m = new MessageBoxDS();
+					MessageBoxDS.thongbao = "Hủy đặt phòng thành công!";
+					MessageBoxDS.maHinh = 1;
+					m.ShowDialog();
+				}
+				else
+				{
+					MessageBoxDS m = new MessageBoxDS();
+					MessageBoxDS.thongbao = "Hủy đặt phòng thất bại!";
+					MessageBoxDS.maHinh = 3;
+					m.ShowDialog();
+				}
+			}
 		}
 	}
 }

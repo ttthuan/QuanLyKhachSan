@@ -77,6 +77,29 @@ namespace DataAccesLayer
 			return null;
 		}
 
+		public PhieuThuePhongDTO LayPhieuthuephongTheomaKhachHang(int maKH)
+		{
+			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+			string query = "Select * From Phieuthuephong Where TrangThai = 2 and Makhachhang = " + maKH + "";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count > 0 && tb != null)
+			{
+				foreach (DataRow row in tb.Rows)
+				{
+					phieuThuePhongDTO.Ma = int.Parse(row[0].ToString());
+					phieuThuePhongDTO.MaPhong = int.Parse(row[1].ToString());
+					phieuThuePhongDTO.MaKhachHang = int.Parse(row[2].ToString());
+					phieuThuePhongDTO.ThoiGianNhanPhong = DateTime.Parse(row[3].ToString());
+					phieuThuePhongDTO.ThoiGianTraPhong = DateTime.Parse(row[4].ToString());
+					phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(row[5].ToString());
+					phieuThuePhongDTO.Gia = float.Parse(row[6].ToString());
+				}
+				return phieuThuePhongDTO;
+			}
+			return null;
+		}
+
 		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
 		{
 			string query = "INSERT INTO Phieuthuephong(Maphong,Makhachhang,Thoigiannhanphong,Thoigiantraphong," +
@@ -84,6 +107,20 @@ namespace DataAccesLayer
 				"','" + phieuThuePhongDTO.ThoiGianNhanPhong.ToString("dd-MM-yyyy HH:mm:ss") + "','" + phieuThuePhongDTO.ThoiGianTraPhong.ToString("dd-MM-yyyy HH:mm:ss") + 
 				"','" + phieuThuePhongDTO.MaLoaiThuePhong +
 				"','" + phieuThuePhongDTO.Gia + "','" + phieuThuePhongDTO.TrangThai + "','" + phieuThuePhongDTO.TraTruoc + "')";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public bool HuyDatPhong(int maPhieuThuePhong)
+		{
+			string query = "UPDATE Phieuthuephong SET TrangThai = 5 WHERE Ma = " + maPhieuThuePhong + "";
 			try
 			{
 				dataProvider.ExecuteUpdateQuery(query);

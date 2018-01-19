@@ -28,6 +28,7 @@ namespace PresentationLayer
 			{
 				lbTittle.Text = "Danh sách khách hàng đang ở";
 				bntChiTietThuePhong.Visible = true;
+				bntTraPhong.Visible = true;
 
 				KhachHangBUS khBus = new KhachHangBUS();
 				var source = new BindingSource();
@@ -85,7 +86,7 @@ namespace PresentationLayer
 				{
 					PhieuThuePhong ct = new PhieuThuePhong();
 					PhieuThuePhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
-
+					PhieuThuePhong.dangO = true;
 					ct.ShowDialog();
 					Load();
 				}
@@ -105,6 +106,18 @@ namespace PresentationLayer
 				DatPhong datPhong = new DatPhong();
 				DatPhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
 				datPhong.ShowDialog();
+				Load();
+			}
+		}
+
+		private void bntTraPhong_Click(object sender, EventArgs e)
+		{
+			if (gridKhachHang.Rows.Count != 0)
+			{
+				TraPhong traPhong = new TraPhong();
+				TraPhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+
+				traPhong.ShowDialog();
 				Load();
 			}
 		}

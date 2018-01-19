@@ -32,5 +32,10 @@ namespace BusinessLayer
 		{
 			return phieuSuDungDichVuDAO.XoaSuDungDichVu(phieuSuDungDichVuDTO);
 		}
+
+		public string TinhTongTienSuDungDichVu(int maPhieuSuDungDichVu)
+		{
+			return phieuSuDungDichVuDAO.TinhTongTienSuDungDichVu(maPhieuSuDungDichVu);
+		}
 	}
 }

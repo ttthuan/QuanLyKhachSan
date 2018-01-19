@@ -37,17 +37,21 @@
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label4 = new System.Windows.Forms.Label();
 			this.gridDSDV = new System.Windows.Forms.DataGridView();
-			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label5 = new System.Windows.Forms.Label();
 			this.gridDVdangSD = new System.Windows.Forms.DataGridView();
-			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panlTieuDe = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.dataGridViewImageColumn8 = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			((System.ComponentModel.ISupportInitialize)(this.gridDSDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridDVdangSD)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -144,15 +148,7 @@
 			this.gridDSDV.RowHeadersVisible = false;
 			this.gridDSDV.Size = new System.Drawing.Size(752, 161);
 			this.gridDSDV.TabIndex = 1;
-			// 
-			// clThemDV
-			// 
-			this.clThemDV.HeaderText = "Thêm";
-			this.clThemDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
-			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThemDV.Name = "clThemDV";
-			this.clThemDV.ReadOnly = true;
-			this.clThemDV.Width = 613;
+			this.gridDSDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSDV_CellClick);
 			// 
 			// label5
 			// 
@@ -183,30 +179,6 @@
 			this.gridDVdangSD.Size = new System.Drawing.Size(752, 155);
 			this.gridDVdangSD.TabIndex = 1;
 			this.gridDVdangSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDVdangSD_CellClick);
-			// 
-			// clThem
-			// 
-			this.clThem.HeaderText = "Thêm";
-			this.clThem.Image = global::PresentationLayer.Properties.Resources.library_plus;
-			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThem.Name = "clThem";
-			this.clThem.ReadOnly = true;
-			// 
-			// clGiam
-			// 
-			this.clGiam.HeaderText = "Bớt";
-			this.clGiam.Image = global::PresentationLayer.Properties.Resources.minus_box;
-			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clGiam.Name = "clGiam";
-			this.clGiam.ReadOnly = true;
-			// 
-			// clXoa
-			// 
-			this.clXoa.HeaderText = "Xóa";
-			this.clXoa.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
-			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clXoa.Name = "clXoa";
-			this.clXoa.ReadOnly = true;
 			// 
 			// panel1
 			// 
@@ -274,6 +246,68 @@
 			this.panel3.Size = new System.Drawing.Size(781, 240);
 			this.panel3.TabIndex = 39;
 			// 
+			// dataGridViewImageColumn5
+			// 
+			this.dataGridViewImageColumn5.HeaderText = "Thêm";
+			this.dataGridViewImageColumn5.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.dataGridViewImageColumn5.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
+			this.dataGridViewImageColumn5.Width = 613;
+			// 
+			// dataGridViewImageColumn6
+			// 
+			this.dataGridViewImageColumn6.HeaderText = "Thêm";
+			this.dataGridViewImageColumn6.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.dataGridViewImageColumn6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn6.Name = "dataGridViewImageColumn6";
+			// 
+			// dataGridViewImageColumn7
+			// 
+			this.dataGridViewImageColumn7.HeaderText = "Bớt";
+			this.dataGridViewImageColumn7.Image = global::PresentationLayer.Properties.Resources.minus_box;
+			this.dataGridViewImageColumn7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn7.Name = "dataGridViewImageColumn7";
+			// 
+			// dataGridViewImageColumn8
+			// 
+			this.dataGridViewImageColumn8.HeaderText = "Xóa";
+			this.dataGridViewImageColumn8.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
+			this.dataGridViewImageColumn8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.dataGridViewImageColumn8.Name = "dataGridViewImageColumn8";
+			// 
+			// clThem
+			// 
+			this.clThem.HeaderText = "Thêm";
+			this.clThem.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThem.Name = "clThem";
+			this.clThem.ReadOnly = true;
+			// 
+			// clGiam
+			// 
+			this.clGiam.HeaderText = "Bớt";
+			this.clGiam.Image = global::PresentationLayer.Properties.Resources.minus_box;
+			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clGiam.Name = "clGiam";
+			this.clGiam.ReadOnly = true;
+			// 
+			// clXoa
+			// 
+			this.clXoa.HeaderText = "Xóa";
+			this.clXoa.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
+			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clXoa.Name = "clXoa";
+			this.clXoa.ReadOnly = true;
+			// 
+			// clThemDV
+			// 
+			this.clThemDV.HeaderText = "Thêm";
+			this.clThemDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThemDV.Name = "clThemDV";
+			this.clThemDV.ReadOnly = true;
+			this.clThemDV.Width = 613;
+			// 
 			// PhieuSuDungDichVu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +357,9 @@
 		private System.Windows.Forms.DataGridViewImageColumn clThem;
 		private System.Windows.Forms.DataGridViewImageColumn clGiam;
 		private System.Windows.Forms.DataGridViewImageColumn clXoa;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn6;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn7;
+		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn8;
 	}
 }

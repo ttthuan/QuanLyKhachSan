@@ -34,6 +34,9 @@
 			this.bntDatPhong = new System.Windows.Forms.Button();
 			this.bntHuy = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.dtpkGioKT = new System.Windows.Forms.DateTimePicker();
+			this.dtpkGioBD = new System.Windows.Forms.DateTimePicker();
+			this.lbTraTruoc = new System.Windows.Forms.Label();
 			this.lbGiaPhong = new System.Windows.Forms.Label();
 			this.lbPhong = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
@@ -74,9 +77,6 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panlTieuDe = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
-			this.lbTraTruoc = new System.Windows.Forms.Label();
-			this.dtpkGioBD = new System.Windows.Forms.DateTimePicker();
-			this.dtpkGioKT = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,7 +101,7 @@
 			this.bntDatPhong.Name = "bntDatPhong";
 			this.bntDatPhong.Size = new System.Drawing.Size(89, 28);
 			this.bntDatPhong.TabIndex = 30;
-			this.bntDatPhong.Text = "Đặt phòng";
+			this.bntDatPhong.Text = "Thực hiện";
 			this.bntDatPhong.UseVisualStyleBackColor = false;
 			this.bntDatPhong.Click += new System.EventHandler(this.bntDatPhong_Click);
 			// 
@@ -123,7 +123,7 @@
 			// 
 			// panel2
 			// 
-			this.panel2.BackColor = System.Drawing.Color.White;
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
 			this.panel2.Controls.Add(this.dtpkGioKT);
 			this.panel2.Controls.Add(this.dtpkGioBD);
 			this.panel2.Controls.Add(this.lbTraTruoc);
@@ -153,6 +153,41 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(509, 198);
 			this.panel2.TabIndex = 32;
+			// 
+			// dtpkGioKT
+			// 
+			this.dtpkGioKT.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.dtpkGioKT.CustomFormat = "HH:mm:ss";
+			this.dtpkGioKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkGioKT.Location = new System.Drawing.Point(156, 164);
+			this.dtpkGioKT.Name = "dtpkGioKT";
+			this.dtpkGioKT.ShowUpDown = true;
+			this.dtpkGioKT.Size = new System.Drawing.Size(86, 20);
+			this.dtpkGioKT.TabIndex = 79;
+			this.dtpkGioKT.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
+			// 
+			// dtpkGioBD
+			// 
+			this.dtpkGioBD.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.dtpkGioBD.CustomFormat = "HH:mm:ss";
+			this.dtpkGioBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkGioBD.Location = new System.Drawing.Point(156, 133);
+			this.dtpkGioBD.Name = "dtpkGioBD";
+			this.dtpkGioBD.ShowUpDown = true;
+			this.dtpkGioBD.Size = new System.Drawing.Size(86, 20);
+			this.dtpkGioBD.TabIndex = 78;
+			this.dtpkGioBD.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
+			this.dtpkGioBD.ValueChanged += new System.EventHandler(this.dtpkGioBD_ValueChanged);
+			// 
+			// lbTraTruoc
+			// 
+			this.lbTraTruoc.AutoSize = true;
+			this.lbTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbTraTruoc.Location = new System.Drawing.Point(310, 104);
+			this.lbTraTruoc.Name = "lbTraTruoc";
+			this.lbTraTruoc.Size = new System.Drawing.Size(13, 13);
+			this.lbTraTruoc.TabIndex = 70;
+			this.lbTraTruoc.Text = "0";
 			// 
 			// lbGiaPhong
 			// 
@@ -438,7 +473,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.White;
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
 			this.panel1.Controls.Add(this.txtDiaChi);
 			this.panel1.Controls.Add(this.txtQuocTich);
 			this.panel1.Controls.Add(this.txtCMND);
@@ -591,45 +626,11 @@
 			this.label1.Text = "Đặt Phòng ";
 			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
-			// lbTraTruoc
-			// 
-			this.lbTraTruoc.AutoSize = true;
-			this.lbTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbTraTruoc.Location = new System.Drawing.Point(310, 104);
-			this.lbTraTruoc.Name = "lbTraTruoc";
-			this.lbTraTruoc.Size = new System.Drawing.Size(13, 13);
-			this.lbTraTruoc.TabIndex = 70;
-			this.lbTraTruoc.Text = "0";
-			// 
-			// dtpkGioBD
-			// 
-			this.dtpkGioBD.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.dtpkGioBD.CustomFormat = "HH:mm:ss";
-			this.dtpkGioBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dtpkGioBD.Location = new System.Drawing.Point(156, 133);
-			this.dtpkGioBD.Name = "dtpkGioBD";
-			this.dtpkGioBD.ShowUpDown = true;
-			this.dtpkGioBD.Size = new System.Drawing.Size(86, 20);
-			this.dtpkGioBD.TabIndex = 78;
-			this.dtpkGioBD.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
-			this.dtpkGioBD.ValueChanged += new System.EventHandler(this.dtpkGioBD_ValueChanged);
-			// 
-			// dtpkGioKT
-			// 
-			this.dtpkGioKT.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.dtpkGioKT.CustomFormat = "HH:mm:ss";
-			this.dtpkGioKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dtpkGioKT.Location = new System.Drawing.Point(156, 164);
-			this.dtpkGioKT.Name = "dtpkGioKT";
-			this.dtpkGioKT.ShowUpDown = true;
-			this.dtpkGioKT.Size = new System.Drawing.Size(86, 20);
-			this.dtpkGioKT.TabIndex = 79;
-			this.dtpkGioKT.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
-			// 
 			// DatPhong
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
 			this.ClientSize = new System.Drawing.Size(509, 468);
 			this.Controls.Add(this.bntDatPhong);
 			this.Controls.Add(this.bntHuy);

@@ -64,7 +64,7 @@ namespace PresentationLayer
 			phieuThuePhongDTO.ThoiGianTraPhong = _thoiGianTra;
 			phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(cbmLoaiDangKy.SelectedValue.ToString());
 			phieuThuePhongDTO.Gia = float.Parse(lbGiaPhong.Text);
-			phieuThuePhongDTO.TrangThai = 2;
+			phieuThuePhongDTO.TrangThai = 1;
 			phieuThuePhongDTO.TraTruoc = float.Parse(lbTraTruoc.Text);
 
 			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
