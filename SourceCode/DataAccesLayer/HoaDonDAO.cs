@@ -39,5 +39,21 @@ namespace DataAccesLayer
 
             return hoaDon;
         }
-    }
+
+		public bool LuuHoaDon(HoaDonDTO hoaDonDTO)
+		{
+			string query = "INSERT INTO Hoadon(Maphieuthuephong,Manhanvienlap,Ngaytao,Tongtien,Ghichu) " +
+				"VALUES (" + hoaDonDTO.Maphieuthuephong + "," + hoaDonDTO.Manhanvienlap +
+				",'" + hoaDonDTO.Ngaytao + "'," + hoaDonDTO.Tongtien + ",N'" + hoaDonDTO.Ghichu +"')";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+	}
 }

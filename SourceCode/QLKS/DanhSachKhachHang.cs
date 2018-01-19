@@ -15,6 +15,7 @@ namespace PresentationLayer
 	public partial class DanhSachKhachHang : Form
 	{
 		public int _loaiKH = 0;
+		public static int maTaiKhoan = 0;
 
 		public DanhSachKhachHang(int loaiKH)
 		{
@@ -23,7 +24,7 @@ namespace PresentationLayer
 			Load();
 		}
 
-		private void Load()
+		public void Load()
 		{
 			if (_loaiKH == 1)
 			{
@@ -99,6 +100,7 @@ namespace PresentationLayer
 				{
 					DanhSachDatPhongTheoKhachHang ds = new DanhSachDatPhongTheoKhachHang();
 					DanhSachDatPhongTheoKhachHang.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+					ds.MyParent = this;
 					ds.ShowDialog();
 				}
 			}
@@ -121,6 +123,7 @@ namespace PresentationLayer
 			{
 				TraPhong traPhong = new TraPhong();
 				TraPhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+				TraPhong.maTaiKhoan = maTaiKhoan;
 
 				traPhong.ShowDialog();
 				Load();

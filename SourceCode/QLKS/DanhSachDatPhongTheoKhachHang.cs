@@ -22,6 +22,7 @@ namespace PresentationLayer
 		[System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
 		public static extern bool ReleaseCapture();
 
+		public DanhSachKhachHang MyParent { get; set; }
 		public static int maKH;
 		public DanhSachDatPhongTheoKhachHang()
 		{
@@ -66,6 +67,15 @@ namespace PresentationLayer
 			PhieuThuePhong.maPhieuthuephong = maPhieuthuephong;
 			phieuThuePhong.ShowDialog();
 			this.Close();
+		}
+
+		private void btnNhanPhong_Click(object sender, EventArgs e)
+		{
+			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+			if(phieuThuePhongBUS.CapNhatTinhTrang(Convert.ToInt32(gridDanhsachphong.CurrentRow.Cells[0].Value.ToString()), 2))
+			{
+				MyParent.Load();
+			}
 		}
 	}
 }

@@ -60,5 +60,10 @@ namespace BusinessLayer
             
             return lsDisplayHoaDon;
         }
-    }
+
+		public bool LuuHoaDon(HoaDonDTO hoaDonDTO)
+		{
+			return hoaDonDAO.LuuHoaDon(hoaDonDTO);
+		}
+	}
 }

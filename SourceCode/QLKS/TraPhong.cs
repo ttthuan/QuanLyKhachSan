@@ -26,6 +26,7 @@ namespace PresentationLayer
 		public static int maP;
 		public static int maPhieuthuephong;
 		private static int maLoaiThuePhong =-1;
+		public static int maTaiKhoan = 0;
 
 		public TraPhong()
 		{
@@ -166,16 +167,20 @@ namespace PresentationLayer
 			}
 		}
 
-		private void HienthiTongTienDichVu()
+		public void HienthiTongTienDichVu()
 		{
 			PhieuSuDungDichVuBUS phieuSuDungDichVuBUS = new PhieuSuDungDichVuBUS();
 			lbTongTienDichVu.Text = phieuSuDungDichVuBUS.TinhTongTienSuDungDichVu(maPhieuthuephong);
 		}
 
-		private void HienthiTongTienPhaiTra()
+		public void HienthiTongTienPhaiTra()
 		{
 			TimeSpan Time = dtpkNgayKT.Value.Date - dtpkNgayBD.Value.Date;
 			int TongSoNgay = Time.Days;
+			if(TongSoNgay == 0)
+			{
+				TongSoNgay = 1;
+			}
 
 			if (txtPhuThu.Text.Equals(""))
 			{
@@ -209,7 +214,38 @@ namespace PresentationLayer
 
 		private void bntTraPhong_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				//Lưu hóa đơn
+				HoaDonDTO hoaDonDTO = new HoaDonDTO();
+				hoaDonDTO.Maphieuthuephong = maPhieuthuephong;
 
+				NhanVienBUS nhanVienBUS = new NhanVienBUS();
+				hoaDonDTO.Manhanvienlap = nhanVienBUS.LayMaNhanVien(maTaiKhoan);
+
+				hoaDonDTO.Ghichu = txtGhiChu.Text;
+				hoaDonDTO.Tongtien = float.Parse(lbTongTien.Text);
+				hoaDonDTO.Ngaytao = DateTime.Now.Date;
+
+				HoaDonBUS hoaDonBUS = new HoaDonBUS();
+				hoaDonBUS.LuuHoaDon(hoaDonDTO);
+
+				//Cập nhật trạng thái phiếu thuê phòng.
+				PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+				phieuThuePhongBUS.CapNhatTinhTrang(maPhieuthuephong, 3);
+
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Trả phòng thành công";
+				MessageBoxDS.maHinh = 1;
+				m.ShowDialog();
+			}
+			catch
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Trả phòng thất bại";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
 		}
 
 		private void bntXemdsDv_Click(object sender, EventArgs e)

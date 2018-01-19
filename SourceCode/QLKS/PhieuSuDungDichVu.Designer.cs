@@ -31,14 +31,17 @@
 			this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.bntCapNhat = new System.Windows.Forms.Button();
 			this.bntHuy = new System.Windows.Forms.Button();
 			this.cbmLoaiDV = new System.Windows.Forms.ComboBox();
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label4 = new System.Windows.Forms.Label();
 			this.gridDSDV = new System.Windows.Forms.DataGridView();
+			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label5 = new System.Windows.Forms.Label();
 			this.gridDVdangSD = new System.Windows.Forms.DataGridView();
+			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -48,10 +51,6 @@
 			this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn8 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			((System.ComponentModel.ISupportInitialize)(this.gridDSDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridDVdangSD)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -77,20 +76,6 @@
 			this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
 			this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
 			// 
-			// bntCapNhat
-			// 
-			this.bntCapNhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
-			this.bntCapNhat.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.bntCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.bntCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-			this.bntCapNhat.ForeColor = System.Drawing.Color.Snow;
-			this.bntCapNhat.Location = new System.Drawing.Point(278, 477);
-			this.bntCapNhat.Name = "bntCapNhat";
-			this.bntCapNhat.Size = new System.Drawing.Size(89, 28);
-			this.bntCapNhat.TabIndex = 40;
-			this.bntCapNhat.Text = "Cập nhật";
-			this.bntCapNhat.UseVisualStyleBackColor = false;
-			// 
 			// bntHuy
 			// 
 			this.bntHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(30)))), ((int)(((byte)(163)))));
@@ -98,7 +83,7 @@
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntHuy.ForeColor = System.Drawing.Color.Snow;
-			this.bntHuy.Location = new System.Drawing.Point(406, 477);
+			this.bntHuy.Location = new System.Drawing.Point(312, 477);
 			this.bntHuy.Name = "bntHuy";
 			this.bntHuy.Size = new System.Drawing.Size(94, 28);
 			this.bntHuy.TabIndex = 41;
@@ -150,6 +135,15 @@
 			this.gridDSDV.TabIndex = 1;
 			this.gridDSDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSDV_CellClick);
 			// 
+			// clThemDV
+			// 
+			this.clThemDV.HeaderText = "Thêm";
+			this.clThemDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThemDV.Name = "clThemDV";
+			this.clThemDV.ReadOnly = true;
+			this.clThemDV.Width = 613;
+			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
@@ -179,6 +173,30 @@
 			this.gridDVdangSD.Size = new System.Drawing.Size(752, 155);
 			this.gridDVdangSD.TabIndex = 1;
 			this.gridDVdangSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDVdangSD_CellClick);
+			// 
+			// clThem
+			// 
+			this.clThem.HeaderText = "Thêm";
+			this.clThem.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThem.Name = "clThem";
+			this.clThem.ReadOnly = true;
+			// 
+			// clGiam
+			// 
+			this.clGiam.HeaderText = "Bớt";
+			this.clGiam.Image = global::PresentationLayer.Properties.Resources.minus_box;
+			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clGiam.Name = "clGiam";
+			this.clGiam.ReadOnly = true;
+			// 
+			// clXoa
+			// 
+			this.clXoa.HeaderText = "Xóa";
+			this.clXoa.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
+			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clXoa.Name = "clXoa";
+			this.clXoa.ReadOnly = true;
 			// 
 			// panel1
 			// 
@@ -275,45 +293,11 @@
 			this.dataGridViewImageColumn8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn8.Name = "dataGridViewImageColumn8";
 			// 
-			// clThem
-			// 
-			this.clThem.HeaderText = "Thêm";
-			this.clThem.Image = global::PresentationLayer.Properties.Resources.library_plus;
-			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThem.Name = "clThem";
-			this.clThem.ReadOnly = true;
-			// 
-			// clGiam
-			// 
-			this.clGiam.HeaderText = "Bớt";
-			this.clGiam.Image = global::PresentationLayer.Properties.Resources.minus_box;
-			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clGiam.Name = "clGiam";
-			this.clGiam.ReadOnly = true;
-			// 
-			// clXoa
-			// 
-			this.clXoa.HeaderText = "Xóa";
-			this.clXoa.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
-			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clXoa.Name = "clXoa";
-			this.clXoa.ReadOnly = true;
-			// 
-			// clThemDV
-			// 
-			this.clThemDV.HeaderText = "Thêm";
-			this.clThemDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
-			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThemDV.Name = "clThemDV";
-			this.clThemDV.ReadOnly = true;
-			this.clThemDV.Width = 613;
-			// 
 			// PhieuSuDungDichVu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(780, 514);
-			this.Controls.Add(this.bntCapNhat);
 			this.Controls.Add(this.bntHuy);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panlTieuDe);
@@ -322,6 +306,7 @@
 			this.Name = "PhieuSuDungDichVu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "PhieuSuDungDichVu";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhieuSuDungDichVu_FormClosed);
 			this.Load += new System.EventHandler(this.PhieuSuDungDichVu_Load);
 			((System.ComponentModel.ISupportInitialize)(this.gridDSDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridDVdangSD)).EndInit();
@@ -340,7 +325,6 @@
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-		private System.Windows.Forms.Button bntCapNhat;
 		private System.Windows.Forms.Button bntHuy;
 		private System.Windows.Forms.ComboBox cbmLoaiDV;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;

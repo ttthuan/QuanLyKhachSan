@@ -89,5 +89,10 @@ namespace BusinessLayer
 		{
 			return phieuThuePhongDAO.HuyDatPhong(maPhieuThuePhong);
 		}
+
+		public bool CapNhatTinhTrang(int maPhieuThuePhong, int maTrangThai)
+		{
+			return phieuThuePhongDAO.CapNhatTinhTrang(maTrangThai, maPhieuThuePhong);
+		}
 	}
 }

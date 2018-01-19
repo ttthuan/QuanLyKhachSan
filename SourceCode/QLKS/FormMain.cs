@@ -151,6 +151,7 @@ namespace PresentationLayer
         {
 			setColorActiveForButton((Button)sender);
 			khachHang = new DanhSachKhachHang(3);
+			DanhSachKhachHang.maTaiKhoan = taiKhoan.Ma;
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
 			pnBody.Controls.Add(khachHang);
@@ -162,6 +163,7 @@ namespace PresentationLayer
         {
 			setColorActiveForButton((Button)sender);
 			khachHang = new DanhSachKhachHang(2);
+			DanhSachKhachHang.maTaiKhoan = taiKhoan.Ma;
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
 			pnBody.Controls.Add(khachHang);
@@ -173,6 +175,7 @@ namespace PresentationLayer
         {
 			setColorActiveForButton((Button)sender);
 			khachHang = new DanhSachKhachHang(1);
+			DanhSachKhachHang.maTaiKhoan = taiKhoan.Ma;
 			khachHang.Dock = DockStyle.Fill;
 			khachHang.TopLevel = false;
 			pnBody.Controls.Add(khachHang);

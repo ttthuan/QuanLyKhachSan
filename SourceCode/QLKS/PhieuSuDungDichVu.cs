@@ -218,5 +218,11 @@ namespace PresentationLayer
 				HienthiSuDungDichVu();
 			}
 		}
+
+		private void PhieuSuDungDichVu_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			MyParent1.HienthiTongTienDichVu();
+			MyParent1.HienthiTongTienPhaiTra();
+		}
 	}
 }

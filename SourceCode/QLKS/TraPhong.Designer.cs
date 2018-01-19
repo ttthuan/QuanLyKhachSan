@@ -561,7 +561,7 @@
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntHuy.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntHuy.Location = new System.Drawing.Point(274, 191);
+			this.bntHuy.Location = new System.Drawing.Point(262, 191);
 			this.bntHuy.Name = "bntHuy";
 			this.bntHuy.Size = new System.Drawing.Size(73, 30);
 			this.bntHuy.TabIndex = 32;

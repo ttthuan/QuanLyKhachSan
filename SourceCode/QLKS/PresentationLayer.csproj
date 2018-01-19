@@ -182,6 +182,9 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachDatPhongTheoKhachHang.resx">
+      <DependentUpon>DanhSachDatPhongTheoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhSachKhachHang.resx">
       <DependentUpon>DanhSachKhachHang.cs</DependentUpon>
     </EmbeddedResource>

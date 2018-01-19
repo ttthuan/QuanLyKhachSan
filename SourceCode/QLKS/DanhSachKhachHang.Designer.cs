@@ -49,9 +49,9 @@
 			this.lbTittle = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.bntTraPhong = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
 			this.ctMenuGv.SuspendLayout();
@@ -255,21 +255,6 @@
 			this.panel2.Size = new System.Drawing.Size(835, 31);
 			this.panel2.TabIndex = 24;
 			// 
-			// button1
-			// 
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(23, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(23, 28);
-			this.button1.TabIndex = 10;
-			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// panel1
 			// 
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -298,6 +283,21 @@
 			this.bntTraPhong.UseVisualStyleBackColor = false;
 			this.bntTraPhong.Visible = false;
 			this.bntTraPhong.Click += new System.EventHandler(this.bntTraPhong_Click);
+			// 
+			// button1
+			// 
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.White;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(23, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(23, 28);
+			this.button1.TabIndex = 10;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// DanhSachKhachHang
 			// 

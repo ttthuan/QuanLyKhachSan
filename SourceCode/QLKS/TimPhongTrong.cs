@@ -81,7 +81,7 @@ namespace PresentationLayer
 			}
 
 			PhongBUS phongBUS = new PhongBUS();
-			dt1 = phongBUS.LayDanhSachPhongTrong(s.ToString("dd-MM-yyyy HH:mm:ss"), f.ToString("dd-MM-yyyy HH:mm:ss"), loaiphong);
+			dt1 = phongBUS.LayDanhSachPhongTrong(s.ToString("yyyy-MM-dd HH:mm:ss"), f.ToString("yyyy-MM-dd HH:mm:ss"), loaiphong);
 			DataTable dtgrid = new DataTable();
 			dtgrid.Columns.Add("1");
 			dtgrid.Columns.Add("2");
@@ -117,18 +117,21 @@ namespace PresentationLayer
 			gridviewPhong.AllowUserToResizeRows = false;
 			gridviewPhong.CurrentCell = null;
 
-			foreach (DataRow r in dt1.Rows)
+			if (dt1 != null)
 			{
-				int maP = Convert.ToInt32(r["Ma"]);
-				if (maP % 5 == 0)
+				foreach (DataRow r in dt1.Rows)
 				{
-					DataGridViewButtonCell c = (DataGridViewButtonCell)gridviewPhong.Rows[maP / 5 - 1].Cells[4];
-					c.Style.BackColor = Color.FromArgb(124, 179, 66);
-				}
-				else
-				{
-					DataGridViewButtonCell c = (DataGridViewButtonCell)gridviewPhong.Rows[maP / 5].Cells[maP % 5 - 1];
-					c.Style.BackColor = Color.FromArgb(124, 179, 66);
+					int maP = Convert.ToInt32(r["Ma"]);
+					if (maP % 5 == 0)
+					{
+						DataGridViewButtonCell c = (DataGridViewButtonCell)gridviewPhong.Rows[maP / 5 - 1].Cells[4];
+						c.Style.BackColor = Color.FromArgb(124, 179, 66);
+					}
+					else
+					{
+						DataGridViewButtonCell c = (DataGridViewButtonCell)gridviewPhong.Rows[maP / 5].Cells[maP % 5 - 1];
+						c.Style.BackColor = Color.FromArgb(124, 179, 66);
+					}
 				}
 			}
 		}
@@ -141,8 +144,6 @@ namespace PresentationLayer
 				dtpkNgayKT.Value = _thoiGianTra.Date;
 				dtpkGioDB.Text = _thoigianNhan.TimeOfDay.ToString();
 				dtpkGioKT.Text = _thoiGianTra.TimeOfDay.ToString();
-				dtpkGioDB.Enabled = false;
-				dtpkGioKT.Enabled = false;
 				dtpkNgayBD.Enabled = false;
 				dtpkNgayKT.Enabled = false;
 			}

@@ -56,10 +56,10 @@ namespace DataAccesLayer
 		public DataTable LayDanhSachPhongTrong(string time1, string time2, int maLoaiPhong)
 		{
 			DataTable dataTable = new DataTable();
-			string query = "Select Ma,Ten,Tang From Phong where Maloaiphong = " + maLoaiPhong + " and Ma not in " +
-				"( Select Maphong from Phieuthuephong where (('" + time1 + "' <= Thoigiannhanphong and '" + time2 + "' > Thoigiannhanphong )" +
-				"or ('" + time1 + "' > Thoigiannhanphong and '" + time2 + "' <= Thoigiantraphong ) or ('" + time1 + 
-				"' <= Thoigiantraphong and '" + time2+"' > Thoigiantraphong )))";
+			string query = "Select * From Phong where Ma not in " +
+				"(Select Maphong From Phieuthuephong where(TrangThai = 1 or TrangThai = 2) " +
+				"and Thoigiannhanphong >= '"+ time1 + "' " +
+				"and Thoigiantraphong <= '"+ time2 + "' )";
 			dataTable = dataProvider.ExecuteQuery_DataTble(query);
 			return dataTable;
 		}
