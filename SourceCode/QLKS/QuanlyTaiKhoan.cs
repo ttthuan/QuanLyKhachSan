@@ -24,43 +24,36 @@ namespace PresentationLayer
 
 		private void Hienthi()
 		{
-			HienthiDanhsachtaikhoan();
-			lbTaikhoan.Text = _taiKhoan.Tendangnhap;
+			HienthiDanhsachNhanvien();
 			HienthiCBMChucVu();
-			HienthithongtinTaikhoan();
 		}
 
-		private void HienthiDanhsachtaikhoan()
+		private void HienthiDanhsachNhanvien()
 		{
-			TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
-			gridTaikhoan.DataSource = taiKhoanBUS.LayDanhsachTK();
+			NhanVienBUS nhanVienBUS = new NhanVienBUS();
+			gridNhanVien.DataSource = nhanVienBUS.LaydanhsachNhanvienDataTable();
+			gridNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+			gridNhanVien.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			gridNhanVien.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+			gridNhanVien.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(206, 187, 214);
 		}
 
 		private void HienthiCBMChucVu()
 		{
 			NhanVienBUS nhanVienBUS = new NhanVienBUS();
-			DataTable dataTable = new DataTable();
-			dataTable = nhanVienBUS.LaydanhsachChucvu();
-
-			cbmChucvu.DataSource = dataTable;
+			cbmChucvu.DataSource = nhanVienBUS.LaydanhsachChucvu();
 			cbmChucvu.DisplayMember = "Ten";
 			cbmChucvu.ValueMember = "Ma";
-
-			cbmChucvumoi.DataSource = dataTable;
-			cbmChucvumoi.DisplayMember = "Ten";
-			cbmChucvumoi.ValueMember = "Ma";
+			
 		}
 
 		private void HienthithongtinTaikhoan()
 		{
-			NhanVienBUS nhanVienBUS = new NhanVienBUS();
-			NhanVienDTO nhanVienDTO = new NhanVienDTO();
-
-			nhanVienDTO = nhanVienBUS.LayNhanVienTheoTK(_taiKhoan.Ma);
-
-			txtTen.Text = nhanVienDTO.Ten;
-			txtSDT.Text = nhanVienDTO.SDT;
-			if(nhanVienDTO.GioiTinh.Equals("Nam"))
+			txtTaiKhoan.Text = gridNhanVien.CurrentRow.Cells[9].Value.ToString();
+			txtSDT.Text = gridNhanVien.CurrentRow.Cells[2].Value.ToString();
+			txtDiaChi.Text = gridNhanVien.CurrentRow.Cells[3].Value.ToString();
+			cbmChucvu.SelectedValue = gridNhanVien.CurrentRow.Cells[7].Value.ToString();
+			if(gridNhanVien.CurrentRow.Cells[4].Value.ToString().Equals("Nam"))
 			{
 				rbNam.Checked = true;
 			}
@@ -68,6 +61,28 @@ namespace PresentationLayer
 			{
 				rbNu.Checked = true;
 			}
+			txtTen.Text = gridNhanVien.CurrentRow.Cells[1].Value.ToString();
+			dtpkNgaySinh.Text = gridNhanVien.CurrentRow.Cells[5].Value.ToString();
+		}
+
+		private void gridNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			HienthithongtinTaikhoan();
+		}
+
+		private void btnThem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnCapnhat_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnReset_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

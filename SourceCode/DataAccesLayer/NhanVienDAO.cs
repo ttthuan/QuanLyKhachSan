@@ -67,8 +67,15 @@ namespace DataAccesLayer
 
 		public DataTable LaydanhsachChucvu()
 		{
-			string query = "Select Ma From Loainhanvien";
+			string query = "Select * From Loainhanvien";
 			return dataProvider.ExecuteQuery_DataTble(query);
 		}
+
+		public DataTable LaydanhsachNhanvienDataTable()
+		{
+			string query = "Select * From Nhanvien nv,Taikhoan tk where nv.Mataikhoan = tk.Ma";
+			return dataProvider.ExecuteQuery_DataTble(query);
+		}
+
 	}
 }
