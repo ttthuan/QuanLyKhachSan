@@ -77,7 +77,7 @@ namespace DataAccesLayer
 			return null;
 		}
 
-		public PhieuThuePhongDTO LayPhieuthuephongTheomaKhachHang(int maKH)
+		public PhieuThuePhongDTO DangO_KhachHang(int maKH)
 		{
 			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
 			string query = "Select * From Phieuthuephong Where TrangThai = 2 and Makhachhang = " + maKH + "";

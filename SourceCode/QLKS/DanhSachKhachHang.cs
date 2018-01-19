@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using DataTranferObject;
 
 namespace PresentationLayer
 {
@@ -84,10 +85,14 @@ namespace PresentationLayer
 			{
 				if (_loaiKH == 1)
 				{
-					PhieuThuePhong ct = new PhieuThuePhong();
+					PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+					PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+					phieuThuePhongDTO = phieuThuePhongBUS.DangO_KhachHang(int.Parse(gridKhachHang.CurrentRow.Cells[0].Value.ToString()));
+					PhieuThuePhong phieuThuePhong = new PhieuThuePhong();
 					PhieuThuePhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
 					PhieuThuePhong.dangO = true;
-					ct.ShowDialog();
+					PhieuThuePhong.maPhieuthuephong = phieuThuePhongDTO.Ma;
+					phieuThuePhong.ShowDialog();
 					Load();
 				}
 				else if (_loaiKH == 2)

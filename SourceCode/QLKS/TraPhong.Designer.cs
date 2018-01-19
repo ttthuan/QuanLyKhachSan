@@ -512,6 +512,8 @@
 			this.txtPhuThu.Size = new System.Drawing.Size(82, 20);
 			this.txtPhuThu.TabIndex = 24;
 			this.txtPhuThu.Text = "0";
+			this.txtPhuThu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuThu_KeyPress);
+			this.txtPhuThu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPhuThu_KeyUp);
 			// 
 			// label25
 			// 
@@ -530,6 +532,8 @@
 			this.txtGiamTru.Size = new System.Drawing.Size(82, 20);
 			this.txtGiamTru.TabIndex = 25;
 			this.txtGiamTru.Text = "0";
+			this.txtGiamTru.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiamTru_KeyPress);
+			this.txtGiamTru.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtGiamTru_KeyUp);
 			// 
 			// lb19
 			// 

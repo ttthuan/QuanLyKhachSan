@@ -49,8 +49,8 @@
 			this.lbTittle = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.bntTraPhong = new System.Windows.Forms.Button();
 			this.panel3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridKhachHang)).BeginInit();
@@ -255,19 +255,6 @@
 			this.panel2.Size = new System.Drawing.Size(835, 31);
 			this.panel2.TabIndex = 24;
 			// 
-			// panel1
-			// 
-			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.panel1.AutoSize = true;
-			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-			this.panel1.Controls.Add(this.txtTimKH);
-			this.panel1.Controls.Add(this.label3);
-			this.panel1.Location = new System.Drawing.Point(0, 37);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(835, 41);
-			this.panel1.TabIndex = 25;
-			// 
 			// button1
 			// 
 			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -282,6 +269,19 @@
 			this.button1.TabIndex = 10;
 			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.AutoSize = true;
+			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.panel1.Controls.Add(this.txtTimKH);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Location = new System.Drawing.Point(0, 37);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(835, 41);
+			this.panel1.TabIndex = 25;
 			// 
 			// bntTraPhong
 			// 
