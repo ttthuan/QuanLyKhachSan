@@ -31,6 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DichVuvaLoaiDichVu));
 			this.pnLoai = new System.Windows.Forms.Panel();
 			this.gridLoai = new System.Windows.Forms.DataGridView();
+			this.MaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.bntThemLoai = new System.Windows.Forms.Button();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.txtDonvi = new System.Windows.Forms.TextBox();
@@ -52,19 +54,22 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.radioButton2 = new System.Windows.Forms.RadioButton();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.rbTatca = new System.Windows.Forms.RadioButton();
+			this.rbLoai = new System.Windows.Forms.RadioButton();
 			this.label3 = new System.Windows.Forms.Label();
 			this.pnDV = new System.Windows.Forms.Panel();
 			this.gridDV = new System.Windows.Forms.DataGridView();
+			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Maloaidichvu = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.button1 = new System.Windows.Forms.Button();
 			this.pnLoai.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridLoai)).BeginInit();
 			this.panel5.SuspendLayout();
@@ -74,8 +79,6 @@
 			this.pnDV.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDV)).BeginInit();
 			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pnLoai
@@ -92,15 +95,36 @@
 			// 
 			this.gridLoai.AllowUserToAddRows = false;
 			this.gridLoai.AllowUserToDeleteRows = false;
+			this.gridLoai.AllowUserToOrderColumns = true;
 			this.gridLoai.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.gridLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridLoai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaLoai,
+            this.TenLoai});
 			this.gridLoai.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridLoai.Location = new System.Drawing.Point(0, 0);
 			this.gridLoai.Name = "gridLoai";
 			this.gridLoai.ReadOnly = true;
 			this.gridLoai.RowHeadersVisible = false;
+			this.gridLoai.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.gridLoai.Size = new System.Drawing.Size(503, 257);
 			this.gridLoai.TabIndex = 0;
+			this.gridLoai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLoai_CellClick);
+			// 
+			// MaLoai
+			// 
+			this.MaLoai.DataPropertyName = "Ma";
+			this.MaLoai.HeaderText = "Mã";
+			this.MaLoai.Name = "MaLoai";
+			this.MaLoai.ReadOnly = true;
+			this.MaLoai.Visible = false;
+			// 
+			// TenLoai
+			// 
+			this.TenLoai.DataPropertyName = "Ten";
+			this.TenLoai.HeaderText = "Tên Loại";
+			this.TenLoai.Name = "TenLoai";
+			this.TenLoai.ReadOnly = true;
 			// 
 			// bntThemLoai
 			// 
@@ -109,19 +133,19 @@
 			this.bntThemLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntThemLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntThemLoai.ForeColor = System.Drawing.Color.Snow;
-			this.bntThemLoai.Location = new System.Drawing.Point(154, 178);
+			this.bntThemLoai.Location = new System.Drawing.Point(165, 127);
 			this.bntThemLoai.Name = "bntThemLoai";
 			this.bntThemLoai.Size = new System.Drawing.Size(89, 28);
 			this.bntThemLoai.TabIndex = 37;
 			this.bntThemLoai.Text = "Thêm mới";
 			this.bntThemLoai.UseVisualStyleBackColor = false;
+			this.bntThemLoai.Click += new System.EventHandler(this.bntThemLoai_Click);
 			// 
 			// panel5
 			// 
 			this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
 			this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel5.Controls.Add(this.pictureBox2);
 			this.panel5.Controls.Add(this.txtDonvi);
 			this.panel5.Controls.Add(this.cbmLoai);
 			this.panel5.Controls.Add(this.label11);
@@ -141,7 +165,7 @@
 			// txtDonvi
 			// 
 			this.txtDonvi.BackColor = System.Drawing.Color.White;
-			this.txtDonvi.Location = new System.Drawing.Point(104, 81);
+			this.txtDonvi.Location = new System.Drawing.Point(71, 82);
 			this.txtDonvi.MaxLength = 50;
 			this.txtDonvi.Name = "txtDonvi";
 			this.txtDonvi.Size = new System.Drawing.Size(72, 20);
@@ -150,10 +174,11 @@
 			// cbmLoai
 			// 
 			this.cbmLoai.FormattingEnabled = true;
-			this.cbmLoai.Location = new System.Drawing.Point(104, 151);
+			this.cbmLoai.Location = new System.Drawing.Point(71, 152);
 			this.cbmLoai.Name = "cbmLoai";
 			this.cbmLoai.Size = new System.Drawing.Size(115, 21);
 			this.cbmLoai.TabIndex = 46;
+			this.cbmLoai.SelectedIndexChanged += new System.EventHandler(this.cbmLoai_SelectedIndexChanged);
 			// 
 			// label11
 			// 
@@ -161,7 +186,7 @@
 			this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label11.Location = new System.Drawing.Point(62, 151);
+			this.label11.Location = new System.Drawing.Point(18, 152);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(33, 13);
 			this.label11.TabIndex = 45;
@@ -170,7 +195,7 @@
 			// txtGia
 			// 
 			this.txtGia.BackColor = System.Drawing.Color.White;
-			this.txtGia.Location = new System.Drawing.Point(104, 115);
+			this.txtGia.Location = new System.Drawing.Point(71, 116);
 			this.txtGia.MaxLength = 50;
 			this.txtGia.Name = "txtGia";
 			this.txtGia.Size = new System.Drawing.Size(72, 20);
@@ -182,7 +207,7 @@
 			this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label10.Location = new System.Drawing.Point(67, 115);
+			this.label10.Location = new System.Drawing.Point(21, 116);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(29, 13);
 			this.label10.TabIndex = 43;
@@ -201,6 +226,7 @@
 			this.bntThemDV.TabIndex = 39;
 			this.bntThemDV.Text = "Thêm mới";
 			this.bntThemDV.UseVisualStyleBackColor = false;
+			this.bntThemDV.Click += new System.EventHandler(this.bntThemDV_Click);
 			// 
 			// bntCapNhatDV
 			// 
@@ -215,6 +241,7 @@
 			this.bntCapNhatDV.TabIndex = 38;
 			this.bntCapNhatDV.Text = "Cập nhật";
 			this.bntCapNhatDV.UseVisualStyleBackColor = false;
+			this.bntCapNhatDV.Click += new System.EventHandler(this.bntCapNhatDV_Click);
 			// 
 			// label9
 			// 
@@ -222,7 +249,7 @@
 			this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label9.Location = new System.Drawing.Point(51, 81);
+			this.label9.Location = new System.Drawing.Point(18, 82);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(44, 13);
 			this.label9.TabIndex = 37;
@@ -231,7 +258,7 @@
 			// txtTenDV
 			// 
 			this.txtTenDV.BackColor = System.Drawing.Color.White;
-			this.txtTenDV.Location = new System.Drawing.Point(104, 46);
+			this.txtTenDV.Location = new System.Drawing.Point(71, 47);
 			this.txtTenDV.MaxLength = 50;
 			this.txtTenDV.Name = "txtTenDV";
 			this.txtTenDV.Size = new System.Drawing.Size(186, 20);
@@ -243,7 +270,7 @@
 			this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label8.Location = new System.Drawing.Point(65, 49);
+			this.label8.Location = new System.Drawing.Point(18, 50);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(32, 13);
 			this.label8.TabIndex = 35;
@@ -255,7 +282,7 @@
 			this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label7.Location = new System.Drawing.Point(56, 11);
+			this.label7.Location = new System.Drawing.Point(13, 16);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(51, 13);
 			this.label7.TabIndex = 34;
@@ -268,12 +295,13 @@
 			this.bntCapNhatLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntCapNhatLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntCapNhatLoai.ForeColor = System.Drawing.Color.Snow;
-			this.bntCapNhatLoai.Location = new System.Drawing.Point(59, 178);
+			this.bntCapNhatLoai.Location = new System.Drawing.Point(54, 127);
 			this.bntCapNhatLoai.Name = "bntCapNhatLoai";
 			this.bntCapNhatLoai.Size = new System.Drawing.Size(89, 28);
 			this.bntCapNhatLoai.TabIndex = 36;
 			this.bntCapNhatLoai.Text = "Cập nhật";
 			this.bntCapNhatLoai.UseVisualStyleBackColor = false;
+			this.bntCapNhatLoai.Click += new System.EventHandler(this.bntCapNhatLoai_Click);
 			// 
 			// panel3
 			// 
@@ -284,8 +312,8 @@
 			this.panel3.Controls.Add(this.panel5);
 			this.panel3.Controls.Add(this.pnChitiet);
 			this.panel3.Controls.Add(this.label2);
-			this.panel3.Controls.Add(this.radioButton2);
-			this.panel3.Controls.Add(this.radioButton1);
+			this.panel3.Controls.Add(this.rbTatca);
+			this.panel3.Controls.Add(this.rbLoai);
 			this.panel3.Controls.Add(this.label3);
 			this.panel3.Controls.Add(this.pnDV);
 			this.panel3.Controls.Add(this.panel1);
@@ -308,7 +336,6 @@
 			// panel4
 			// 
 			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel4.Controls.Add(this.pictureBox1);
 			this.panel4.Controls.Add(this.bntThemLoai);
 			this.panel4.Controls.Add(this.bntCapNhatLoai);
 			this.panel4.Controls.Add(this.txtTenLoai);
@@ -322,7 +349,7 @@
 			// txtTenLoai
 			// 
 			this.txtTenLoai.BackColor = System.Drawing.Color.White;
-			this.txtTenLoai.Location = new System.Drawing.Point(59, 98);
+			this.txtTenLoai.Location = new System.Drawing.Point(70, 54);
 			this.txtTenLoai.MaxLength = 50;
 			this.txtTenLoai.Name = "txtTenLoai";
 			this.txtTenLoai.Size = new System.Drawing.Size(186, 20);
@@ -334,7 +361,7 @@
 			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label5.Location = new System.Drawing.Point(21, 101);
+			this.label5.Location = new System.Drawing.Point(32, 57);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(32, 13);
 			this.label5.TabIndex = 34;
@@ -346,7 +373,7 @@
 			this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label6.Location = new System.Drawing.Point(56, 4);
+			this.label6.Location = new System.Drawing.Point(7, 9);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(79, 13);
 			this.label6.TabIndex = 33;
@@ -360,37 +387,39 @@
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
 			this.label2.Location = new System.Drawing.Point(325, 8);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(164, 16);
+			this.label2.Size = new System.Drawing.Size(168, 16);
 			this.label2.TabIndex = 28;
-			this.label2.Text = "Danh sách oại dịch vụ:";
+			this.label2.Text = "Danh sách loại dịch vụ:";
 			// 
-			// radioButton2
+			// rbTatca
 			// 
-			this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.rbTatca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.radioButton2.AutoSize = true;
-			this.radioButton2.Checked = true;
-			this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.radioButton2.Location = new System.Drawing.Point(629, 315);
-			this.radioButton2.Name = "radioButton2";
-			this.radioButton2.Size = new System.Drawing.Size(114, 17);
-			this.radioButton2.TabIndex = 30;
-			this.radioButton2.TabStop = true;
-			this.radioButton2.Text = "Xem tất cả dịch vụ";
-			this.radioButton2.UseVisualStyleBackColor = true;
+			this.rbTatca.AutoSize = true;
+			this.rbTatca.Checked = true;
+			this.rbTatca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.rbTatca.Location = new System.Drawing.Point(629, 315);
+			this.rbTatca.Name = "rbTatca";
+			this.rbTatca.Size = new System.Drawing.Size(114, 17);
+			this.rbTatca.TabIndex = 30;
+			this.rbTatca.TabStop = true;
+			this.rbTatca.Text = "Xem tất cả dịch vụ";
+			this.rbTatca.UseVisualStyleBackColor = true;
+			this.rbTatca.CheckedChanged += new System.EventHandler(this.rbTatca_CheckedChanged);
 			// 
-			// radioButton1
+			// rbLoai
 			// 
-			this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.rbLoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.radioButton1.Location = new System.Drawing.Point(513, 315);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(89, 17);
-			this.radioButton1.TabIndex = 29;
-			this.radioButton1.Text = "Xem theo loại";
-			this.radioButton1.UseVisualStyleBackColor = true;
+			this.rbLoai.AutoSize = true;
+			this.rbLoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.rbLoai.Location = new System.Drawing.Point(513, 315);
+			this.rbLoai.Name = "rbLoai";
+			this.rbLoai.Size = new System.Drawing.Size(89, 17);
+			this.rbLoai.TabIndex = 29;
+			this.rbLoai.Text = "Xem theo loại";
+			this.rbLoai.UseVisualStyleBackColor = true;
+			this.rbLoai.CheckedChanged += new System.EventHandler(this.rbTatca_CheckedChanged);
 			// 
 			// label3
 			// 
@@ -419,17 +448,59 @@
 			// 
 			this.gridDV.AllowUserToAddRows = false;
 			this.gridDV.AllowUserToDeleteRows = false;
-			this.gridDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.gridDV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.gridDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ma,
+            this.Ten,
+            this.Donvitinh,
+            this.Gia,
+            this.Maloaidichvu});
+			this.gridDV.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.gridDV.Location = new System.Drawing.Point(0, 0);
 			this.gridDV.Name = "gridDV";
-			this.gridDV.ReadOnly = true;
 			this.gridDV.RowHeadersVisible = false;
+			this.gridDV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.gridDV.Size = new System.Drawing.Size(503, 272);
 			this.gridDV.TabIndex = 0;
+			this.gridDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDV_CellClick);
+			// 
+			// Ma
+			// 
+			this.Ma.DataPropertyName = "Ma";
+			this.Ma.HeaderText = "Mã";
+			this.Ma.Name = "Ma";
+			this.Ma.ReadOnly = true;
+			this.Ma.Visible = false;
+			// 
+			// Ten
+			// 
+			this.Ten.DataPropertyName = "Ten";
+			this.Ten.HeaderText = "Tên";
+			this.Ten.Name = "Ten";
+			this.Ten.ReadOnly = true;
+			// 
+			// Donvitinh
+			// 
+			this.Donvitinh.DataPropertyName = "Donvitinh";
+			this.Donvitinh.HeaderText = "Đơn vị tính";
+			this.Donvitinh.Name = "Donvitinh";
+			this.Donvitinh.ReadOnly = true;
+			// 
+			// Gia
+			// 
+			this.Gia.DataPropertyName = "Gia";
+			this.Gia.HeaderText = "Giá";
+			this.Gia.Name = "Gia";
+			this.Gia.ReadOnly = true;
+			// 
+			// Maloaidichvu
+			// 
+			this.Maloaidichvu.DataPropertyName = "Maloaidichvu";
+			this.Maloaidichvu.HeaderText = "Loại dịch vụ";
+			this.Maloaidichvu.Name = "Maloaidichvu";
+			this.Maloaidichvu.ReadOnly = true;
+			this.Maloaidichvu.Visible = false;
 			// 
 			// panel1
 			// 
@@ -454,6 +525,21 @@
 			this.panel2.Size = new System.Drawing.Size(835, 31);
 			this.panel2.TabIndex = 10;
 			// 
+			// button1
+			// 
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.White;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(23, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(23, 28);
+			this.button1.TabIndex = 1;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -477,37 +563,6 @@
 			this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
 			this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Location = new System.Drawing.Point(4, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(49, 47);
-			this.pictureBox2.TabIndex = 49;
-			this.pictureBox2.TabStop = false;
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(49, 47);
-			this.pictureBox1.TabIndex = 38;
-			this.pictureBox1.TabStop = false;
-			// 
-			// button1
-			// 
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(23, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(23, 28);
-			this.button1.TabIndex = 1;
-			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this.button1.UseVisualStyleBackColor = true;
-			// 
 			// DichVuvaLoaiDichVu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,6 +573,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "DichVuvaLoaiDichVu";
 			this.Text = "DichVuvaLoaiDichVu";
+			this.Load += new System.EventHandler(this.DichVuvaLoaiDichVu_Load);
 			this.pnLoai.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridLoai)).EndInit();
 			this.panel5.ResumeLayout(false);
@@ -531,8 +587,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.gridDV)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -542,10 +596,8 @@
 
 		private System.Windows.Forms.Panel pnLoai;
 		private System.Windows.Forms.DataGridView gridLoai;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button bntThemLoai;
 		private System.Windows.Forms.Panel panel5;
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.TextBox txtDonvi;
 		private System.Windows.Forms.ComboBox cbmLoai;
 		private System.Windows.Forms.Label label11;
@@ -565,8 +617,8 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.RadioButton radioButton2;
-		private System.Windows.Forms.RadioButton radioButton1;
+		private System.Windows.Forms.RadioButton rbTatca;
+		private System.Windows.Forms.RadioButton rbLoai;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Panel pnDV;
 		private System.Windows.Forms.DataGridView gridDV;
@@ -576,5 +628,12 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn MaLoai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn TenLoai;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Donvitinh;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Maloaidichvu;
 	}
 }

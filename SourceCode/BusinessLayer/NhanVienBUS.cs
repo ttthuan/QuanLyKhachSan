@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,16 @@ namespace BusinessLayer
 		public int LayMaNhanVien(int maTK)
 		{
 			return nhanVienDAO.LayMaNhanVien(maTK);
+		}
+
+		public DataTable LaydanhsachChucvu()
+		{
+			return nhanVienDAO.LaydanhsachChucvu();
+		}
+
+		public NhanVienDTO LayNhanVienTheoTK(int maTK)
+		{
+			return nhanVienDAO.LayNhanVienTheoTK(maTK);
 		}
 	}
 }

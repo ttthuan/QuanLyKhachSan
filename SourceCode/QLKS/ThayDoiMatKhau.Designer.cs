@@ -30,14 +30,13 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThayDoiMatKhau));
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtMKmoi = new System.Windows.Forms.TextBox();
 			this.txtMKcu = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.btnHuy = new System.Windows.Forms.Button();
 			this.btnThaydoi = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +54,21 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(408, 31);
 			this.panel2.TabIndex = 48;
+			// 
+			// button1
+			// 
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.Color.White;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(23, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(23, 28);
+			this.button1.TabIndex = 1;
+			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// label1
 			// 
@@ -110,22 +124,6 @@
 			this.label3.TabIndex = 43;
 			this.label3.Text = "Mật khẩu mới :";
 			// 
-			// btnHuy
-			// 
-			this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(114)))));
-			this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnHuy.FlatAppearance.BorderSize = 0;
-			this.btnHuy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(114)))));
-			this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.75F);
-			this.btnHuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnHuy.Location = new System.Drawing.Point(221, 155);
-			this.btnHuy.Name = "btnHuy";
-			this.btnHuy.Size = new System.Drawing.Size(97, 30);
-			this.btnHuy.TabIndex = 42;
-			this.btnHuy.Text = "Hủy";
-			this.btnHuy.UseVisualStyleBackColor = false;
-			// 
 			// btnThaydoi
 			// 
 			this.btnThaydoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(114)))));
@@ -135,27 +133,13 @@
 			this.btnThaydoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnThaydoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.75F);
 			this.btnThaydoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.btnThaydoi.Location = new System.Drawing.Point(94, 155);
+			this.btnThaydoi.Location = new System.Drawing.Point(157, 161);
 			this.btnThaydoi.Name = "btnThaydoi";
 			this.btnThaydoi.Size = new System.Drawing.Size(97, 30);
 			this.btnThaydoi.TabIndex = 41;
 			this.btnThaydoi.Text = "Thay đổi";
 			this.btnThaydoi.UseVisualStyleBackColor = false;
-			// 
-			// button1
-			// 
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.Location = new System.Drawing.Point(23, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(23, 28);
-			this.button1.TabIndex = 1;
-			this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this.button1.UseVisualStyleBackColor = true;
+			this.btnThaydoi.Click += new System.EventHandler(this.btnThaydoi_Click);
 			// 
 			// pictureBox1
 			// 
@@ -178,7 +162,6 @@
 			this.Controls.Add(this.txtMKcu);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.btnHuy);
 			this.Controls.Add(this.btnThaydoi);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "ThayDoiMatKhau";
@@ -201,7 +184,6 @@
 		private System.Windows.Forms.TextBox txtMKcu;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Button btnHuy;
 		private System.Windows.Forms.Button btnThaydoi;
 	}
 }

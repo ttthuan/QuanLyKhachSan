@@ -16,5 +16,15 @@ namespace BusinessLayer
 		{
 			return loaiDichVuDAO.LayDanhSachLoaiDichVu();
 		}
+
+		public bool CapnhatLDV(string ten, string ma)
+		{
+			return loaiDichVuDAO.CapnhatLDV(ten, ma);
+		}
+
+		public bool ThemLDV(string ten)
+		{
+			return loaiDichVuDAO.ThemLDV(ten);
+		}
 	}
 }

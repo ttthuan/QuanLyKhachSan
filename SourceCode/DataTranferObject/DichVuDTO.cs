@@ -12,5 +12,6 @@ namespace DataTranferObject
 		public string _Ten { get; set; }
 		public string _Donvitinh { get; set; }
 		public int _Maloaidichvu { get; set; }
+		public float _Gia { get; set; }
 	}
 }

@@ -128,11 +128,20 @@ namespace PresentationLayer
 
         private void BtnQuanLyTaiKhoan_MouseUp(object sender, MouseEventArgs e)
         {
-            setColorActiveForButton((Button)sender);
-            
 
+			setColorActiveForButton((Button)sender);
 
-            onlyShowOneFormOnPannelBody(quanlytaikhoan);
+			if (quanlytaikhoan == null)
+			{
+				quanlytaikhoan = new QuanlyTaiKhoan(taiKhoan);
+				quanlytaikhoan.Dock = DockStyle.Fill;
+				quanlytaikhoan.TopLevel = false;
+				pnBody.Controls.Add(quanlytaikhoan);
+
+				quanlytaikhoan.Show();
+			}
+
+			onlyShowOneFormOnPannelBody(quanlytaikhoan);
         }
 
         private void BtnDoiMatKhau_MouseUp(object sender, MouseEventArgs e)
@@ -220,9 +229,10 @@ namespace PresentationLayer
            
             onlyShowOneFormOnPannelBody(doanhThuGanDay);
         }
-        
-        // button close windown
-        private void btnClose_Click(object sender, EventArgs e)
+
+
+		// button close windown
+		private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -643,5 +653,5 @@ namespace PresentationLayer
             }
             
         }
-    }
+	}
 }

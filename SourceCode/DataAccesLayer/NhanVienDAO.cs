@@ -28,7 +28,20 @@ namespace DataAccesLayer
             return nhanViens;
         }
 
-        public NhanVienDTO ChuyenRowThanhObject(DataRow row)
+		public NhanVienDTO LayNhanVienTheoTK(int maTK)
+		{
+			string query = "Select * From Nhanvien where Mataikhoan = "+maTK+"";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			NhanVienDTO nhanVienDTO = new NhanVienDTO();
+			foreach (DataRow r in tb.Rows)
+			{
+				nhanVienDTO = ChuyenRowThanhObject(r);
+			}
+			return nhanVienDTO;
+		}
+
+		public NhanVienDTO ChuyenRowThanhObject(DataRow row)
         {
             NhanVienDTO nhanVien = new NhanVienDTO();
             nhanVien.Ma = int.Parse(row[0].ToString());
@@ -50,6 +63,12 @@ namespace DataAccesLayer
 			tb = dataProvider.ExecuteQuery_DataTble(query);
 			int resut = int.Parse(tb.Rows[0][0].ToString());
 			return resut;
+		}
+
+		public DataTable LaydanhsachChucvu()
+		{
+			string query = "Select Ma From Loainhanvien";
+			return dataProvider.ExecuteQuery_DataTble(query);
 		}
 	}
 }
