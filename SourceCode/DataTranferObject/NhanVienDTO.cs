@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataTranferObject
 {
-	class NhanVienDTO
+	public class NhanVienDTO
 	{
 		private int _Ma;
 		private string _Ten;
