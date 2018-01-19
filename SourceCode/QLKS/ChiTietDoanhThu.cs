@@ -61,7 +61,7 @@ namespace PresentationLayer
             dtgvHoaDon.Columns[4].HeaderText = "Thời gian vào";
             dtgvHoaDon.Columns[5].HeaderText = "Thời gian ra";
             dtgvHoaDon.Columns[6].HeaderText = "Tổng tiền";
-            dtgvHoaDon.Columns[7].HeaderText = "Nhân viên checkin";
+            dtgvHoaDon.Columns[7].HeaderText = "Nhân viên tạo";
 
             dtgvHoaDon.Columns[0].Width = 40;
             dtgvHoaDon.Columns[1].Width = 70;
@@ -85,10 +85,10 @@ namespace PresentationLayer
                 lbMax.Text = (ls.Count()-1).ToString();
             }
 
-            dtgvHoaDon.Columns.Remove("TIENPHONG");
-            dtgvHoaDon.Columns.Remove("TIENPHUTHU");
-            dtgvHoaDon.Columns.Remove("GIAMTRU");
-            dtgvHoaDon.Columns.Remove("DICHVU");
+            //dtgvHoaDon.Columns.Remove("TIENPHONG");
+            //dtgvHoaDon.Columns.Remove("TIENPHUTHU");
+            //dtgvHoaDon.Columns.Remove("GIAMTRU");
+            //dtgvHoaDon.Columns.Remove("DICHVU");
 
             hiLight();
         }
@@ -296,7 +296,7 @@ namespace PresentationLayer
                     worksheet.Cells[cellRowIndex, 5] = item.THOIGIANVAO.ToShortDateString();
                     worksheet.Cells[cellRowIndex, 6] = item.THOIGIANTRA.ToShortDateString();
                     worksheet.Cells[cellRowIndex, 7] = item.TONG.ToString();
-                    worksheet.Cells[cellRowIndex++, 8] = item.NVCHECKIN.ToString();
+                    worksheet.Cells[cellRowIndex++, 8] = item.NVTAO.ToString();
                 }
 
                 cellRowIndex += 2;

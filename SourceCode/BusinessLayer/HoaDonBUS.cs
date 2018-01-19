@@ -46,6 +46,7 @@ namespace BusinessLayer
                                     customDisplayHoaDon.THOIGIANVAO = phieuThuePhongs[j].ThoiGianNhanPhong;
                                     customDisplayHoaDon.THOIGIANTRA = phieuThuePhongs[j].ThoiGianTraPhong;
                                     customDisplayHoaDon.TONG = hoaDons[i].Tongtien;
+                                    //customDisplayHoaDon.NVTAO = 
                                     lsDisplayHoaDon.Add(customDisplayHoaDon);
                                 }
                             }
