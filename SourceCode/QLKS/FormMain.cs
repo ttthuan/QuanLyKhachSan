@@ -189,7 +189,16 @@ namespace PresentationLayer
         {
             setColorActiveForButton((Button)sender);
 
-           
+            if (bieuDoKhachDen == null)
+            {
+                bieuDoKhachDen = new BieuDoKhachDen();
+                bieuDoKhachDen.Dock = DockStyle.Fill;
+                bieuDoKhachDen.TopLevel = false;
+                pnBody.Controls.Add(bieuDoKhachDen);
+
+                bieuDoKhachDen.Show();
+            }
+
             onlyShowOneFormOnPannelBody(bieuDoKhachDen);
         }
 
@@ -214,7 +223,16 @@ namespace PresentationLayer
         {
             setColorActiveForButton((Button)sender);
 
-           
+            if (doanhThuGanDay == null)
+            {
+                doanhThuGanDay = new DoanhThuGanDay();
+                doanhThuGanDay.Dock = DockStyle.Fill;
+                doanhThuGanDay.TopLevel = false;
+                pnBody.Controls.Add(doanhThuGanDay);
+
+                doanhThuGanDay.Show();
+            }
+
             onlyShowOneFormOnPannelBody(doanhThuGanDay);
         }
         

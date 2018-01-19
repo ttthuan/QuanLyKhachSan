@@ -289,7 +289,7 @@
             this.btnPhanTichBieuDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.btnPhanTichBieuDo.Image = global::PresentationLayer.Properties.Resources.white_chart_bar;
             this.btnPhanTichBieuDo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhanTichBieuDo.Location = new System.Drawing.Point(0, 119);
+            this.btnPhanTichBieuDo.Location = new System.Drawing.Point(0, 120);
             this.btnPhanTichBieuDo.Margin = new System.Windows.Forms.Padding(0);
             this.btnPhanTichBieuDo.Name = "btnPhanTichBieuDo";
             this.btnPhanTichBieuDo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);

@@ -25,11 +25,8 @@ namespace PresentationLayer
         SaveFileDialog saveDialog;
         Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
         int numberLuotThue = 0;
-        int sumPhuThu = 0;
-        int sumTienPhong = 0;
-        int sumTienDichVu = 0;
-        int sumGiamTru = 0;
         int sumDoanhThu = 0;
+        int sumDichVu = 0;
 
         private HoaDonBUS hoaDonBUS = new HoaDonBUS();
 
@@ -176,7 +173,7 @@ namespace PresentationLayer
         {
             if(!(string.IsNullOrEmpty(txtSearching.Text) || string.IsNullOrWhiteSpace(txtSearching.Text)))
             {
-                //ls = hoaDonBUS.getCusTomHoaDonsSearching(txtSearching.Text, bd, kt);
+                ls = hoaDonBUS.getCusTomHoaDonsSearch(txtSearching.Text, bd, kt);
                 lbThoiGian.Text = bd.Date.ToShortDateString() + " - " + kt.Date.ToShortDateString();
                 max = int.Parse(cbbNumber.SelectedItem.ToString());
                 index = 0;
@@ -210,9 +207,11 @@ namespace PresentationLayer
             {
                 numberLuotThue = ls.Count();
                 sumDoanhThu = int.Parse(ls.Sum(h=>h.TONG).ToString());
+                sumDichVu = int.Parse(ls.Sum(h => h.DICHVU).ToString());
 
                 lbLuotThue.Text = numberLuotThue.ToString();
                 lbTongTien.Text = sumDoanhThu.ToString();
+                lbDichVu.Text = sumDichVu.ToString();
             }
         }
 
@@ -221,6 +220,7 @@ namespace PresentationLayer
             public List<BusinessLayer.CustomDisplayHoaDon> ls;
             public int TongLuotThue;
             public int TongDoahThu;
+            public int TongDichVu;
         }
         DataParameter parameter;
 
@@ -240,6 +240,7 @@ namespace PresentationLayer
                     parameter.ls = ls;
                     parameter.TongLuotThue = numberLuotThue;
                     parameter.TongDoahThu = sumDoanhThu;
+                    parameter.TongDichVu = sumDichVu;
                     pbloadding.Visible = true;
                     backgroundWorkerApp.RunWorkerAsync(parameter);
                 }
@@ -288,12 +289,14 @@ namespace PresentationLayer
                 cellRowIndex += 3;
                 // worksheet.Cells[cellRowIndex, 1] = item.STT.ToString();
                 worksheet.Cells[cellRowIndex, 2] = "Lượt thuê";
-                worksheet.Cells[cellRowIndex, 3] = "Tổng tiền";
+                worksheet.Cells[cellRowIndex, 3] = "Dịch vụ";
+                worksheet.Cells[cellRowIndex, 4] = "Tổng tiền";
 
                 cellRowIndex++;
                 worksheet.Cells[cellRowIndex, 1] = "Tổng kết";
                 worksheet.Cells[cellRowIndex, 2] = ((DataParameter)e.Argument).TongLuotThue.ToString();
-                worksheet.Cells[cellRowIndex, 3] = ((DataParameter)e.Argument).TongDoahThu.ToString();
+                worksheet.Cells[cellRowIndex, 3] = ((DataParameter)e.Argument).TongDichVu.ToString();
+                worksheet.Cells[cellRowIndex, 4] = ((DataParameter)e.Argument).TongDoahThu.ToString();
 
                 workbook.SaveAs(fileName);
 

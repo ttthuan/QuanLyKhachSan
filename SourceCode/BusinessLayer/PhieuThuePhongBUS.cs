@@ -65,6 +65,45 @@ namespace BusinessLayer
             return null;
         }
 
+        public List<BieuDoKhachDen> LayDanhSachSoKhachDenTrongThang(int year, int month)
+        {
+            List<BieuDoKhachDen> list = new List<BieuDoKhachDen>();
+            int lastDayInMounth = DateTime.DaysInMonth(year, month);
+            for (int i = 1; i <= lastDayInMounth; i++)
+            {
+                list.Add(LaySoLuongKhachDenTrongNgay(new DateTime(year, month, i)));
+            }
+            return list;
+        }
+
+        public BieuDoKhachDen LaySoLuongKhachDenTrongNgay(DateTime date)
+        {
+            BieuDoKhachDen bieuDoKhachDen = new BieuDoKhachDen();
+            bieuDoKhachDen.DAY = date.Day;
+
+            PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongDAO.LayDanhSachPhieuThuePhong();
+
+            foreach (var temp in phieuThuePhongs.Where(dp => dp.ThoiGianNhanPhong.Date == date.Date)
+                    .OrderBy(dp => dp.MaLoaiThuePhong)
+                    .GroupBy(dp => dp.MaLoaiThuePhong).Select(group => new { MALOAIDK = group.Key, NUMBER = group.Count() }))
+            {
+                if (temp.MALOAIDK == 1)
+                {
+                    bieuDoKhachDen.NUMBERTHUENGAY = temp.NUMBER;
+                }
+                else if (temp.MALOAIDK == 2)
+                {
+                    bieuDoKhachDen.NUMBERQUADEM = temp.NUMBER;
+                }
+                else
+                {
+                    bieuDoKhachDen.NUMBERTHUEGIO = temp.NUMBER;
+                }
+            }
+
+            return bieuDoKhachDen;
+        }
+
 		public DataTable DanhSachDatPhong(int maKH)
 		{
 			return phieuThuePhongDAO.DanhSachDatPhong(maKH);
