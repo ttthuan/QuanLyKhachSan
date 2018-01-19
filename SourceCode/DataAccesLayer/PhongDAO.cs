@@ -56,10 +56,10 @@ namespace DataAccesLayer
 		public DataTable LayDanhSachPhongTrong(string time1, string time2, int maLoaiPhong)
 		{
 			DataTable dataTable = new DataTable();
-			string query = "Select Ma,Ten,Tang From Phong where Ma not in " +
-				"( Select Maphong from Phieuthuephong where ('" + time1 + "' < Thoigiannhanphong and '" + time2 + "' > Thoigiannhanphong )" +
-				"or ('" + time1 + "' > Thoigiannhanphong and '" + time2 + "' < Thoigiantraphong ) or ('" + time1 + 
-				"' < Thoigiantraphong and '" + time2+"' > Thoigiantraphong ) and Maloaiphong = "+ maLoaiPhong + ")";
+			string query = "Select Ma,Ten,Tang From Phong where Maloaiphong = " + maLoaiPhong + " and Ma not in " +
+				"( Select Maphong from Phieuthuephong where (('" + time1 + "' <= Thoigiannhanphong and '" + time2 + "' > Thoigiannhanphong )" +
+				"or ('" + time1 + "' > Thoigiannhanphong and '" + time2 + "' <= Thoigiantraphong ) or ('" + time1 + 
+				"' <= Thoigiantraphong and '" + time2+"' > Thoigiantraphong )))";
 			dataTable = dataProvider.ExecuteQuery_DataTble(query);
 			return dataTable;
 		}
@@ -78,6 +78,32 @@ namespace DataAccesLayer
 				phongDTO.MaLoaiPhong = int.Parse(tb.Rows[0]["Maloaiphong"].ToString());
 			}
 			return phongDTO;
+		}
+
+		public float LayGiaPhong(int maLoaiGia, int maLoaiPhong)
+		{
+			float giaPhong = 0;
+			string query = "Select Gia from Giaphong where Maloaigia = "+maLoaiGia+" and Maloaiphong = "+maLoaiPhong+"";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count != 0)
+			{
+				giaPhong = float.Parse(tb.Rows[0]["Gia"].ToString());
+			}
+			return giaPhong;
+		}
+
+		public string LayLoaiPhong(int maLoaiPhong)
+		{
+			string query = "Select Ten from Loaiphong where Ma =  " + maLoaiPhong + "";
+			string loaiPhong = "";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count != 0)
+			{
+				loaiPhong = tb.Rows[0]["Ten"].ToString();
+			}
+			return loaiPhong;
 		}
 	}
 }

@@ -16,5 +16,6 @@ namespace DataTranferObject
         public int MaLoaiThuePhong { get; set; }
         public float Gia { get; set; }
         public int TrangThai { get; set; }
-    }
+		public float TraTruoc { get; set; }
+	}
 }

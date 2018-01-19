@@ -33,16 +33,16 @@
 			this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.bntCapNhat = new System.Windows.Forms.Button();
 			this.bntHuy = new System.Windows.Forms.Button();
-			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			this.cbmLoaiDV = new System.Windows.Forms.ComboBox();
 			this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label4 = new System.Windows.Forms.Label();
-			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
-			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
 			this.gridDSDV = new System.Windows.Forms.DataGridView();
-			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clThemDV = new System.Windows.Forms.DataGridViewImageColumn();
 			this.label5 = new System.Windows.Forms.Label();
 			this.gridDVdangSD = new System.Windows.Forms.DataGridView();
+			this.clThem = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clGiam = new System.Windows.Forms.DataGridViewImageColumn();
+			this.clXoa = new System.Windows.Forms.DataGridViewImageColumn();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -100,14 +100,7 @@
 			this.bntHuy.TabIndex = 41;
 			this.bntHuy.Text = "Đóng";
 			this.bntHuy.UseVisualStyleBackColor = false;
-			// 
-			// clThemDV
-			// 
-			this.clThemDV.HeaderText = "Thêm";
-			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThemDV.Name = "clThemDV";
-			this.clThemDV.ReadOnly = true;
-			this.clThemDV.Width = 613;
+			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
 			// 
 			// cbmLoaiDV
 			// 
@@ -116,6 +109,7 @@
 			this.cbmLoaiDV.Name = "cbmLoaiDV";
 			this.cbmLoaiDV.Size = new System.Drawing.Size(136, 21);
 			this.cbmLoaiDV.TabIndex = 2;
+			this.cbmLoaiDV.SelectedIndexChanged += new System.EventHandler(this.cbmLoaiDV_SelectedIndexChanged);
 			// 
 			// dataGridViewImageColumn3
 			// 
@@ -135,20 +129,6 @@
 			this.label4.TabIndex = 0;
 			this.label4.Text = "Loại dịch vụ :";
 			// 
-			// clXoa
-			// 
-			this.clXoa.HeaderText = "Xóa";
-			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clXoa.Name = "clXoa";
-			this.clXoa.ReadOnly = true;
-			// 
-			// clGiam
-			// 
-			this.clGiam.HeaderText = "Bớt";
-			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clGiam.Name = "clGiam";
-			this.clGiam.ReadOnly = true;
-			// 
 			// gridDSDV
 			// 
 			this.gridDSDV.AllowUserToAddRows = false;
@@ -165,12 +145,14 @@
 			this.gridDSDV.Size = new System.Drawing.Size(752, 161);
 			this.gridDSDV.TabIndex = 1;
 			// 
-			// clThem
+			// clThemDV
 			// 
-			this.clThem.HeaderText = "Thêm";
-			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-			this.clThem.Name = "clThem";
-			this.clThem.ReadOnly = true;
+			this.clThemDV.HeaderText = "Thêm";
+			this.clThemDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThemDV.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThemDV.Name = "clThemDV";
+			this.clThemDV.ReadOnly = true;
+			this.clThemDV.Width = 613;
 			// 
 			// label5
 			// 
@@ -194,12 +176,37 @@
             this.clThem,
             this.clGiam,
             this.clXoa});
-			this.gridDVdangSD.Location = new System.Drawing.Point(13, 26);
+			this.gridDVdangSD.Location = new System.Drawing.Point(14, 22);
 			this.gridDVdangSD.Name = "gridDVdangSD";
 			this.gridDVdangSD.ReadOnly = true;
 			this.gridDVdangSD.RowHeadersVisible = false;
 			this.gridDVdangSD.Size = new System.Drawing.Size(752, 155);
 			this.gridDVdangSD.TabIndex = 1;
+			this.gridDVdangSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDVdangSD_CellClick);
+			// 
+			// clThem
+			// 
+			this.clThem.HeaderText = "Thêm";
+			this.clThem.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.clThem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clThem.Name = "clThem";
+			this.clThem.ReadOnly = true;
+			// 
+			// clGiam
+			// 
+			this.clGiam.HeaderText = "Bớt";
+			this.clGiam.Image = global::PresentationLayer.Properties.Resources.minus_box;
+			this.clGiam.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clGiam.Name = "clGiam";
+			this.clGiam.ReadOnly = true;
+			// 
+			// clXoa
+			// 
+			this.clXoa.HeaderText = "Xóa";
+			this.clXoa.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
+			this.clXoa.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+			this.clXoa.Name = "clXoa";
+			this.clXoa.ReadOnly = true;
 			// 
 			// panel1
 			// 
@@ -236,6 +243,7 @@
 			this.label1.Size = new System.Drawing.Size(163, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Phiếu sử dụng dịch vụ";
+			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// panlTieuDe
 			// 
@@ -249,6 +257,7 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(781, 40);
 			this.panlTieuDe.TabIndex = 37;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// panel3
 			// 
@@ -277,7 +286,9 @@
 			this.Controls.Add(this.panel3);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "PhieuSuDungDichVu";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "PhieuSuDungDichVu";
+			this.Load += new System.EventHandler(this.PhieuSuDungDichVu_Load);
 			((System.ComponentModel.ISupportInitialize)(this.gridDSDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridDVdangSD)).EndInit();
 			this.panel1.ResumeLayout(false);
@@ -297,14 +308,10 @@
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
 		private System.Windows.Forms.Button bntCapNhat;
 		private System.Windows.Forms.Button bntHuy;
-		private System.Windows.Forms.DataGridViewImageColumn clThemDV;
 		private System.Windows.Forms.ComboBox cbmLoaiDV;
 		private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.DataGridViewImageColumn clXoa;
-		private System.Windows.Forms.DataGridViewImageColumn clGiam;
 		private System.Windows.Forms.DataGridView gridDSDV;
-		private System.Windows.Forms.DataGridViewImageColumn clThem;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.DataGridView gridDVdangSD;
 		private System.Windows.Forms.Panel panel1;
@@ -312,5 +319,9 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panlTieuDe;
 		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.DataGridViewImageColumn clThemDV;
+		private System.Windows.Forms.DataGridViewImageColumn clThem;
+		private System.Windows.Forms.DataGridViewImageColumn clGiam;
+		private System.Windows.Forms.DataGridViewImageColumn clXoa;
 	}
 }

@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DichVuDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />
     <Compile Include="KhachHangDTO.cs" />
     <Compile Include="LoaiThuePhongDTO.cs" />
     <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="PhieuSuDungDichVuDTO.cs" />
     <Compile Include="PhieuThuePhongDTO.cs" />
     <Compile Include="PhongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

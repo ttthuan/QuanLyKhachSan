@@ -2,6 +2,7 @@
 using DataTranferObject;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,5 +64,20 @@ namespace BusinessLayer
             }
             return null;
         }
-    }
+
+		public DataTable DanhSachDatPhong(int maKH)
+		{
+			return phieuThuePhongDAO.DanhSachDatPhong(maKH);
+		}
+
+		public PhieuThuePhongDTO LayPhieuthuephongTheoma(int maPhieuthue)
+		{
+			return phieuThuePhongDAO.LayPhieuthuephongTheoma(maPhieuthue);
+		}
+
+		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
+		{
+			return phieuThuePhongDAO.ThemPhieuThuePhong(phieuThuePhongDTO);
+		}
+	}
 }

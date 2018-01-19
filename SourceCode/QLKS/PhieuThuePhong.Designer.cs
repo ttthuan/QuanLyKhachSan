@@ -43,50 +43,47 @@
 			this.cbmLoaiDangKy = new System.Windows.Forms.ComboBox();
 			this.cbmLoaiDV = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
 			this.dtpkGioKT = new System.Windows.Forms.DateTimePicker();
-			this.lbValidationSoLuongKH = new System.Windows.Forms.Label();
-			this.lbValidationTraTruoc = new System.Windows.Forms.Label();
-			this.txtTraTruoc = new System.Windows.Forms.TextBox();
-			this.txtGiaPhong = new System.Windows.Forms.TextBox();
 			this.label15 = new System.Windows.Forms.Label();
-			this.txtSoLuongKH = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
 			this.label25 = new System.Windows.Forms.Label();
 			this.label21 = new System.Windows.Forms.Label();
 			this.label22 = new System.Windows.Forms.Label();
 			this.dtpkNgayKT = new System.Windows.Forms.DateTimePicker();
 			this.label11 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.dtpkGioDB = new System.Windows.Forms.DateTimePicker();
+			this.lbLoaiPhong = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.dtpkGioBD = new System.Windows.Forms.DateTimePicker();
 			this.lbTang = new System.Windows.Forms.Label();
 			this.label16 = new System.Windows.Forms.Label();
 			this.lbTenPhong = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
+			this.lbThongTinDangKy = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.lbCMND = new System.Windows.Forms.Label();
+			this.lbTenKH = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.lbThemsudungDV = new System.Windows.Forms.PictureBox();
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.picboxChiTietDV = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.bntCapNhat = new System.Windows.Forms.Button();
 			this.bntHuy = new System.Windows.Forms.Button();
 			this.panlTieuDe = new System.Windows.Forms.Panel();
-			this.lbCMND = new System.Windows.Forms.Label();
-			this.lbTenKH = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.lbThongTinDangKy = new System.Windows.Forms.Label();
+			this.lbTraTruoc = new System.Windows.Forms.Label();
+			this.lbGiaPhong = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panel3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.lbThemsudungDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -138,7 +135,7 @@
 			// 
 			this.label18.AutoSize = true;
 			this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label18.Location = new System.Drawing.Point(77, 61);
+			this.label18.Location = new System.Drawing.Point(75, 103);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(78, 13);
 			this.label18.TabIndex = 46;
@@ -227,10 +224,11 @@
 			this.cbmLoaiDangKy.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.cbmLoaiDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cbmLoaiDangKy.FormattingEnabled = true;
-			this.cbmLoaiDangKy.Location = new System.Drawing.Point(168, 61);
+			this.cbmLoaiDangKy.Location = new System.Drawing.Point(168, 99);
 			this.cbmLoaiDangKy.Name = "cbmLoaiDangKy";
 			this.cbmLoaiDangKy.Size = new System.Drawing.Size(121, 21);
 			this.cbmLoaiDangKy.TabIndex = 8;
+			this.cbmLoaiDangKy.SelectedIndexChanged += new System.EventHandler(this.cbmLoaiDangKy_SelectedIndexChanged);
 			// 
 			// cbmLoaiDV
 			// 
@@ -244,6 +242,7 @@
 			this.cbmLoaiDV.Name = "cbmLoaiDV";
 			this.cbmLoaiDV.Size = new System.Drawing.Size(149, 21);
 			this.cbmLoaiDV.TabIndex = 67;
+			this.cbmLoaiDV.SelectedIndexChanged += new System.EventHandler(this.cbmLoaiDV_SelectedIndexChanged);
 			// 
 			// label10
 			// 
@@ -255,17 +254,6 @@
 			this.label10.Size = new System.Drawing.Size(76, 13);
 			this.label10.TabIndex = 67;
 			this.label10.Text = "Dịch vụ thêm :";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.label6.Location = new System.Drawing.Point(478, 102);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(17, 13);
-			this.label6.TabIndex = 69;
-			this.label6.Text = "(*)";
 			// 
 			// dtpkGioKT
 			// 
@@ -279,48 +267,6 @@
 			this.dtpkGioKT.Size = new System.Drawing.Size(86, 20);
 			this.dtpkGioKT.TabIndex = 68;
 			// 
-			// lbValidationSoLuongKH
-			// 
-			this.lbValidationSoLuongKH.AutoSize = true;
-			this.lbValidationSoLuongKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbValidationSoLuongKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.lbValidationSoLuongKH.Location = new System.Drawing.Point(248, 102);
-			this.lbValidationSoLuongKH.Name = "lbValidationSoLuongKH";
-			this.lbValidationSoLuongKH.Size = new System.Drawing.Size(17, 13);
-			this.lbValidationSoLuongKH.TabIndex = 66;
-			this.lbValidationSoLuongKH.Text = "(*)";
-			// 
-			// lbValidationTraTruoc
-			// 
-			this.lbValidationTraTruoc.AutoSize = true;
-			this.lbValidationTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbValidationTraTruoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.lbValidationTraTruoc.Location = new System.Drawing.Point(478, 61);
-			this.lbValidationTraTruoc.Name = "lbValidationTraTruoc";
-			this.lbValidationTraTruoc.Size = new System.Drawing.Size(17, 13);
-			this.lbValidationTraTruoc.TabIndex = 65;
-			this.lbValidationTraTruoc.Text = "(*)";
-			// 
-			// txtTraTruoc
-			// 
-			this.txtTraTruoc.BackColor = System.Drawing.Color.White;
-			this.txtTraTruoc.Location = new System.Drawing.Point(395, 59);
-			this.txtTraTruoc.MaxLength = 10;
-			this.txtTraTruoc.Name = "txtTraTruoc";
-			this.txtTraTruoc.Size = new System.Drawing.Size(77, 20);
-			this.txtTraTruoc.TabIndex = 64;
-			// 
-			// txtGiaPhong
-			// 
-			this.txtGiaPhong.BackColor = System.Drawing.Color.White;
-			this.txtGiaPhong.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txtGiaPhong.Location = new System.Drawing.Point(395, 100);
-			this.txtGiaPhong.Name = "txtGiaPhong";
-			this.txtGiaPhong.ReadOnly = true;
-			this.txtGiaPhong.Size = new System.Drawing.Size(77, 20);
-			this.txtGiaPhong.TabIndex = 62;
-			this.txtGiaPhong.Text = "0";
-			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
@@ -331,30 +277,11 @@
 			this.label15.TabIndex = 63;
 			this.label15.Text = "Giá phòng:";
 			// 
-			// txtSoLuongKH
-			// 
-			this.txtSoLuongKH.BackColor = System.Drawing.Color.White;
-			this.txtSoLuongKH.Location = new System.Drawing.Point(156, 100);
-			this.txtSoLuongKH.MaxLength = 2;
-			this.txtSoLuongKH.Name = "txtSoLuongKH";
-			this.txtSoLuongKH.Size = new System.Drawing.Size(86, 20);
-			this.txtSoLuongKH.TabIndex = 60;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label14.Location = new System.Drawing.Point(6, 102);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(115, 13);
-			this.label14.TabIndex = 61;
-			this.label14.Text = "Số lượng khách hàng :";
-			// 
 			// label25
 			// 
 			this.label25.AutoSize = true;
 			this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label25.Location = new System.Drawing.Point(321, 61);
+			this.label25.Location = new System.Drawing.Point(321, 66);
 			this.label25.Name = "label25";
 			this.label25.Size = new System.Drawing.Size(59, 13);
 			this.label25.TabIndex = 58;
@@ -405,16 +332,13 @@
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
 			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.panel2.Controls.Add(this.label6);
+			this.panel2.Controls.Add(this.lbGiaPhong);
+			this.panel2.Controls.Add(this.lbTraTruoc);
+			this.panel2.Controls.Add(this.lbLoaiPhong);
+			this.panel2.Controls.Add(this.label7);
 			this.panel2.Controls.Add(this.dtpkGioKT);
-			this.panel2.Controls.Add(this.dtpkGioDB);
-			this.panel2.Controls.Add(this.lbValidationSoLuongKH);
-			this.panel2.Controls.Add(this.lbValidationTraTruoc);
-			this.panel2.Controls.Add(this.txtTraTruoc);
-			this.panel2.Controls.Add(this.txtGiaPhong);
+			this.panel2.Controls.Add(this.dtpkGioBD);
 			this.panel2.Controls.Add(this.label15);
-			this.panel2.Controls.Add(this.txtSoLuongKH);
-			this.panel2.Controls.Add(this.label14);
 			this.panel2.Controls.Add(this.label25);
 			this.panel2.Controls.Add(this.label21);
 			this.panel2.Controls.Add(this.label22);
@@ -437,37 +361,58 @@
 			this.panel2.Size = new System.Drawing.Size(509, 195);
 			this.panel2.TabIndex = 38;
 			// 
-			// dtpkGioDB
+			// lbLoaiPhong
 			// 
-			this.dtpkGioDB.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.dtpkGioDB.CustomFormat = "HH:mm:ss";
-			this.dtpkGioDB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dtpkGioDB.Location = new System.Drawing.Point(156, 133);
-			this.dtpkGioDB.Name = "dtpkGioDB";
-			this.dtpkGioDB.ShowUpDown = true;
-			this.dtpkGioDB.Size = new System.Drawing.Size(86, 20);
-			this.dtpkGioDB.TabIndex = 67;
-			this.dtpkGioDB.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
+			this.lbLoaiPhong.AutoSize = true;
+			this.lbLoaiPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbLoaiPhong.Location = new System.Drawing.Point(167, 66);
+			this.lbLoaiPhong.Name = "lbLoaiPhong";
+			this.lbLoaiPhong.Size = new System.Drawing.Size(16, 13);
+			this.lbLoaiPhong.TabIndex = 71;
+			this.lbLoaiPhong.Text = "...";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label7.Location = new System.Drawing.Point(84, 66);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(66, 13);
+			this.label7.TabIndex = 70;
+			this.label7.Text = "Loại phòng :";
+			// 
+			// dtpkGioBD
+			// 
+			this.dtpkGioBD.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.dtpkGioBD.CustomFormat = "HH:mm:ss";
+			this.dtpkGioBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkGioBD.Location = new System.Drawing.Point(156, 133);
+			this.dtpkGioBD.Name = "dtpkGioBD";
+			this.dtpkGioBD.ShowUpDown = true;
+			this.dtpkGioBD.Size = new System.Drawing.Size(86, 20);
+			this.dtpkGioBD.TabIndex = 67;
+			this.dtpkGioBD.Value = new System.DateTime(2017, 5, 22, 10, 7, 0, 0);
+			this.dtpkGioBD.ValueChanged += new System.EventHandler(this.dtpkGioBD_ValueChanged);
 			// 
 			// lbTang
 			// 
 			this.lbTang.AutoSize = true;
 			this.lbTang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbTang.Location = new System.Drawing.Point(398, 37);
+			this.lbTang.Location = new System.Drawing.Point(392, 37);
 			this.lbTang.Name = "lbTang";
-			this.lbTang.Size = new System.Drawing.Size(32, 13);
+			this.lbTang.Size = new System.Drawing.Size(16, 13);
 			this.lbTang.TabIndex = 45;
-			this.lbTang.Text = "Tầng";
+			this.lbTang.Text = "...";
 			// 
 			// label16
 			// 
 			this.label16.AutoSize = true;
 			this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label16.Location = new System.Drawing.Point(321, 37);
+			this.label16.Location = new System.Drawing.Point(342, 37);
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(52, 13);
+			this.label16.Size = new System.Drawing.Size(38, 13);
 			this.label16.TabIndex = 44;
-			this.label16.Text = "Mã tầng :";
+			this.label16.Text = "Tầng :";
 			// 
 			// lbTenPhong
 			// 
@@ -475,9 +420,9 @@
 			this.lbTenPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.lbTenPhong.Location = new System.Drawing.Point(165, 37);
 			this.lbTenPhong.Name = "lbTenPhong";
-			this.lbTenPhong.Size = new System.Drawing.Size(59, 13);
+			this.lbTenPhong.Size = new System.Drawing.Size(16, 13);
 			this.lbTenPhong.TabIndex = 43;
-			this.lbTenPhong.Text = "Tên phòng";
+			this.lbTenPhong.Text = "...";
 			// 
 			// label13
 			// 
@@ -489,8 +434,20 @@
 			this.label13.TabIndex = 42;
 			this.label13.Text = "Mã số phòng :";
 			// 
+			// lbThongTinDangKy
+			// 
+			this.lbThongTinDangKy.AutoSize = true;
+			this.lbThongTinDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbThongTinDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.lbThongTinDangKy.Location = new System.Drawing.Point(77, 7);
+			this.lbThongTinDangKy.Name = "lbThongTinDangKy";
+			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
+			this.lbThongTinDangKy.TabIndex = 41;
+			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
+			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Image = global::PresentationLayer.Properties.Resources.clipboard_text;
 			this.pictureBox1.Location = new System.Drawing.Point(3, 6);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(48, 49);
@@ -524,8 +481,49 @@
 			this.panel1.Size = new System.Drawing.Size(509, 92);
 			this.panel1.TabIndex = 37;
 			// 
+			// lbCMND
+			// 
+			this.lbCMND.AutoSize = true;
+			this.lbCMND.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbCMND.Location = new System.Drawing.Point(161, 60);
+			this.lbCMND.Name = "lbCMND";
+			this.lbCMND.Size = new System.Drawing.Size(16, 13);
+			this.lbCMND.TabIndex = 34;
+			this.lbCMND.Text = "...";
+			// 
+			// lbTenKH
+			// 
+			this.lbTenKH.AutoSize = true;
+			this.lbTenKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbTenKH.Location = new System.Drawing.Point(161, 29);
+			this.lbTenKH.Name = "lbTenKH";
+			this.lbTenKH.Size = new System.Drawing.Size(16, 13);
+			this.lbTenKH.TabIndex = 33;
+			this.lbTenKH.Text = "...";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label5.Location = new System.Drawing.Point(83, 60);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(61, 13);
+			this.label5.TabIndex = 32;
+			this.label5.Text = "Số CMND :";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.label4.Location = new System.Drawing.Point(112, 29);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(32, 13);
+			this.label4.TabIndex = 31;
+			this.label4.Text = "Tên :";
+			// 
 			// pictureBox2
 			// 
+			this.pictureBox2.Image = global::PresentationLayer.Properties.Resources.account_card_details_black;
 			this.pictureBox2.Location = new System.Drawing.Point(3, 4);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(48, 49);
@@ -549,7 +547,7 @@
 			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel3.Controls.Add(this.lbSL);
 			this.panel3.Controls.Add(this.lbThem);
-			this.panel3.Controls.Add(this.pictureBox4);
+			this.panel3.Controls.Add(this.lbThemsudungDV);
 			this.panel3.Controls.Add(this.lbtbDVdd);
 			this.panel3.Controls.Add(this.pictureBox5);
 			this.panel3.Controls.Add(this.txtSoLuong);
@@ -565,18 +563,23 @@
 			this.panel3.Size = new System.Drawing.Size(509, 94);
 			this.panel3.TabIndex = 41;
 			// 
-			// pictureBox4
+			// lbThemsudungDV
 			// 
-			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pictureBox4.Location = new System.Drawing.Point(205, 7);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(24, 21);
-			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox4.TabIndex = 75;
-			this.pictureBox4.TabStop = false;
+			this.lbThemsudungDV.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lbThemsudungDV.Image = global::PresentationLayer.Properties.Resources.library_plus;
+			this.lbThemsudungDV.Location = new System.Drawing.Point(205, 7);
+			this.lbThemsudungDV.Name = "lbThemsudungDV";
+			this.lbThemsudungDV.Size = new System.Drawing.Size(24, 21);
+			this.lbThemsudungDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.lbThemsudungDV.TabIndex = 75;
+			this.lbThemsudungDV.TabStop = false;
+			this.lbThemsudungDV.Click += new System.EventHandler(this.lbThemsudungDV_Click);
+			this.lbThemsudungDV.MouseLeave += new System.EventHandler(this.lbThemsudungDV_MouseLeave);
+			this.lbThemsudungDV.MouseHover += new System.EventHandler(this.lbThemsudungDV_MouseHover);
 			// 
 			// pictureBox5
 			// 
+			this.pictureBox5.Image = global::PresentationLayer.Properties.Resources.ic_close_black_48dp;
 			this.pictureBox5.Location = new System.Drawing.Point(392, 59);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(24, 21);
@@ -587,15 +590,20 @@
 			// picboxChiTietDV
 			// 
 			this.picboxChiTietDV.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.picboxChiTietDV.Image = global::PresentationLayer.Properties.Resources.open_in_new;
 			this.picboxChiTietDV.Location = new System.Drawing.Point(166, 7);
 			this.picboxChiTietDV.Name = "picboxChiTietDV";
 			this.picboxChiTietDV.Size = new System.Drawing.Size(27, 21);
 			this.picboxChiTietDV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.picboxChiTietDV.TabIndex = 71;
 			this.picboxChiTietDV.TabStop = false;
+			this.picboxChiTietDV.Click += new System.EventHandler(this.picboxChiTietDV_Click);
+			this.picboxChiTietDV.MouseLeave += new System.EventHandler(this.picboxChiTietDV_MouseLeave);
+			this.picboxChiTietDV.MouseHover += new System.EventHandler(this.picboxChiTietDV_MouseHover);
 			// 
 			// pictureBox3
 			// 
+			this.pictureBox3.Image = global::PresentationLayer.Properties.Resources.food;
 			this.pictureBox3.Location = new System.Drawing.Point(7, 5);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(48, 49);
@@ -616,6 +624,7 @@
 			this.bntCapNhat.TabIndex = 39;
 			this.bntCapNhat.Text = "Cập nhật";
 			this.bntCapNhat.UseVisualStyleBackColor = false;
+			this.bntCapNhat.Click += new System.EventHandler(this.bntCapNhat_Click);
 			// 
 			// bntHuy
 			// 
@@ -630,6 +639,7 @@
 			this.bntHuy.TabIndex = 40;
 			this.bntHuy.Text = "Đóng";
 			this.bntHuy.UseVisualStyleBackColor = false;
+			this.bntHuy.Click += new System.EventHandler(this.bntHuy_Click);
 			// 
 			// panlTieuDe
 			// 
@@ -643,57 +653,27 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(509, 40);
 			this.panlTieuDe.TabIndex = 36;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
-			// lbCMND
+			// lbTraTruoc
 			// 
-			this.lbCMND.AutoSize = true;
-			this.lbCMND.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbCMND.Location = new System.Drawing.Point(161, 60);
-			this.lbCMND.Name = "lbCMND";
-			this.lbCMND.Size = new System.Drawing.Size(33, 13);
-			this.lbCMND.TabIndex = 34;
-			this.lbCMND.Text = "cmnd";
+			this.lbTraTruoc.AutoSize = true;
+			this.lbTraTruoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbTraTruoc.Location = new System.Drawing.Point(392, 66);
+			this.lbTraTruoc.Name = "lbTraTruoc";
+			this.lbTraTruoc.Size = new System.Drawing.Size(13, 13);
+			this.lbTraTruoc.TabIndex = 72;
+			this.lbTraTruoc.Text = "0";
 			// 
-			// lbTenKH
+			// lbGiaPhong
 			// 
-			this.lbTenKH.AutoSize = true;
-			this.lbTenKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbTenKH.Location = new System.Drawing.Point(161, 29);
-			this.lbTenKH.Name = "lbTenKH";
-			this.lbTenKH.Size = new System.Drawing.Size(22, 13);
-			this.lbTenKH.TabIndex = 33;
-			this.lbTenKH.Text = "tên";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label5.Location = new System.Drawing.Point(83, 60);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(61, 13);
-			this.label5.TabIndex = 32;
-			this.label5.Text = "Số CMND :";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label4.Location = new System.Drawing.Point(112, 29);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(32, 13);
-			this.label4.TabIndex = 31;
-			this.label4.Text = "Tên :";
-			// 
-			// lbThongTinDangKy
-			// 
-			this.lbThongTinDangKy.AutoSize = true;
-			this.lbThongTinDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.lbThongTinDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
-			this.lbThongTinDangKy.Location = new System.Drawing.Point(77, 7);
-			this.lbThongTinDangKy.Name = "lbThongTinDangKy";
-			this.lbThongTinDangKy.Size = new System.Drawing.Size(100, 13);
-			this.lbThongTinDangKy.TabIndex = 41;
-			this.lbThongTinDangKy.Text = "Thông tin đăng ký :";
+			this.lbGiaPhong.AutoSize = true;
+			this.lbGiaPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.lbGiaPhong.Location = new System.Drawing.Point(392, 102);
+			this.lbGiaPhong.Name = "lbGiaPhong";
+			this.lbGiaPhong.Size = new System.Drawing.Size(13, 13);
+			this.lbGiaPhong.TabIndex = 73;
+			this.lbGiaPhong.Text = "0";
 			// 
 			// PhieuThuePhong
 			// 
@@ -708,7 +688,9 @@
 			this.Controls.Add(this.panlTieuDe);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "PhieuThuePhong";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "PhieuThuePhong";
+			this.Load += new System.EventHandler(this.PhieuThuePhong_Load);
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -717,7 +699,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.lbThemsudungDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.picboxChiTietDV)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -734,7 +716,7 @@
 		private System.Windows.Forms.DateTimePicker dtpkNgayBD;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
-		private System.Windows.Forms.PictureBox pictureBox4;
+		private System.Windows.Forms.PictureBox lbThemsudungDV;
 		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.PictureBox picboxChiTietDV;
 		private System.Windows.Forms.Label label23;
@@ -747,15 +729,8 @@
 		private System.Windows.Forms.ComboBox cbmLoaiDangKy;
 		private System.Windows.Forms.ComboBox cbmLoaiDV;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.DateTimePicker dtpkGioKT;
-		private System.Windows.Forms.Label lbValidationSoLuongKH;
-		private System.Windows.Forms.Label lbValidationTraTruoc;
-		private System.Windows.Forms.TextBox txtTraTruoc;
-		private System.Windows.Forms.TextBox txtGiaPhong;
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TextBox txtSoLuongKH;
-		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label label25;
 		private System.Windows.Forms.Label label21;
 		private System.Windows.Forms.Label label22;
@@ -764,7 +739,7 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.DateTimePicker dtpkGioDB;
+		private System.Windows.Forms.DateTimePicker dtpkGioBD;
 		private System.Windows.Forms.Label lbTang;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label lbTenPhong;
@@ -782,5 +757,9 @@
 		private System.Windows.Forms.Label lbTenKH;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lbLoaiPhong;
+		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label lbGiaPhong;
+		private System.Windows.Forms.Label lbTraTruoc;
 	}
 }

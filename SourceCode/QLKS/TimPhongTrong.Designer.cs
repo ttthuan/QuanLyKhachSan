@@ -96,6 +96,7 @@
 			this.rdbPhongdoi.TabIndex = 80;
 			this.rdbPhongdoi.Text = "Phòng đôi";
 			this.rdbPhongdoi.UseVisualStyleBackColor = true;
+			this.rdbPhongdoi.CheckedChanged += new System.EventHandler(this.rdbPhongdoi_CheckedChanged);
 			// 
 			// rdbPhongdon
 			// 
@@ -108,6 +109,7 @@
 			this.rdbPhongdon.TabStop = true;
 			this.rdbPhongdon.Text = "Phòng đơn";
 			this.rdbPhongdon.UseVisualStyleBackColor = true;
+			this.rdbPhongdon.CheckedChanged += new System.EventHandler(this.rdbPhongdon_CheckedChanged);
 			// 
 			// dtpkGioKT
 			// 
@@ -230,7 +232,7 @@
 			this.dtpkNgayKT.CalendarMonthBackground = System.Drawing.Color.White;
 			this.dtpkNgayKT.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.dtpkNgayKT.CustomFormat = "yyyy-MM-dd";
-			this.dtpkNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpkNgayKT.Location = new System.Drawing.Point(388, 40);
 			this.dtpkNgayKT.Name = "dtpkNgayKT";
 			this.dtpkNgayKT.Size = new System.Drawing.Size(169, 20);
@@ -257,7 +259,7 @@
 			this.dtpkNgayBD.CalendarMonthBackground = System.Drawing.Color.White;
 			this.dtpkNgayBD.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.dtpkNgayBD.CustomFormat = "yyyy-MM-dd";
-			this.dtpkNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtpkNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dtpkNgayBD.Location = new System.Drawing.Point(388, 9);
 			this.dtpkNgayBD.Name = "dtpkNgayBD";
 			this.dtpkNgayBD.Size = new System.Drawing.Size(169, 20);
@@ -345,6 +347,7 @@
 			this.lbTitle.TabIndex = 2;
 			this.lbTitle.Text = "Danh sách phòng";
 			this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// panlTieuDe
 			// 
@@ -358,6 +361,7 @@
 			this.panlTieuDe.Name = "panlTieuDe";
 			this.panlTieuDe.Size = new System.Drawing.Size(584, 49);
 			this.panlTieuDe.TabIndex = 87;
+			this.panlTieuDe.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
 			// 
 			// panel1
 			// 
@@ -439,7 +443,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DateTimePicker dtpkNgayKT;
 		private System.Windows.Forms.Button bntHuy;
-		private System.Windows.Forms.DateTimePicker dtpkNgayBD;
 		private System.Windows.Forms.DataGridView gridviewPhong;
 		private System.Windows.Forms.DataGridViewButtonColumn cl1;
 		private System.Windows.Forms.Panel panel2;
@@ -449,5 +452,6 @@
 		private System.Windows.Forms.Label lbTitle;
 		private System.Windows.Forms.Panel panlTieuDe;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.DateTimePicker dtpkNgayBD;
 	}
 }

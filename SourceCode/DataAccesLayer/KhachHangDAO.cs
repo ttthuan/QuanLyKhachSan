@@ -113,5 +113,24 @@ namespace DataAccesLayer
 				return false;
 			}
 		}
+
+		public int ThemKhachHang(KhachHangDTO khachhangDTO)
+		{
+			int maKH = 0;
+			string query = "INSERT INTO Khachhang(Ten,Diachi,SDT,Gioitinh,SoCMND,Quoctich) VALUES (N'" + khachhangDTO.Ten + "',N'" + khachhangDTO.DiaChi +
+				"','" + khachhangDTO.Sdt + "',N'" + khachhangDTO.GioiTinh + "','" + khachhangDTO.Scmnd +
+				"',N'" + khachhangDTO.QuocTich + "')";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				string query1 = "SELECT MAX(Ma) FROM Khachhang";
+				maKH = int.Parse(dataProvider.ExecuteQuery(query1).ToString());
+				return maKH;
+			}
+			catch
+			{
+				return maKH;
+			}
+		}
 	}
 }
