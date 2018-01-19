@@ -66,6 +66,8 @@ namespace PresentationLayer
 		{
 			gridKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 			gridKhachHang.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+			gridKhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(206, 187, 214);
+			gridKhachHang.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 		}
 
 		private void bntChiTiet_Click(object sender, EventArgs e)

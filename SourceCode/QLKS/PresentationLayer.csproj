@@ -156,6 +156,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuanlyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanlyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanlyTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="SIZE.cs" />
     <Compile Include="SoDoKhachSan.cs">
       <SubType>Form</SubType>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhieuThuePhong.resx">
       <DependentUpon>PhieuThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanlyTaiKhoan.resx">
+      <DependentUpon>QuanlyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoDoKhachSan.resx">
       <DependentUpon>SoDoKhachSan.cs</DependentUpon>
