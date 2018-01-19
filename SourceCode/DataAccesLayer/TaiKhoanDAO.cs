@@ -51,5 +51,17 @@ namespace DataAccesLayer
 				return false;
 			}
 		}
+
+		public bool KiemtraTrungTenDN(string maTK, string tenDN)
+		{
+			string query = "Select * From Taikhoan Where Ma = " + maTK + " and Tendangnhap = N'" + tenDN + "'";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count > 0 && tb != null)
+			{
+				return false;
+			}
+			return true;
+		}
 	}
 }

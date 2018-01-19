@@ -49,5 +49,10 @@ namespace BusinessLayer
 		{
 			return nhanVienDAO.LayNhanVienTheoTK(maTK);
 		}
+
+		public DataTable LaydanhsachNhanvienDataTable()
+		{
+			return nhanVienDAO.LaydanhsachNhanvienDataTable();
+		}
 	}
 }
