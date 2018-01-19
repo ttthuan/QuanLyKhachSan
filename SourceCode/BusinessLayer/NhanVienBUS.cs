@@ -54,5 +54,15 @@ namespace BusinessLayer
 		{
 			return nhanVienDAO.LaydanhsachNhanvienDataTable();
 		}
+
+		public bool ThemNhanvien(NhanVienDTO nv)
+		{
+			return nhanVienDAO.ThemNhanvien(nv);
+		}
+
+		public bool CapnhatNhanvien(NhanVienDTO nv)
+		{
+			return nhanVienDAO.CapnhatNhanvien(nv);
+		}
 	}
 }

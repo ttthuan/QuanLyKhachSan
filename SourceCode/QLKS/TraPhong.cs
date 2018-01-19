@@ -27,6 +27,7 @@ namespace PresentationLayer
 		public static int maPhieuthuephong;
 		private static int maLoaiThuePhong =-1;
 		public static int maTaiKhoan = 0;
+		public static bool result = false;
 
 		public TraPhong()
 		{
@@ -238,6 +239,8 @@ namespace PresentationLayer
 				MessageBoxDS.thongbao = "Trả phòng thành công";
 				MessageBoxDS.maHinh = 1;
 				m.ShowDialog();
+
+				result = true;
 			}
 			catch
 			{

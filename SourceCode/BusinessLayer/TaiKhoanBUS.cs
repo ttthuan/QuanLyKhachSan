@@ -26,5 +26,25 @@ namespace BusinessLayer
 		{
 			return taiKhoanDAO.LayDanhsachTK();
 		}
+
+		public bool KiemtraTrungThemNV(string tenDN)
+		{
+			return taiKhoanDAO.KiemtraTrungThemNV(tenDN);
+		}
+
+		public bool KiemtraTrungCapnhatDN(string maNV, string tenDN)
+		{
+			return taiKhoanDAO.KiemtraTrungCapnhatNV(maNV, tenDN);
+		}
+
+		public string ThemTaikhoan(string tenTK)
+		{
+			return taiKhoanDAO.ThemTaikhoan(tenTK);
+		}
+
+		public bool ResetMK(string ma)
+		{
+			return taiKhoanDAO.ResetMK(ma);
+		}
 	}
 }

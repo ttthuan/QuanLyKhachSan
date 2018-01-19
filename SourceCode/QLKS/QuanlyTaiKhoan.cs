@@ -72,17 +72,139 @@ namespace PresentationLayer
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+			try
+			{
+				if (taiKhoanBUS.KiemtraTrungThemNV(txtTaiKhoan.Text))
+				{
+					NhanVienDTO nhanVienDTO = new NhanVienDTO();
+					nhanVienDTO.Ten = txtTen.Text;
+					nhanVienDTO.SDT = txtSDT.Text;
+					nhanVienDTO.Maloainhanvien = int.Parse(cbmChucvu.SelectedValue.ToString());
+					nhanVienDTO.NgaySinh = dtpkNgaySinh.Value.Date;
+					nhanVienDTO.Mataikhoan = int.Parse(taiKhoanBUS.ThemTaikhoan(txtTaiKhoan.Text));
+					nhanVienDTO.DiaChi = txtDiaChi.Text;
+					if (rbNam.Checked)
+					{
+						nhanVienDTO.GioiTinh = "Nam";
+					}
+					else
+					{
+						nhanVienDTO.GioiTinh = "Nữ";
+					}
 
+					NhanVienBUS nhanVienBUS = new NhanVienBUS();
+					if (nhanVienBUS.ThemNhanvien(nhanVienDTO))
+					{
+						MessageBoxDS m = new MessageBoxDS();
+						MessageBoxDS.thongbao = "Thêm nhân viên thành công";
+						MessageBoxDS.maHinh = 1;
+						m.ShowDialog();
+						Hienthi();
+					}
+					else
+					{
+						MessageBoxDS m = new MessageBoxDS();
+						MessageBoxDS.thongbao = "Thêm nhân viên thất bại";
+						MessageBoxDS.maHinh = 3;
+						m.ShowDialog();
+					}
+
+				}
+				else
+				{
+					MessageBoxDS m = new MessageBoxDS();
+					MessageBoxDS.thongbao = "Tên đăng nhập đã tồn tại";
+					MessageBoxDS.maHinh = 2;
+					m.ShowDialog();
+				}
+			}
+			catch
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Nhập chưa đầy đủ thông tin";
+				MessageBoxDS.maHinh = 2;
+				m.ShowDialog();
+			}
 		}
 
 		private void btnCapnhat_Click(object sender, EventArgs e)
 		{
+			TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+			try
+			{
+				if (taiKhoanBUS.KiemtraTrungCapnhatDN(gridNhanVien.CurrentRow.Cells[0].Value.ToString(), txtTaiKhoan.Text))
+				{
+					NhanVienDTO nhanVienDTO = new NhanVienDTO();
+					nhanVienDTO.Ma = int.Parse(gridNhanVien.CurrentRow.Cells[0].Value.ToString());
+					nhanVienDTO.Ten = txtTen.Text;
+					nhanVienDTO.SDT = txtSDT.Text;
+					nhanVienDTO.Maloainhanvien = int.Parse(cbmChucvu.SelectedValue.ToString());
+					nhanVienDTO.NgaySinh = dtpkNgaySinh.Value.Date;
+					nhanVienDTO.Mataikhoan = int.Parse(taiKhoanBUS.ThemTaikhoan(txtTaiKhoan.Text));
+					nhanVienDTO.DiaChi = txtDiaChi.Text;
+					if (rbNam.Checked)
+					{
+						nhanVienDTO.GioiTinh = "Nam";
+					}
+					else
+					{
+						nhanVienDTO.GioiTinh = "Nữ";
+					}
 
+					NhanVienBUS nhanVienBUS = new NhanVienBUS();
+					if (nhanVienBUS.CapnhatNhanvien(nhanVienDTO))
+					{
+						MessageBoxDS m = new MessageBoxDS();
+						MessageBoxDS.thongbao = "Cập nhật nhân viên thành công";
+						MessageBoxDS.maHinh = 1;
+						m.ShowDialog();
+						Hienthi();
+					}
+					else
+					{
+						MessageBoxDS m = new MessageBoxDS();
+						MessageBoxDS.thongbao = "Cập nhật nhân viên thất bại";
+						MessageBoxDS.maHinh = 3;
+						m.ShowDialog();
+					}
+
+				}
+				else
+				{
+					MessageBoxDS m = new MessageBoxDS();
+					MessageBoxDS.thongbao = "Tên đăng nhập đã tồn tại";
+					MessageBoxDS.maHinh = 2;
+					m.ShowDialog();
+				}
+			}
+			catch
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Nhập chưa đầy đủ thông tin";
+				MessageBoxDS.maHinh = 2;
+				m.ShowDialog();
+			}
 		}
 
 		private void btnReset_Click(object sender, EventArgs e)
 		{
-
+			TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+			if (taiKhoanBUS.ResetMK(gridNhanVien.CurrentRow.Cells[6].Value.ToString()))
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Reset mật khẩu thành công";
+				MessageBoxDS.maHinh = 1;
+				m.ShowDialog();
+				Hienthi();
+			}
+			else
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Reset mật khẩu thất bại";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
 		}
 	}
 }

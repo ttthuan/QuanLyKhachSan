@@ -24,6 +24,7 @@ namespace PresentationLayer
 
 		public static int maKH = 0;
 		public static int maP = 0;
+		public static bool result = false;
 		public static DateTime _thoiGianNhan;
 		public static DateTime _thoiGianTra;
 
@@ -74,6 +75,7 @@ namespace PresentationLayer
 				MessageBoxDS.thongbao = "Đặt phòng thành công!";
 				MessageBoxDS.maHinh = 1;
 				m.ShowDialog();
+				result = true;
 			}
 			else
 			{
