@@ -33,5 +33,10 @@ namespace BusinessLayer
 
             return null;
         }
-    }
+
+		public int LayMaNhanVien(int maTK)
+		{
+			return nhanVienDAO.LayMaNhanVien(maTK);
+		}
+	}
 }

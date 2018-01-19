@@ -99,6 +99,8 @@ namespace PresentationLayer
 
 				khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(maKH);
 
+				dtpkNgayKT.Value = DateTime.Now.Date.AddDays(1);
+
 				txtTenKH.Text = khachHangDTO.Ten;
 				txtDiaChi.Text = khachHangDTO.DiaChi;
 				txtCMND.Text = khachHangDTO.Scmnd;
@@ -181,13 +183,16 @@ namespace PresentationLayer
 					dtpkNgayKT.Enabled = true;
 					dtpkGioBD.Enabled = true;
 					dtpkNgayBD.Enabled = true;
+
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
+					dtpkGioKT.Text = DateTime.Now.AddHours(1).TimeOfDay.ToString();
 					break;
 
 				case "qua dem":
 					dtpkGioKT.Enabled = false;
 					dtpkNgayKT.Enabled = false;
 					dtpkGioBD.Enabled = false;
-					dtpkGioBD.Text = "10:00:00 CH";
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
 					dtpkGioKT.Text = "06:00:00 SA";
 					dtpkNgayKT.Value = dtpkNgayBD.Value.AddDays(1);
 					break;
@@ -200,7 +205,8 @@ namespace PresentationLayer
 					s = s.Date + ts;
 					s = s.AddHours(1);
 
-					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
+					dtpkGioKT.Text = DateTime.Now.AddHours(1).TimeOfDay.ToString();
 					dtpkNgayKT.Value = s.Date;
 					break;
 
@@ -211,7 +217,8 @@ namespace PresentationLayer
 					s = s.Date + ts;
 					s = s.AddHours(2);
 
-					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
+					dtpkGioKT.Text = DateTime.Now.AddHours(2).TimeOfDay.ToString();
 					dtpkNgayKT.Value = s.Date;
 					break;
 
@@ -222,7 +229,8 @@ namespace PresentationLayer
 					s = s.Date + ts;
 					s = s.AddHours(3);
 
-					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
+					dtpkGioKT.Text = DateTime.Now.AddHours(3).TimeOfDay.ToString();
 					dtpkNgayKT.Value = s.Date;
 					break;
 
@@ -233,7 +241,8 @@ namespace PresentationLayer
 					s = s.Date + ts;
 					s = s.AddHours(4);
 
-					dtpkGioKT.Text = s.TimeOfDay.ToString();
+					dtpkGioBD.Text = DateTime.Now.AddMinutes(5).TimeOfDay.ToString();
+					dtpkGioKT.Text = DateTime.Now.AddHours(4).TimeOfDay.ToString(); ;
 					dtpkNgayKT.Value = s.Date;
 					break;
 			}

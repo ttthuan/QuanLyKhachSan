@@ -49,7 +49,7 @@ namespace DataAccesLayer
 			string query = "Select Phieuthuephong.Ma,Phieuthuephong.Thoigiannhanphong,Phieuthuephong.Thoigiantraphong," +
 				"Phong.Ten as Tenphong, Khachhang.Ten as Tenkhachhang From Phieuthuephong,Phong,KhachHang Where Phieuthuephong.Maphong = Phong.Ma " +
 				" and Phieuthuephong.Makhachhang = Khachhang.Ma and Phieuthuephong.Makhachhang = " + maKH + " " +
-				" and Phieuthuephong.Thoigiannhanphong >= GETDATE() and Phieuthuephong.TrangThai = 1";
+				" and Phieuthuephong.TrangThai = 1";
 			table = dataProvider.ExecuteQuery_DataTble(query);
 			return table;
 		}
@@ -77,7 +77,7 @@ namespace DataAccesLayer
 			return null;
 		}
 
-		public PhieuThuePhongDTO LayPhieuthuephongTheomaKhachHang(int maKH)
+		public PhieuThuePhongDTO DangO_KhachHang(int maKH)
 		{
 			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
 			string query = "Select * From Phieuthuephong Where TrangThai = 2 and Makhachhang = " + maKH + "";
@@ -104,7 +104,7 @@ namespace DataAccesLayer
 		{
 			string query = "INSERT INTO Phieuthuephong(Maphong,Makhachhang,Thoigiannhanphong,Thoigiantraphong," +
 				"Maloaithuephong,Gia,TrangThai,TraTruoc) VALUES ('" + phieuThuePhongDTO .MaPhong+ "','" + phieuThuePhongDTO.MaKhachHang +
-				"','" + phieuThuePhongDTO.ThoiGianNhanPhong.ToString("dd-MM-yyyy HH:mm:ss") + "','" + phieuThuePhongDTO.ThoiGianTraPhong.ToString("dd-MM-yyyy HH:mm:ss") + 
+				"','" + phieuThuePhongDTO.ThoiGianNhanPhong.ToString("yyyy-MM-dd HH:mm:ss") + "','" + phieuThuePhongDTO.ThoiGianTraPhong.ToString("yyyy-MM-dd HH:mm:ss") + 
 				"','" + phieuThuePhongDTO.MaLoaiThuePhong +
 				"','" + phieuThuePhongDTO.Gia + "','" + phieuThuePhongDTO.TrangThai + "','" + phieuThuePhongDTO.TraTruoc + "')";
 			try
@@ -120,7 +120,21 @@ namespace DataAccesLayer
 
 		public bool HuyDatPhong(int maPhieuThuePhong)
 		{
-			string query = "UPDATE Phieuthuephong SET TrangThai = 5 WHERE Ma = " + maPhieuThuePhong + "";
+			string query = "UPDATE Phieuthuephong SET TrangThai = 4 WHERE Ma = " + maPhieuThuePhong + "";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public bool CapNhatTinhTrang(int maTinhTrang, int maPhieuThuePhong)
+		{
+			string query = "UPDATE Phieuthuephong SET TrangThai = "+maTinhTrang+" WHERE Ma = " + maPhieuThuePhong + "";
 			try
 			{
 				dataProvider.ExecuteUpdateQuery(query);

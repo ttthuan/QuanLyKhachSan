@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using DataTranferObject;
 
 namespace PresentationLayer
 {
 	public partial class DanhSachKhachHang : Form
 	{
 		public int _loaiKH = 0;
+		public static int maTaiKhoan = 0;
 
 		public DanhSachKhachHang(int loaiKH)
 		{
@@ -22,7 +24,7 @@ namespace PresentationLayer
 			Load();
 		}
 
-		private void Load()
+		public void Load()
 		{
 			if (_loaiKH == 1)
 			{
@@ -84,16 +86,21 @@ namespace PresentationLayer
 			{
 				if (_loaiKH == 1)
 				{
-					PhieuThuePhong ct = new PhieuThuePhong();
+					PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+					PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+					phieuThuePhongDTO = phieuThuePhongBUS.DangO_KhachHang(int.Parse(gridKhachHang.CurrentRow.Cells[0].Value.ToString()));
+					PhieuThuePhong phieuThuePhong = new PhieuThuePhong();
 					PhieuThuePhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
 					PhieuThuePhong.dangO = true;
-					ct.ShowDialog();
+					PhieuThuePhong.maPhieuthuephong = phieuThuePhongDTO.Ma;
+					phieuThuePhong.ShowDialog();
 					Load();
 				}
 				else if (_loaiKH == 2)
 				{
 					DanhSachDatPhongTheoKhachHang ds = new DanhSachDatPhongTheoKhachHang();
 					DanhSachDatPhongTheoKhachHang.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+					ds.MyParent = this;
 					ds.ShowDialog();
 				}
 			}
@@ -116,6 +123,7 @@ namespace PresentationLayer
 			{
 				TraPhong traPhong = new TraPhong();
 				TraPhong.maKH = Convert.ToInt32(gridKhachHang.CurrentRow.Cells[0].Value.ToString());
+				TraPhong.maTaiKhoan = maTaiKhoan;
 
 				traPhong.ShowDialog();
 				Load();

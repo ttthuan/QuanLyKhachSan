@@ -39,6 +39,7 @@
 			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnNhanPhong = new System.Windows.Forms.Button();
 			this.panlTieuDe.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDanhsachphong)).BeginInit();
@@ -62,7 +63,7 @@
 			this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.btnChiTiet.ForeColor = System.Drawing.Color.Snow;
-			this.btnChiTiet.Location = new System.Drawing.Point(181, 265);
+			this.btnChiTiet.Location = new System.Drawing.Point(126, 265);
 			this.btnChiTiet.Name = "btnChiTiet";
 			this.btnChiTiet.Size = new System.Drawing.Size(89, 28);
 			this.btnChiTiet.TabIndex = 45;
@@ -77,7 +78,7 @@
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntHuy.ForeColor = System.Drawing.Color.Snow;
-			this.bntHuy.Location = new System.Drawing.Point(304, 265);
+			this.bntHuy.Location = new System.Drawing.Point(373, 265);
 			this.bntHuy.Name = "bntHuy";
 			this.bntHuy.Size = new System.Drawing.Size(94, 28);
 			this.bntHuy.TabIndex = 46;
@@ -87,8 +88,8 @@
 			// 
 			// panlTieuDe
 			// 
-			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.panlTieuDe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.panlTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
 			this.panlTieuDe.Controls.Add(this.label1);
 			this.panlTieuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -115,11 +116,11 @@
 			this.gridDanhsachphong.AllowUserToDeleteRows = false;
 			this.gridDanhsachphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridDanhsachphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.Column1,
-			this.Column2,
-			this.Column3,
-			this.Column4,
-			this.Column5});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
 			this.gridDanhsachphong.Location = new System.Drawing.Point(0, -2);
 			this.gridDanhsachphong.Name = "gridDanhsachphong";
 			this.gridDanhsachphong.ReadOnly = true;
@@ -131,6 +132,7 @@
 			this.Column1.DataPropertyName = "Ma";
 			this.Column1.HeaderText = "Column1";
 			this.Column1.Name = "Column1";
+			this.Column1.ReadOnly = true;
 			this.Column1.Visible = false;
 			// 
 			// Column2
@@ -138,31 +140,51 @@
 			this.Column2.DataPropertyName = "Tenphong";
 			this.Column2.HeaderText = "Phòng";
 			this.Column2.Name = "Column2";
+			this.Column2.ReadOnly = true;
 			// 
 			// Column3
 			// 
 			this.Column3.DataPropertyName = "Thoigiannhanphong";
 			this.Column3.HeaderText = "Thời gian nhận phòng";
 			this.Column3.Name = "Column3";
+			this.Column3.ReadOnly = true;
 			// 
 			// Column4
 			// 
 			this.Column4.DataPropertyName = "Thoigiantraphong";
 			this.Column4.HeaderText = "Thời gian trả";
 			this.Column4.Name = "Column4";
+			this.Column4.ReadOnly = true;
 			// 
 			// Column5
 			// 
 			this.Column5.DataPropertyName = "Tenkhachhang";
 			this.Column5.HeaderText = "Tên khách hàng";
 			this.Column5.Name = "Column5";
+			this.Column5.ReadOnly = true;
 			this.Column5.Visible = false;
+			// 
+			// btnNhanPhong
+			// 
+			this.btnNhanPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.btnNhanPhong.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnNhanPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnNhanPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.btnNhanPhong.ForeColor = System.Drawing.Color.Snow;
+			this.btnNhanPhong.Location = new System.Drawing.Point(251, 265);
+			this.btnNhanPhong.Name = "btnNhanPhong";
+			this.btnNhanPhong.Size = new System.Drawing.Size(89, 28);
+			this.btnNhanPhong.TabIndex = 47;
+			this.btnNhanPhong.Text = "Nhận phòng";
+			this.btnNhanPhong.UseVisualStyleBackColor = false;
+			this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
 			// 
 			// DanhSachDatPhongTheoKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(593, 310);
+			this.Controls.Add(this.btnNhanPhong);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.btnChiTiet);
 			this.Controls.Add(this.bntHuy);
@@ -192,5 +214,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+		private System.Windows.Forms.Button btnNhanPhong;
 	}
 }

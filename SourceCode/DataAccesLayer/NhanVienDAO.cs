@@ -42,5 +42,14 @@ namespace DataAccesLayer
 
             return nhanVien;
         }
-    }
+
+		public int LayMaNhanVien(int maTK)
+		{
+			string query = "Select Ma From Nhanvien Where Mataikhoan = "+maTK+"";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			int resut = int.Parse(tb.Rows[0][0].ToString());
+			return resut;
+		}
+	}
 }

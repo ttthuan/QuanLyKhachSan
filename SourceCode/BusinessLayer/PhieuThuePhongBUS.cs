@@ -114,9 +114,9 @@ namespace BusinessLayer
 			return phieuThuePhongDAO.LayPhieuthuephongTheoma(maPhieuthue);
 		}
 
-		public PhieuThuePhongDTO LayPhieuthuephongTheomaKhachHang(int maKH)
+		public PhieuThuePhongDTO DangO_KhachHang(int maKH)
 		{
-			return phieuThuePhongDAO.LayPhieuthuephongTheomaKhachHang(maKH);
+			return phieuThuePhongDAO.DangO_KhachHang(maKH);
 		}
 
 		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
@@ -127,6 +127,11 @@ namespace BusinessLayer
 		public bool HuyDatPhong(int maPhieuThuePhong)
 		{
 			return phieuThuePhongDAO.HuyDatPhong(maPhieuThuePhong);
+		}
+
+		public bool CapNhatTinhTrang(int maPhieuThuePhong, int maTrangThai)
+		{
+			return phieuThuePhongDAO.CapNhatTinhTrang(maTrangThai, maPhieuThuePhong);
 		}
 	}
 }

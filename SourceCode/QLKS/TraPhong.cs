@@ -25,6 +25,8 @@ namespace PresentationLayer
 		public static int maKH;
 		public static int maP;
 		public static int maPhieuthuephong;
+		private static int maLoaiThuePhong =-1;
+		public static int maTaiKhoan = 0;
 
 		public TraPhong()
 		{
@@ -35,7 +37,9 @@ namespace PresentationLayer
 		{
 			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
 			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
-			phieuThuePhongDTO = phieuThuePhongBUS.LayPhieuthuephongTheomaKhachHang(maKH);
+			phieuThuePhongDTO = phieuThuePhongBUS.DangO_KhachHang(maKH);
+
+			maLoaiThuePhong = phieuThuePhongDTO.MaLoaiThuePhong;
 			maPhieuthuephong = phieuThuePhongDTO.Ma;
 
 			maP = phieuThuePhongDTO.MaPhong;
@@ -57,6 +61,7 @@ namespace PresentationLayer
 			HienthiGiaPhong(phieuThuePhongDTO.MaLoaiThuePhong, phongDTO.MaLoaiPhong);
 			HienthiThoiGian();
 			HienthiTongTienDichVu();
+			HienthiTongTienPhaiTra();
 		}
 
 		private void HienthiThoiGian()
@@ -149,13 +154,48 @@ namespace PresentationLayer
 
 		private void HienthiTraTruoc()
 		{
-			lbTraTruoc.Text = (int.Parse(lbGiaPhong.Text) / 2).ToString();
+			if(maLoaiThuePhong != 1)
+			{
+				lbTraTruoc.Text = (int.Parse(lbGiaPhong.Text) / 2).ToString();
+			}
+			else
+			{
+
+				TimeSpan Time = dtpkNgayKT.Value.Date - dtpkNgayBD.Value.Date;
+				int TongSoNgay = Time.Days;
+				lbTraTruoc.Text = ((int.Parse(lbGiaPhong.Text) / 2)*TongSoNgay).ToString();
+			}
 		}
 
-		private void HienthiTongTienDichVu()
+		public void HienthiTongTienDichVu()
 		{
 			PhieuSuDungDichVuBUS phieuSuDungDichVuBUS = new PhieuSuDungDichVuBUS();
 			lbTongTienDichVu.Text = phieuSuDungDichVuBUS.TinhTongTienSuDungDichVu(maPhieuthuephong);
+		}
+
+		public void HienthiTongTienPhaiTra()
+		{
+			TimeSpan Time = dtpkNgayKT.Value.Date - dtpkNgayBD.Value.Date;
+			int TongSoNgay = Time.Days;
+			if(TongSoNgay == 0)
+			{
+				TongSoNgay = 1;
+			}
+
+			if (txtPhuThu.Text.Equals(""))
+			{
+				txtPhuThu.Text = "0";
+			}
+
+			if (txtGiamTru.Text.Equals(""))
+			{
+				txtGiamTru.Text = "0";
+			}
+
+			TraPhongBUS traPhongBUS = new TraPhongBUS();
+			lbTongTien.Text = traPhongBUS.TinhTongTien(float.Parse(lbGiaPhong.Text), 
+				float.Parse(lbTongTienDichVu.Text), maLoaiThuePhong, TongSoNgay,
+				float.Parse(txtGiamTru.Text), float.Parse(txtPhuThu.Text), float.Parse(lbTraTruoc.Text)).ToString();
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
@@ -174,7 +214,38 @@ namespace PresentationLayer
 
 		private void bntTraPhong_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				//Lưu hóa đơn
+				HoaDonDTO hoaDonDTO = new HoaDonDTO();
+				hoaDonDTO.Maphieuthuephong = maPhieuthuephong;
 
+				NhanVienBUS nhanVienBUS = new NhanVienBUS();
+				hoaDonDTO.Manhanvienlap = nhanVienBUS.LayMaNhanVien(maTaiKhoan);
+
+				hoaDonDTO.Ghichu = txtGhiChu.Text;
+				hoaDonDTO.Tongtien = float.Parse(lbTongTien.Text);
+				hoaDonDTO.Ngaytao = DateTime.Now.Date;
+
+				HoaDonBUS hoaDonBUS = new HoaDonBUS();
+				hoaDonBUS.LuuHoaDon(hoaDonDTO);
+
+				//Cập nhật trạng thái phiếu thuê phòng.
+				PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+				phieuThuePhongBUS.CapNhatTinhTrang(maPhieuthuephong, 3);
+
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Trả phòng thành công";
+				MessageBoxDS.maHinh = 1;
+				m.ShowDialog();
+			}
+			catch
+			{
+				MessageBoxDS m = new MessageBoxDS();
+				MessageBoxDS.thongbao = "Trả phòng thất bại";
+				MessageBoxDS.maHinh = 3;
+				m.ShowDialog();
+			}
 		}
 
 		private void bntXemdsDv_Click(object sender, EventArgs e)
@@ -183,6 +254,28 @@ namespace PresentationLayer
 			PhieuSuDungDichVu.maPhieuthuephong = maPhieuthuephong;
 			phieuSuDungDichVu.MyParent1 = this;
 			phieuSuDungDichVu.ShowDialog();
+		}
+
+		private void txtPhuThu_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+				e.Handled = true;
+		}
+
+		private void txtGiamTru_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+				e.Handled = true;
+		}
+
+		private void txtPhuThu_KeyUp(object sender, KeyEventArgs e)
+		{
+			HienthiTongTienPhaiTra();
+		}
+
+		private void txtGiamTru_KeyUp(object sender, KeyEventArgs e)
+		{
+			HienthiTongTienPhaiTra();
 		}
 	}
 }

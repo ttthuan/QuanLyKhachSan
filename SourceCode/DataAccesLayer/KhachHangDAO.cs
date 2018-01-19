@@ -83,9 +83,8 @@ namespace DataAccesLayer
 		public KhachHangDTO[] LayDanhSachKhachHangCu()
 		{
 			KhachHangDTO[] khachHangs = null;
-			string query = "Select * From KhachHang where Ma not in (" +
-				"Select Makhachhang From Phieuthuephong where  Thoigiannhanphong >= GETDATE() " +
-				"or Thoigiantraphong >= GETDATE() and Thoigiannhanphong<GETDATE())";
+			string query = "Select * From KhachHang " +
+				"where Ma not in (Select Makhachhang From Phieuthuephong where TrangThai = 1 or TrangThai = 2 )";
 			DataTable tb = new DataTable();
 			tb = dataProvider.ExecuteQuery_DataTble(query);
 			khachHangs = new KhachHangDTO[tb.Rows.Count];

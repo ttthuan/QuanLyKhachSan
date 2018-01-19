@@ -181,5 +181,10 @@ namespace BusinessLayer
 
             return lsDisplayHoaDon.Where(ls => ls.THOIGIANVAO >= dtBD && ls.THOIGIANTRA <= dtKT).ToList();
         }
+
+        public bool LuuHoaDon(HoaDonDTO hoaDonDTO)
+		{
+			return hoaDonDAO.LuuHoaDon(hoaDonDTO);
+		}
     }
 }

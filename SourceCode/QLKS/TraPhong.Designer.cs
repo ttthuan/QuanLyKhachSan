@@ -512,6 +512,8 @@
 			this.txtPhuThu.Size = new System.Drawing.Size(82, 20);
 			this.txtPhuThu.TabIndex = 24;
 			this.txtPhuThu.Text = "0";
+			this.txtPhuThu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhuThu_KeyPress);
+			this.txtPhuThu.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPhuThu_KeyUp);
 			// 
 			// label25
 			// 
@@ -530,6 +532,8 @@
 			this.txtGiamTru.Size = new System.Drawing.Size(82, 20);
 			this.txtGiamTru.TabIndex = 25;
 			this.txtGiamTru.Text = "0";
+			this.txtGiamTru.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiamTru_KeyPress);
+			this.txtGiamTru.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtGiamTru_KeyUp);
 			// 
 			// lb19
 			// 
@@ -557,7 +561,7 @@
 			this.bntHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.bntHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
 			this.bntHuy.ForeColor = System.Drawing.Color.WhiteSmoke;
-			this.bntHuy.Location = new System.Drawing.Point(274, 191);
+			this.bntHuy.Location = new System.Drawing.Point(262, 191);
 			this.bntHuy.Name = "bntHuy";
 			this.bntHuy.Size = new System.Drawing.Size(73, 30);
 			this.bntHuy.TabIndex = 32;

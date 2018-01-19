@@ -12,6 +12,7 @@ namespace DataTranferObject
 		private int _Manhanvienlap;
 		private DateTime _Ngaytao;
 		private float _Tongtien;
+		private string _Ghichu;
 
 		public int Ma
 		{
@@ -55,6 +56,15 @@ namespace DataTranferObject
 			set
 			{
 				_Tongtien = value;
+			}
+		}
+
+		public string Ghichu
+		{
+			get { return _Ghichu; }
+			set
+			{
+				_Ghichu = value;
 			}
 		}
 	}
