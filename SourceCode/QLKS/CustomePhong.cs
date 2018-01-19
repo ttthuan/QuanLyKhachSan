@@ -21,6 +21,11 @@ namespace PresentationLayer
         public ContextMenuStrip ctmnt = new ContextMenuStrip();
         public PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
 
+
+        public event EventHandler<ProcessEventArgs> EventNhanPhong = null;
+        public event EventHandler<ProcessEventArgs> EventDatPhong = null;
+        public event EventHandler<ProcessEventArgs> EventThanhToanPhong = null;
+
         public CustomePhong(PhongDTO phong)
         {
             InitializeComponent();
@@ -60,16 +65,28 @@ namespace PresentationLayer
         private void TsNhanPhong_Click(object sender, EventArgs e)
         {
             Console.WriteLine("nhận phòng");
+            if(EventNhanPhong != null)
+            {
+                EventNhanPhong(this, new ProcessEventArgs(Phong));
+            }
         }
 
         private void TsThanhToanPhong_Click(object sender, EventArgs e)
         {
             Console.WriteLine("thanh toan phòng");
+            if(EventThanhToanPhong != null)
+            {
+                EventThanhToanPhong(this, new ProcessEventArgs(Phong));
+            }
         }
 
         private void TsDatPhong_Click(object sender, EventArgs e)
         {
             Console.WriteLine("đặt phòng");
+            if(EventDatPhong != null)
+            {
+                EventDatPhong(this, new ProcessEventArgs(Phong));
+            }
         }
 
         public void TaiToolTripItem(int[] idx)
@@ -145,6 +162,16 @@ namespace PresentationLayer
         private void CustomePhong_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = PRIMERY;
+        }
+        
+    }
+
+    public class ProcessEventArgs: EventArgs
+    {
+        public PhongDTO PHONG { get; set; }
+        public ProcessEventArgs(PhongDTO phong)
+        {
+            PHONG = phong;
         }
     }
 }
