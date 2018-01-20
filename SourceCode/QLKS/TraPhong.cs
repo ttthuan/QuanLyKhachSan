@@ -27,6 +27,7 @@ namespace PresentationLayer
 		public static int maPhieuthuephong;
 		private static int maLoaiThuePhong =-1;
 		public static int maTaiKhoan = 0;
+		public static bool isSodoKScall = false;
 		public static bool result = false;
 
 		public TraPhong()
@@ -36,33 +37,64 @@ namespace PresentationLayer
 
 		private void TraPhong_Load(object sender, EventArgs e)
 		{
-			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
-			PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
-			phieuThuePhongDTO = phieuThuePhongBUS.DangO_KhachHang(maKH);
+			if(isSodoKScall)
+			{
+				PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+				PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+				phieuThuePhongDTO = phieuThuePhongBUS.DangO_Phong(maP);
 
-			maLoaiThuePhong = phieuThuePhongDTO.MaLoaiThuePhong;
-			maPhieuthuephong = phieuThuePhongDTO.Ma;
+				maLoaiThuePhong = phieuThuePhongDTO.MaLoaiThuePhong;
+				maPhieuthuephong = phieuThuePhongDTO.Ma;
 
-			maP = phieuThuePhongDTO.MaPhong;
+				PhongDTO phongDTO = new PhongDTO();
+				PhongBUS phongBUS = new PhongBUS();
+				phongDTO = phongBUS.LayPhongTheoMaSo(phieuThuePhongDTO.MaPhong);
 
-			PhongDTO phongDTO = new PhongDTO();
-			PhongBUS phongBUS = new PhongBUS();
-			phongDTO = phongBUS.LayPhongTheoMaSo(phieuThuePhongDTO.MaPhong);
+				HienthiKhachhang(phieuThuePhongDTO.MaKhachHang);
 
-			HienthiKhachhang(phieuThuePhongDTO.MaKhachHang);
+				lbTenPhong.Text = phongDTO.Ten;
+				dtpkGioBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+				dtpkGioKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+				dtpkNgayBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+				dtpkNgayKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+				lbLoaiDangKy.Text = phongBUS.LayLoaiDangKy(phieuThuePhongDTO.MaLoaiThuePhong);
+				lbLoaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
 
-			lbTenPhong.Text = phongDTO.Ten;
-			dtpkGioBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
-			dtpkGioKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
-			dtpkNgayBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
-			dtpkNgayKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
-			lbLoaiDangKy.Text = phongBUS.LayLoaiDangKy(phieuThuePhongDTO.MaLoaiThuePhong);
-			lbLoaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
+				HienthiGiaPhong(phieuThuePhongDTO.MaLoaiThuePhong, phongDTO.MaLoaiPhong);
+				HienthiThoiGian();
+				HienthiTongTienDichVu();
+				HienthiTongTienPhaiTra();
+			}
+			else
+			{
+				PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+				PhieuThuePhongBUS phieuThuePhongBUS = new PhieuThuePhongBUS();
+				phieuThuePhongDTO = phieuThuePhongBUS.DangO_KhachHang(maKH);
 
-			HienthiGiaPhong(phieuThuePhongDTO.MaLoaiThuePhong, phongDTO.MaLoaiPhong);
-			HienthiThoiGian();
-			HienthiTongTienDichVu();
-			HienthiTongTienPhaiTra();
+				maLoaiThuePhong = phieuThuePhongDTO.MaLoaiThuePhong;
+				maPhieuthuephong = phieuThuePhongDTO.Ma;
+
+				maP = phieuThuePhongDTO.MaPhong;
+
+				PhongDTO phongDTO = new PhongDTO();
+				PhongBUS phongBUS = new PhongBUS();
+				phongDTO = phongBUS.LayPhongTheoMaSo(phieuThuePhongDTO.MaPhong);
+
+				HienthiKhachhang(phieuThuePhongDTO.MaKhachHang);
+
+				lbTenPhong.Text = phongDTO.Ten;
+				dtpkGioBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+				dtpkGioKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+				dtpkNgayBD.Value = phieuThuePhongDTO.ThoiGianNhanPhong;
+				dtpkNgayKT.Value = phieuThuePhongDTO.ThoiGianTraPhong;
+				lbLoaiDangKy.Text = phongBUS.LayLoaiDangKy(phieuThuePhongDTO.MaLoaiThuePhong);
+				lbLoaiPhong.Text = phongBUS.LayLoaiPhong(phongDTO.MaLoaiPhong);
+
+				HienthiGiaPhong(phieuThuePhongDTO.MaLoaiThuePhong, phongDTO.MaLoaiPhong);
+				HienthiThoiGian();
+				HienthiTongTienDichVu();
+				HienthiTongTienPhaiTra();
+			}
 		}
 
 		private void HienthiThoiGian()

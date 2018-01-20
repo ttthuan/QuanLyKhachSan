@@ -127,6 +127,12 @@
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoaiPhong.Designer.cs">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="MessageBoxDS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiPhong.resx">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MessageBoxDS.resx">
       <DependentUpon>MessageBoxDS.cs</DependentUpon>

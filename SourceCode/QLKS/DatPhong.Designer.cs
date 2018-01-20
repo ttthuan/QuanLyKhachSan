@@ -77,6 +77,7 @@
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panlTieuDe = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
+			this.btnTimKH = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.errorProviderApp)).BeginInit();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -474,6 +475,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(226)))), ((int)(((byte)(225)))));
+			this.panel1.Controls.Add(this.btnTimKH);
 			this.panel1.Controls.Add(this.txtDiaChi);
 			this.panel1.Controls.Add(this.txtQuocTich);
 			this.panel1.Controls.Add(this.txtCMND);
@@ -554,10 +556,10 @@
 			// 
 			this.txtSDT.BackColor = System.Drawing.Color.White;
 			this.txtSDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.txtSDT.Location = new System.Drawing.Point(304, 71);
+			this.txtSDT.Location = new System.Drawing.Point(360, 85);
 			this.txtSDT.MaxLength = 11;
 			this.txtSDT.Name = "txtSDT";
-			this.txtSDT.Size = new System.Drawing.Size(183, 20);
+			this.txtSDT.Size = new System.Drawing.Size(126, 20);
 			this.txtSDT.TabIndex = 4;
 			// 
 			// txtTenKH
@@ -574,7 +576,7 @@
 			// 
 			this.label9.AutoSize = true;
 			this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label9.Location = new System.Drawing.Point(301, 53);
+			this.label9.Location = new System.Drawing.Point(278, 87);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(76, 13);
 			this.label9.TabIndex = 32;
@@ -625,6 +627,22 @@
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Đặt Phòng ";
 			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panlTieuDe_MouseDown);
+			// 
+			// btnTimKH
+			// 
+			this.btnTimKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(0)))), ((int)(((byte)(115)))));
+			this.btnTimKH.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnTimKH.FlatAppearance.BorderSize = 0;
+			this.btnTimKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnTimKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+			this.btnTimKH.ForeColor = System.Drawing.Color.Snow;
+			this.btnTimKH.Location = new System.Drawing.Point(282, 53);
+			this.btnTimKH.Name = "btnTimKH";
+			this.btnTimKH.Size = new System.Drawing.Size(72, 21);
+			this.btnTimKH.TabIndex = 33;
+			this.btnTimKH.Text = "Tìm";
+			this.btnTimKH.UseVisualStyleBackColor = false;
+			this.btnTimKH.Click += new System.EventHandler(this.btnTimKH_Click);
 			// 
 			// DatPhong
 			// 
@@ -704,5 +722,6 @@
 		private System.Windows.Forms.Label lbTraTruoc;
 		private System.Windows.Forms.DateTimePicker dtpkGioKT;
 		private System.Windows.Forms.DateTimePicker dtpkGioBD;
+		private System.Windows.Forms.Button btnTimKH;
 	}
 }

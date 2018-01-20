@@ -97,6 +97,25 @@ namespace DataAccesLayer
 			}
 			return khachHangs;
 		}
+		public KhachHangDTO LayKHtheoSCMND(string cmnd)
+		{
+			KhachHangDTO kh = new KhachHangDTO();
+			string query = "Select * From Khachhang where SoCMND = '"+cmnd+"'";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+
+			if(tb.Rows.Count == 0)
+			{
+				return null;
+			}
+
+			foreach(DataRow r in tb.Rows)
+			{
+				kh = ChuyenRowThanhObject(r);
+			}
+			return kh;
+		}
+
 
 		public bool CapnhatThongTinKhachHang(KhachHangDTO khachhangDTO)
 		{
@@ -122,8 +141,10 @@ namespace DataAccesLayer
 			try
 			{
 				dataProvider.ExecuteUpdateQuery(query);
+				DataTable table = new DataTable();
 				string query1 = "SELECT MAX(Ma) FROM Khachhang";
-				maKH = int.Parse(dataProvider.ExecuteQuery(query1).ToString());
+				table = dataProvider.ExecuteQuery_DataTble(query1);
+				maKH = int.Parse(table.Rows[0][0].ToString());
 				return maKH;
 			}
 			catch

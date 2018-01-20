@@ -55,5 +55,10 @@ namespace BusinessLayer
 		{
 			return khachHangDAO.ThemKhachHang(khachHangDTO);
 		}
+
+		public KhachHangDTO LayKHtheoSCMND(string cmnd)
+		{
+			return khachHangDAO.LayKHtheoSCMND(cmnd);
+		}
 	}
 }

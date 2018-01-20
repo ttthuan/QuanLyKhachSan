@@ -394,6 +394,7 @@ namespace PresentationLayer
             if (soDoKhachSan == null)
             {
                 soDoKhachSan = new SoDoKhachSan();
+				SoDoKhachSan.taiKhoan = taiKhoan;
                 soDoKhachSan.Dock = DockStyle.Fill;
                 soDoKhachSan.TopLevel = false;
                 pnBody.Controls.Add(soDoKhachSan);
