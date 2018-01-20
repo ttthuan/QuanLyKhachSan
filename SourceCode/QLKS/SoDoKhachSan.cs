@@ -189,8 +189,18 @@ namespace PresentationLayer
         private void CustomePhong_EventNhanPhong(object sender, ProcessEventArgs e)
         {
             // call nhận phòng
-            PhieuThuePhongBUS phieuThuePhong = new PhieuThuePhongBUS();
-            phieuThuePhong.CapNhatTrangThaiPhieuThuePhongCoMaPhong(e.PHONG.Ma);
+            try
+            {
+                PhieuThuePhongBUS phieuThuePhong = new PhieuThuePhongBUS();
+                phieuThuePhong.CapNhatTrangThaiPhieuThuePhongCoMaPhong(e.PHONG.Ma);
+            }catch(Exception ex)
+            {
+                MessageBoxDS m = new MessageBoxDS();
+                MessageBoxDS.thongbao = "Thời gian nhận phòng chưa đến";
+                MessageBoxDS.maHinh = 3;
+                m.ShowDialog();
+            }
+            
         }
 
         private void CustomePhong_EventDatPhong(object sender, ProcessEventArgs e)

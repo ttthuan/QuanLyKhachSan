@@ -123,12 +123,19 @@ namespace BusinessLayer
             PhieuThuePhongDTO[] phieuThuePhongs = phieuThuePhongDAO.LayDanhSachPhieuThuePhong();
             if(phieuThuePhongs != null)
             {
-                DateTime date = DateTime.Now;
-                PhieuThuePhongDTO phieuThuePhong = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.MaPhong == maPhong && tp.ThoiGianNhanPhong < date).FirstOrDefault(null);
-                if (phieuThuePhong != null)
+                try
                 {
-                    CapNhatTinhTrang(phieuThuePhong.Ma, 2);
+                    DateTime date = DateTime.Now;
+                    PhieuThuePhongDTO phieuThuePhong = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.MaPhong == maPhong && tp.ThoiGianNhanPhong < date).FirstOrDefault(null);
+                    if (phieuThuePhong != null)
+                    {
+                        CapNhatTinhTrang(phieuThuePhong.Ma, 2);
+                    }
+                }catch(Exception ex)
+                {
+                    throw ex.InnerException;
                 }
+                
             }
         }
 
