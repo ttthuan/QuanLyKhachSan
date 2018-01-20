@@ -126,7 +126,7 @@ namespace BusinessLayer
                 try
                 {
                     DateTime date = DateTime.Now;
-                    PhieuThuePhongDTO phieuThuePhong = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.MaPhong == maPhong && tp.ThoiGianNhanPhong < date).FirstOrDefault(null);
+                    PhieuThuePhongDTO phieuThuePhong = phieuThuePhongs.Where(tp => tp.TrangThai == 1 && tp.MaPhong == maPhong && tp.ThoiGianNhanPhong <= date).FirstOrDefault(null);
                     if (phieuThuePhong != null)
                     {
                         CapNhatTinhTrang(phieuThuePhong.Ma, 2);
