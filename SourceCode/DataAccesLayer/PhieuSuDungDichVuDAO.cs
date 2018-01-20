@@ -72,7 +72,7 @@ namespace DataAccesLayer
 		public string TinhTongTienSuDungDichVu(int maPhieuSuDungDichVu)
 		{
 			string query = "Select Sum(Phieu.Soluong * dv.Gia) From Phieusudungdichvu Phieu, Dichvu dv where Phieu.Madichvu = dv.Ma and Phieu.Maphieuthuephong = " + maPhieuSuDungDichVu + "";
-			string TongTien = "";
+			string TongTien = "0";
 			try
 			{
 				DataTable dataTable = dataProvider.ExecuteQuery_DataTble(query);

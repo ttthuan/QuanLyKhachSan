@@ -204,6 +204,10 @@ namespace PresentationLayer
 		{
 			PhieuSuDungDichVuBUS phieuSuDungDichVuBUS = new PhieuSuDungDichVuBUS();
 			lbTongTienDichVu.Text = phieuSuDungDichVuBUS.TinhTongTienSuDungDichVu(maPhieuthuephong);
+			if(lbTongTienDichVu.Text.Equals(""))
+			{
+				lbTongTienDichVu.Text = "0";
+			}
 		}
 
 		public void HienthiTongTienPhaiTra()
@@ -226,16 +230,9 @@ namespace PresentationLayer
 			}
 
 			TraPhongBUS traPhongBUS = new TraPhongBUS();
-			try
-			{
-				lbTongTien.Text = traPhongBUS.TinhTongTien(float.Parse(lbGiaPhong.Text),
+			lbTongTien.Text = traPhongBUS.TinhTongTien(float.Parse(lbGiaPhong.Text),
 				float.Parse(lbTongTienDichVu.Text), maLoaiThuePhong, TongSoNgay,
 				float.Parse(txtGiamTru.Text), float.Parse(txtPhuThu.Text), float.Parse(lbTraTruoc.Text)).ToString();
-			}
-			catch
-			{
-				lbTongTien.Text = "0";
-			}
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
