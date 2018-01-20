@@ -150,7 +150,7 @@ namespace PresentationLayer
 			else if(isSoDoKSCall)
 			{
 				dtpkNgayBD.Value = DateTime.Now.Date.AddDays(1);
-				dtpkNgayKT.Value = DateTime.Now.Date.AddDays(2);
+				dtpkNgayKT.Value = DateTime.Now.Date.AddDays(1);
 				dtpkGioDB.Value = DateTime.Now.Date.AddHours(1);
 				dtpkGioKT.Value = DateTime.Now.Date.AddHours(2);
 			}
@@ -218,12 +218,12 @@ namespace PresentationLayer
 
 						if (isSoDoKSCall == true)
 						{
-							//isSoDoKSCall = false;
-							//DatPhong datPhong = new DatPhong();
-							//this.transferPhongAndNgay = datPhong.functionGetPhongAndNgay;
-							//DA.PHONG phong = BUS.BUS_PHONG.getPhong(maP);
-							//this.functionTransferPhongAndNgay(phong, s, f);
-							//datPhong.ShowDialog();
+							isSoDoKSCall = false;
+							DatPhong datPhong = new DatPhong();
+							DatPhong.maP = maP;
+							DatPhong._thoiGianNhan = s;
+							DatPhong._thoiGianTra = f;
+							datPhong.ShowDialog();
 						}
 						else
 						{

@@ -52,9 +52,9 @@ namespace DataAccesLayer
 			}
 		}
 
-		public bool KiemtraTrungTenDN(string maTK, string tenDN)
+		public bool KiemtraTrungThemNV(string tenDN)
 		{
-			string query = "Select * From Taikhoan Where Ma = " + maTK + " and Tendangnhap = N'" + tenDN + "'";
+			string query = "Select * From Taikhoan Where Tendangnhap = N'" + tenDN + "'";
 			DataTable tb = new DataTable();
 			tb = dataProvider.ExecuteQuery_DataTble(query);
 			if (tb.Rows.Count > 0 && tb != null)
@@ -62,6 +62,49 @@ namespace DataAccesLayer
 				return false;
 			}
 			return true;
+		}
+
+		public bool KiemtraTrungCapnhatNV(string maNV,string tenDN)
+		{
+			string query = "Select * From Nhanvien nv,Taikhoan tk Where nv.Mataikhoan = tk.Ma and tk.Tendangnhap = N'"+tenDN+"' and nv.Ma != "+maNV+"";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count > 0 && tb != null)
+			{
+				return false;
+			}
+			return true;
+		}
+
+		public string ThemTaikhoan(string tenTK)
+		{
+			string query = "insert into Taikhoan(Tendangnhap, Matkhau) Values('"+ tenTK + "','123')";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				string query1 = "select max(Ma) from Taikhoan";
+				DataTable tb = new DataTable();
+				tb = dataProvider.ExecuteQuery_DataTble(query1);
+				return tb.Rows[0][0].ToString();
+			}
+			catch
+			{
+				return "";
+			}
+		}
+
+		public bool ResetMK(string ma)
+		{
+			string query = "UPDATE Taikhoan Set Matkhau = N'123' where Ma = " + ma + "";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
 		}
 	}
 }

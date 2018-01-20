@@ -77,5 +77,37 @@ namespace DataAccesLayer
 			return dataProvider.ExecuteQuery_DataTble(query);
 		}
 
+		public bool ThemNhanvien(NhanVienDTO nv)
+		{
+			string query = "insert into Nhanvien(Ten,SDT,DiaChi,Gioitinh,Ngaysinh,Mataikhoan,Maloainhanvien) " +
+				"Values (N'"+nv.Ten+"','"+nv.SDT+"',N'"+nv.DiaChi+"',N'"+nv.GioiTinh+"','"+nv.NgaySinh.ToString("yyyy-MM-dd") + "'" +
+				", '"+nv.Mataikhoan+"',"+nv.Maloainhanvien+")";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
+		public bool CapnhatNhanvien(NhanVienDTO nv)
+		{
+			string query = "update Nhanvien set Ten = N'" + nv.Ten + "', SDT = '" + nv.SDT + "', DiaChi = N'" + nv.DiaChi + 
+				"', Gioitinh = '" + nv.GioiTinh + "', Ngaysinh = '" + nv.NgaySinh.ToString("yyyy-MM-dd") + "'" +
+				",Maloainhanvien = " + nv.Maloainhanvien + " where Ma = "+nv.Ma+"";
+			try
+			{
+				dataProvider.ExecuteUpdateQuery(query);
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
 	}
 }

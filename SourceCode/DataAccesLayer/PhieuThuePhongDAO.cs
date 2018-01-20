@@ -100,6 +100,29 @@ namespace DataAccesLayer
 			return null;
 		}
 
+		public PhieuThuePhongDTO DangO_Phong(int maP)
+		{
+			PhieuThuePhongDTO phieuThuePhongDTO = new PhieuThuePhongDTO();
+			string query = "Select * From Phieuthuephong Where TrangThai = 2 and Maphong = " + maP + "";
+			DataTable tb = new DataTable();
+			tb = dataProvider.ExecuteQuery_DataTble(query);
+			if (tb.Rows.Count > 0 && tb != null)
+			{
+				foreach (DataRow row in tb.Rows)
+				{
+					phieuThuePhongDTO.Ma = int.Parse(row[0].ToString());
+					phieuThuePhongDTO.MaPhong = int.Parse(row[1].ToString());
+					phieuThuePhongDTO.MaKhachHang = int.Parse(row[2].ToString());
+					phieuThuePhongDTO.ThoiGianNhanPhong = DateTime.Parse(row[3].ToString());
+					phieuThuePhongDTO.ThoiGianTraPhong = DateTime.Parse(row[4].ToString());
+					phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(row[5].ToString());
+					phieuThuePhongDTO.Gia = float.Parse(row[6].ToString());
+				}
+				return phieuThuePhongDTO;
+			}
+			return null;
+		}
+
 		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
 		{
 			string query = "INSERT INTO Phieuthuephong(Maphong,Makhachhang,Thoigiannhanphong,Thoigiantraphong," +

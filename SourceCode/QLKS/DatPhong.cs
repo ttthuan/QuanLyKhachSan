@@ -24,12 +24,15 @@ namespace PresentationLayer
 
 		public static int maKH = 0;
 		public static int maP = 0;
+		public static bool isSodoKScall = false;
+		public static bool result = false;
 		public static DateTime _thoiGianNhan;
 		public static DateTime _thoiGianTra;
 
 		public DatPhong()
 		{
 			InitializeComponent();
+			HienthiComboboxLoaiGia();
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
@@ -60,6 +63,18 @@ namespace PresentationLayer
 			{
 				phieuThuePhongDTO.MaKhachHang =  ThemKhachHang();
 			}
+			
+			if(isSodoKScall)
+			{
+				DateTime s = dtpkNgayBD.Value.Date;
+				TimeSpan ts = dtpkGioBD.Value.TimeOfDay;
+				_thoiGianNhan = s.Date + ts;
+
+				DateTime f = dtpkNgayKT.Value.Date;
+				TimeSpan tf = dtpkGioKT.Value.TimeOfDay;
+				_thoiGianTra = f.Date + tf;
+			}
+
 			phieuThuePhongDTO.ThoiGianNhanPhong = _thoiGianNhan;
 			phieuThuePhongDTO.ThoiGianTraPhong = _thoiGianTra;
 			phieuThuePhongDTO.MaLoaiThuePhong = int.Parse(cbmLoaiDangKy.SelectedValue.ToString());
@@ -74,6 +89,7 @@ namespace PresentationLayer
 				MessageBoxDS.thongbao = "Đặt phòng thành công!";
 				MessageBoxDS.maHinh = 1;
 				m.ShowDialog();
+				result = true;
 			}
 			else
 			{
@@ -92,29 +108,36 @@ namespace PresentationLayer
 		private void formLoad()
 		{
 			HienthiComboboxLoaiGia();
-			if (maKH != 0)
+			if (!isSodoKScall)
 			{
-				KhachHangDTO khachHangDTO = new KhachHangDTO();
-				KhachHangBUS khachHangBUS = new KhachHangBUS();
-
-				khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(maKH);
-
-				dtpkNgayKT.Value = DateTime.Now.Date.AddDays(1);
-
-				txtTenKH.Text = khachHangDTO.Ten;
-				txtDiaChi.Text = khachHangDTO.DiaChi;
-				txtCMND.Text = khachHangDTO.Scmnd;
-				txtQuocTich.Text = khachHangDTO.QuocTich;
-				txtSDT.Text = khachHangDTO.Sdt;
-				if (khachHangDTO.GioiTinh.Equals("Nam"))
+				if (maKH != 0)
 				{
-					rbNam.Checked = true;
+					KhachHangDTO khachHangDTO = new KhachHangDTO();
+					KhachHangBUS khachHangBUS = new KhachHangBUS();
+
+					khachHangDTO = khachHangBUS.LayKhachHangCoMaSo(maKH);
+
+					dtpkNgayKT.Value = DateTime.Now.Date.AddDays(1);
+
+					txtTenKH.Text = khachHangDTO.Ten;
+					txtDiaChi.Text = khachHangDTO.DiaChi;
+					txtCMND.Text = khachHangDTO.Scmnd;
+					txtQuocTich.Text = khachHangDTO.QuocTich;
+					txtSDT.Text = khachHangDTO.Sdt;
+					if (khachHangDTO.GioiTinh.Equals("Nam"))
+					{
+						rbNam.Checked = true;
+					}
+					else
+					{
+						rbNu.Checked = true;
+					}
+					btnHienTrangVsDatPhong.Visible = true;
 				}
-				else
-				{
-					rbNu.Checked = true;
-				}
-				btnHienTrangVsDatPhong.Visible = true;
+			}
+			else
+			{
+				HienthithongTinDatPhong(maP,DateTime.Now.AddMinutes(5).Date,DateTime.Now.AddHours(1).Date);
 			}
 		}
 
@@ -267,6 +290,8 @@ namespace PresentationLayer
 				{
 					khachHangDTO.GioiTinh = "Nữ";
 				}
+				KhachHangBUS khachHangBUS = new KhachHangBUS();
+				maKH = khachHangBUS.ThemKhachHang(khachHangDTO);
 			}catch
 			{
 				MessageBoxDS m = new MessageBoxDS();
@@ -327,6 +352,30 @@ namespace PresentationLayer
 		private void dtpkGioBD_ValueChanged(object sender, EventArgs e)
 		{
 			HienthiThoiGian();
+		}
+
+		private void btnTimKH_Click(object sender, EventArgs e)
+		{
+			KhachHangBUS khachHangBUS = new KhachHangBUS();
+			KhachHangDTO khachHangDTO = new KhachHangDTO();
+
+			khachHangDTO = khachHangBUS.LayKHtheoSCMND(txtCMND.Text);
+			if(khachHangDTO != null)
+			{
+				txtTenKH.Text = khachHangDTO.Ten;
+				txtDiaChi.Text = khachHangDTO.DiaChi;
+				txtCMND.Text = khachHangDTO.Scmnd;
+				txtQuocTich.Text = khachHangDTO.QuocTich;
+				txtSDT.Text = khachHangDTO.Sdt;
+				if (khachHangDTO.GioiTinh.Equals("Nam"))
+				{
+					rbNam.Checked = true;
+				}
+				else
+				{
+					rbNu.Checked = true;
+				}
+			}
 		}
 	}
 }

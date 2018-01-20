@@ -23,8 +23,9 @@ namespace PresentationLayer
         //// khái báo biến
         //public NHANVIEN nhanVien = null;
         int tick = 0;
-        //List<CustomePhong> 
-		
+		//List<CustomePhong> 
+
+		public static TaiKhoanDTO taiKhoan = null;
         public SoDoKhachSan()
         {
             InitializeComponent();
@@ -173,8 +174,17 @@ namespace PresentationLayer
 
         private void CustomePhong_EventThanhToanPhong(object sender, ProcessEventArgs e)
         {
-            // call thanh toan phong
-        }
+			// call thanh toan phong
+			TraPhong traPhong = new TraPhong();
+			TraPhong.maTaiKhoan = taiKhoan.Ma;
+			TraPhong.maP = e.PHONG.Ma;
+			TraPhong.isSodoKScall = true;
+			traPhong.ShowDialog();
+			if (TraPhong.result)
+			{
+				LoadPhong();
+			}
+		}
 
         private void CustomePhong_EventNhanPhong(object sender, ProcessEventArgs e)
         {
@@ -185,8 +195,17 @@ namespace PresentationLayer
 
         private void CustomePhong_EventDatPhong(object sender, ProcessEventArgs e)
         {
-            // call dăt phòng
-        }
+			// call dăt phòng
+
+			DatPhong datPhong = new DatPhong();
+			DatPhong.maP = e.PHONG.Ma;
+			DatPhong.isSodoKScall = true;
+			datPhong.ShowDialog();
+			if (DatPhong.result)
+			{
+				LoadPhong();
+			}
+		}
 
 
 

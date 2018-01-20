@@ -66,7 +66,7 @@ namespace DataTranferObject
 
 		public string GioiTinh
 		{
-			get { return _Ten; }
+			get { return _GioiTinh; }
 			set
 			{
 				if (value.Length == 0)

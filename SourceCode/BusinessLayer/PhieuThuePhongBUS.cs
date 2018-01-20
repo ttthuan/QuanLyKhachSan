@@ -147,6 +147,11 @@ namespace BusinessLayer
 			return phieuThuePhongDAO.DangO_KhachHang(maKH);
 		}
 
+		public PhieuThuePhongDTO DangO_Phong(int maP)
+		{
+			return phieuThuePhongDAO.DangO_Phong(maP);
+		}
+
 		public bool ThemPhieuThuePhong(PhieuThuePhongDTO phieuThuePhongDTO)
 		{
 			return phieuThuePhongDAO.ThemPhieuThuePhong(phieuThuePhongDTO);
