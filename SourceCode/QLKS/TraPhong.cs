@@ -226,9 +226,16 @@ namespace PresentationLayer
 			}
 
 			TraPhongBUS traPhongBUS = new TraPhongBUS();
-			lbTongTien.Text = traPhongBUS.TinhTongTien(float.Parse(lbGiaPhong.Text), 
+			try
+			{
+				lbTongTien.Text = traPhongBUS.TinhTongTien(float.Parse(lbGiaPhong.Text),
 				float.Parse(lbTongTienDichVu.Text), maLoaiThuePhong, TongSoNgay,
 				float.Parse(txtGiamTru.Text), float.Parse(txtPhuThu.Text), float.Parse(lbTraTruoc.Text)).ToString();
+			}
+			catch
+			{
+				lbTongTien.Text = "0";
+			}
 		}
 
 		private void panlTieuDe_MouseDown(object sender, MouseEventArgs e)
