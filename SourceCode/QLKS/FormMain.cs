@@ -55,9 +55,10 @@ namespace PresentationLayer
         
         // khai báo delegate
         public delegate void callBtnMouseEvent(object sender, MouseEventArgs e);
+        callBtnMouseEvent CallSodokhEvet;
 
-		//Tai khoản đăng nhập
-		TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
+        //Tai khoản đăng nhập
+        TaiKhoanDTO taiKhoan = new TaiKhoanDTO();
         
         public FormMain(ControllerSV objSV)
         {
@@ -122,9 +123,13 @@ namespace PresentationLayer
 
             plbDangXuat = lbDangXuat;
 
-			//taikhoan
-			//lbTaiKhoan.Text = objSV.taiKhoan.Tendangnhap;
-		}
+            //taikhoan
+            //lbTaiKhoan.Text = objSV.taiKhoan.Tendangnhap;
+            //callBtnMouseEvent = btnSoDoKhachSan_MouseUp;
+            //CallSodokhEvet += btnSoDoKhachSan_MouseUp;
+            //CallSodokhEvet(this, new MouseEventArgs(btnSoDoKhachSan, 1, 0, 0, 0));
+            btnSoDoKhachSan_MouseUp(btnSoDoKhachSan, new MouseEventArgs(MouseButtons, 1, 1, 1, 1));
+        }
 
         private void BtnQuanLyTaiKhoan_MouseUp(object sender, MouseEventArgs e)
         {
