@@ -18,7 +18,8 @@
 - Lập biểu đồ khách thuê
 
 # Hình ảnh
-
+## Sơ đồ phòng và trạng thái phòng
+![list image folow month-year](https://drive.google.com/uc?id=19dBOwxWhK0y6ELwY24zwCzjnZ1XDdMpb)
 
 # Danh sách thành viên:#
 > 1. Trịnh Thanh Thuận MSSV: 1642074.
